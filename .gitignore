@@ -1,0 +1,9 @@
+# Ignorar archivos de respaldo (~) generados por Emacs
+*~
+
+# Ignorar archivos de Emacs
+*.elc
+auto-save-list/
+tramp
+\#*\#
+.\#*
