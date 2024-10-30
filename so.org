@@ -1,0 +1,291 @@
+#+TITLE: Apuntes Sistemas Operativos 
+#+LANGUAGE: es
+#+LaTeX_HEADER: \usepackage[spanish]{inputenc}
+#+SETUPFILE: /home/likcos/Materias/SO/theme-readtheorg-local.setup
+#+EXPORT_FILE_NAME: index.html
+#+OPTIONS: num:nil
+#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
+#+HTML_HEAD: <style>pre.src {background-color: #303030; color: #e5e5e5;}</style>
+
+
+* Concepto de proceso
+Un proceso es una unidad de ejecución dentro de un sistema
+operativo. Cada proceso tiene su propio espacio de memoria, que
+incluye el código del programa, sus datos y su pila. La creación de un
+proceso implica varias operaciones del sistema operativo, como
+asignación de memoria y registro en la tabla de procesos. Los procesos
+permiten a los sistemas multitarea ejecutar múltiples programas de
+forma aparentemente simultánea.
+
+
+* Comandos para manejar procesos en Linux
+
+** 1. Ver procesos activos
+   - `ps`
+     Muestra una lista de procesos en la terminal actual. Ofrece información sobre el PID, usuario, CPU, memoria, etc.
+     - Ejemplo: `ps aux` muestra todos los procesos en ejecución en el sistema.
+
+   - `top` 
+     Muestra una lista dinámica de procesos en tiempo real, actualizándose constantemente. Incluye el uso de CPU, memoria, y estadísticas del sistema.
+     - Comando alternativo: `htop`, que ofrece una interfaz más visual y personalizable.
+
+   - `pgrep <nombre>`
+     Busca el PID (Process ID) de un proceso específico por su nombre. Útil para obtener el PID antes de aplicar otros comandos.
+     - Ejemplo: `pgrep apache` muestra el PID del proceso con el nombre "apache".
+
+** 2. Iniciar procesos
+   - `&` 
+     Ejecuta un comando en segundo plano, permitiendo que el usuario continúe usando la terminal. 
+     - Ejemplo: `comando &` ejecuta el proceso en segundo plano.
+
+   - `nohup <comando> &`
+     Inicia un proceso que continúa en ejecución incluso después de cerrar la terminal. El output se guarda en un archivo `nohup.out` por defecto.
+     - Ejemplo: `nohup script.sh &` ejecuta `script.sh` y permanece activo tras cerrar sesión.
+
+** 3. Controlar la ejecución de procesos
+   - `fg` 
+     Trae un proceso en segundo plano al primer plano, permitiendo interactuar directamente con él.
+
+   - `bg`
+     Envía un proceso suspendido al segundo plano, liberando la terminal para otros comandos.
+
+   - `jobs`
+     Muestra los procesos en segundo plano o suspendidos asociados a la sesión de terminal actual, con su ID de trabajo (job ID).
+
+** 4. Enviar señales a los procesos
+   - `kill <PID>` 
+     Envía una señal de terminación al proceso especificado por su PID. Intenta cerrar el proceso de manera controlada.
+     - Ejemplo: `kill 1234` termina el proceso con PID 1234.
+
+   - `kill -9 <PID>`
+     Fuerza el cierre inmediato del proceso especificado, sin esperar una terminación ordenada. Utiliza la señal `KILL`.
+     - Ejemplo: `kill -9 1234`.
+
+   - `pkill <nombre>`
+     Termina todos los procesos que coinciden con el nombre especificado.
+     - Ejemplo: `pkill apache` detiene todos los procesos con nombre "apache".
+
+   - `killall <nombre>`
+     Similar a `pkill`, detiene todos los procesos con un nombre específico.
+     - Ejemplo: `killall httpd`.
+
+** 5. Cambiar prioridad de procesos
+   - `nice -n <prioridad> <comando>`
+     Inicia un proceso con una prioridad especificada, donde el rango va de -20 (mayor prioridad) a 19 (menor prioridad). La prioridad afecta el orden de planificación.
+     - Ejemplo: `nice -n -10 script.sh` ejecuta `script.sh` con una prioridad alta.
+
+   - `renice <prioridad> <PID>`
+     Cambia la prioridad de un proceso en ejecución.
+     - Ejemplo: `renice -5 1234` ajusta la prioridad del proceso con PID 1234.
+
+** 6. Ver detalles específicos de los procesos
+   - `pstree`
+     Muestra los procesos en una estructura de árbol, permitiendo visualizar mejor las relaciones y jerarquías entre procesos en ejecución.
+
+   - `lsof -p <PID>`
+     Lista todos los archivos abiertos por un proceso específico, útil para ver conexiones de red o archivos utilizados por un proceso.
+     - Ejemplo: `lsof -p 1234` muestra los archivos abiertos por el proceso con PID 1234.
+
+
+
+** Ejemplo en C: Creación de un proceso utilizando fork()
+#+BEGIN_SRC C :results output
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+
+int main() {
+    pid_t pid = fork(); // Crear un nuevo proceso
+    if (pid == 0) {
+        printf("Soy el proceso hijo con PID %d\n", getpid());
+    } else {
+        printf("Soy el proceso padre con PID %d\n", getpid());
+    }
+    return 0;
+}
+#+END_SRC
+
+#+RESULTS:
+: Soy el proceso padre con PID 61713
+: Soy el proceso hijo con PID 61714
+
+* Estados y transiciones de los procesos
+Los procesos en un sistema operativo pueden estar en diferentes
+estados, que determinan si están utilizando la CPU, esperando, o
+listos para ejecutarse. Los estados comunes incluyen:
+  - **Nuevo**: El proceso está siendo creado.
+  - **Listo**: El proceso está listo para ejecutarse.
+  - **Ejecución**: El proceso está ejecutándose en la CPU.
+  - **Bloqueado**: El proceso está esperando un evento externo (por ejemplo, entrada/salida).
+  - **Terminado**: El proceso ha completado su ejecución.
+
+Los sistemas operativos gestionan estas transiciones mediante una estructura de datos llamada tabla de procesos.
+
+** Ejemplo en C: Simulación de transiciones de estados
+#+BEGIN_SRC C :results output
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/wait.h>
+
+int main() {
+    printf("Proceso creado\n");
+    pid_t pid = fork();
+    if (pid == 0) {
+        printf("Estado: Ejecución - Proceso hijo\n");
+        sleep(2); // Simula un proceso en espera (bloqueado)
+        printf("Estado: Terminado - Proceso hijo\n");
+        exit(0);
+    } else {
+        printf("Estado: Listo - Proceso padre\n");
+        wait(NULL); // Espera a que el proceso hijo finalice
+        printf("Estado: Terminado - Proceso padre\n");
+    }
+    return 0;
+}
+#+END_SRC
+
+#+RESULTS:
+: Proceso creado
+: Estado: Ejecución - Proceso hijo
+: Estado: Terminado - Proceso hijo
+: Proceso creado
+: Estado: Listo - Proceso padre
+: Estado: Terminado - Proceso padre
+
+* Procesos ligeros: Hilos o hebras
+
+Un proceso ligero o hilo es una unidad de ejecución que comparte el
+mismo espacio de memoria que otros hilos dentro del mismo proceso. Los
+hilos permiten paralelizar tareas en un programa y mejorar la
+eficiencia sin crear procesos separados. Los sistemas operativos
+modernos proporcionan bibliotecas como POSIX threads (pthreads) para
+crear y gestionar hilos.
+
+** Ejemplo en C: Creación de hilos con pthread
+#+BEGIN_SRC C
+#include <pthread.h>
+#include <stdio.h>
+
+void* tarea(void* arg) {
+    printf("Hilo en ejecución\n");
+    return NULL;
+}
+
+int main() {
+    pthread_t hilo1, hilo2;
+    pthread_create(&hilo1, NULL, tarea, NULL);
+    pthread_create(&hilo2, NULL, tarea, NULL);
+
+    pthread_join(hilo1, NULL);
+    pthread_join(hilo2, NULL);
+    printf("Todos los hilos han terminado\n");
+    return 0;
+}
+#+END_SRC
+
+* Concurrencia y secuenciabilidad
+La concurrencia permite ejecutar múltiples tareas "simultáneamente". Aunque no siempre se ejecutan al mismo tiempo, se pueden intercalar en un mismo procesador mediante interrupciones y cambios de contexto. La secuenciabilidad define un orden en estas tareas concurrentes, permitiendo que se ejecute un bloque de código mientras otro espera, garantizando la sincronización.
+
+** Ejemplo en C: Concurrencia y sincronización de tareas
+#+BEGIN_SRC C
+#include <pthread.h>
+#include <stdio.h>
+#include <unistd.h>
+
+void* tarea1(void* arg) {
+    printf("Inicio de tarea 1\n");
+    sleep(1);
+    printf("Fin de tarea 1\n");
+    return NULL;
+}
+
+void* tarea2(void* arg) {
+    printf("Inicio de tarea 2\n");
+    sleep(1);
+    printf("Fin de tarea 2\n");
+    return NULL;
+}
+
+int main() {
+    pthread_t hilo1, hilo2;
+    pthread_create(&hilo1, NULL, tarea1, NULL);
+    pthread_create(&hilo2, NULL, tarea2, NULL);
+
+    pthread_join(hilo1, NULL);
+    pthread_join(hilo2, NULL);
+    printf("Ambas tareas han terminado de forma concurrente\n");
+    return 0;
+}
+#+END_SRC
+
+* Niveles, objetivos y criterios de planificación
+La planificación es el proceso de asignar recursos del sistema a los procesos. Existen varios niveles:
+  - **Planificación a largo plazo**: Selecciona qué procesos ingresar al sistema.
+  - **Planificación a medio plazo**: Decide qué procesos en espera se vuelven listos.
+  - **Planificación a corto plazo**: Selecciona qué proceso listo ocupará la CPU.
+
+Los criterios de planificación pueden incluir la equidad, la eficiencia y el tiempo de respuesta.
+
+** Ejemplo en C: Implementación simple de planificación Round Robin
+#+BEGIN_SRC C
+#include <stdio.h>
+#include <unistd.h>
+
+void proceso(int id) {
+    printf("Proceso %d en ejecución\n", id);
+    sleep(1); // Tiempo simulado de ejecución del proceso
+    printf("Proceso %d terminado\n", id);
+}
+
+int main() {
+    int n_procesos = 3;
+    for (int i = 0; i < n_procesos; i++) {
+        proceso(i);
+    }
+    return 0;
+}
+#+END_SRC
+
+* Técnicas de administración del planificador
+El planificador utiliza varias técnicas para mejorar la gestión de procesos:
+  - **Round Robin**: Asigna a cada proceso una franja de tiempo.
+  - **Prioridad**: Da preferencia a procesos con alta prioridad.
+  - **Planificación en tiempo real**: Asegura que tareas críticas se ejecuten en el momento correcto.
+
+** Ejemplo en C: Planificación simple basada en prioridades
+#+BEGIN_SRC C
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    int id;
+    int prioridad;
+} Proceso;
+
+void ejecutar(Proceso p) {
+    printf("Ejecutando proceso %d con prioridad %d\n", p.id, p.prioridad);
+}
+
+int main() {
+    Proceso procesos[] = {{1, 2}, {2, 1}, {3, 3}};
+    int n = sizeof(procesos) / sizeof(procesos[0]);
+
+    // Ordenar procesos por prioridad
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (procesos[i].prioridad > procesos[j].prioridad) {
+                Proceso temp = procesos[i];
+                procesos[i] = procesos[j];
+                procesos[j] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        ejecutar(procesos[i]);
+    }
+
+    return 0;
+}
+#+END_SRC
