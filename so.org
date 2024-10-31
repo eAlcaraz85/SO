@@ -8,19 +8,11 @@
 #+HTML_HEAD: <style>pre.src {background-color: #303030; color: #e5e5e5;}</style>
 
 
-* Concepto de proceso
-Un proceso es una unidad de ejecución dentro de un sistema
-operativo. Cada proceso tiene su propio espacio de memoria, que
-incluye el código del programa, sus datos y su pila. La creación de un
-proceso implica varias operaciones del sistema operativo, como
-asignación de memoria y registro en la tabla de procesos. Los procesos
-permiten a los sistemas multitarea ejecutar múltiples programas de
-forma aparentemente simultánea.
 
+* Administración de Procesos y del procesador
+** Comandos para manejar procesos en Linux
 
-* Comandos para manejar procesos en Linux
-
-** 1. Ver procesos activos
+*** 1. Ver procesos activos
    - `ps`
      Muestra una lista de procesos en la terminal actual. Ofrece información sobre el PID, usuario, CPU, memoria, etc.
      - Ejemplo: `ps aux` muestra todos los procesos en ejecución en el sistema.
@@ -33,7 +25,7 @@ forma aparentemente simultánea.
      Busca el PID (Process ID) de un proceso específico por su nombre. Útil para obtener el PID antes de aplicar otros comandos.
      - Ejemplo: `pgrep apache` muestra el PID del proceso con el nombre "apache".
 
-** 2. Iniciar procesos
+*** 2. Iniciar procesos
    - `&` 
      Ejecuta un comando en segundo plano, permitiendo que el usuario continúe usando la terminal. 
      - Ejemplo: `comando &` ejecuta el proceso en segundo plano.
@@ -42,7 +34,7 @@ forma aparentemente simultánea.
      Inicia un proceso que continúa en ejecución incluso después de cerrar la terminal. El output se guarda en un archivo `nohup.out` por defecto.
      - Ejemplo: `nohup script.sh &` ejecuta `script.sh` y permanece activo tras cerrar sesión.
 
-** 3. Controlar la ejecución de procesos
+*** 3. Controlar la ejecución de procesos
    - `fg` 
      Trae un proceso en segundo plano al primer plano, permitiendo interactuar directamente con él.
 
@@ -52,7 +44,7 @@ forma aparentemente simultánea.
    - `jobs`
      Muestra los procesos en segundo plano o suspendidos asociados a la sesión de terminal actual, con su ID de trabajo (job ID).
 
-** 4. Enviar señales a los procesos
+*** 4. Enviar señales a los procesos
    - `kill <PID>` 
      Envía una señal de terminación al proceso especificado por su PID. Intenta cerrar el proceso de manera controlada.
      - Ejemplo: `kill 1234` termina el proceso con PID 1234.
@@ -69,7 +61,7 @@ forma aparentemente simultánea.
      Similar a `pkill`, detiene todos los procesos con un nombre específico.
      - Ejemplo: `killall httpd`.
 
-** 5. Cambiar prioridad de procesos
+*** 5. Cambiar prioridad de procesos
    - `nice -n <prioridad> <comando>`
      Inicia un proceso con una prioridad especificada, donde el rango va de -20 (mayor prioridad) a 19 (menor prioridad). La prioridad afecta el orden de planificación.
      - Ejemplo: `nice -n -10 script.sh` ejecuta `script.sh` con una prioridad alta.
@@ -78,7 +70,7 @@ forma aparentemente simultánea.
      Cambia la prioridad de un proceso en ejecución.
      - Ejemplo: `renice -5 1234` ajusta la prioridad del proceso con PID 1234.
 
-** 6. Ver detalles específicos de los procesos
+*** 6. Ver detalles específicos de los procesos
    - `pstree`
      Muestra los procesos en una estructura de árbol, permitiendo visualizar mejor las relaciones y jerarquías entre procesos en ejecución.
 
@@ -88,7 +80,283 @@ forma aparentemente simultánea.
 
 
 
-** Ejemplo en C: Creación de un proceso utilizando fork()
+** Punteros en C
+*** ¿Qué es un puntero?
+Un puntero es una variable que almacena la dirección de memoria de
+otra variable. En lugar de contener un valor directo, un puntero
+"apunta" a la ubicación donde se almacena ese valor.
+
+*** Declaración de punteros
+Para declarar un puntero, se utiliza el operador `*` antes del nombre
+de la variable:
+
+#+BEGIN_SRC c
+int *ptr;
+#+END_SRC
+
+En este ejemplo, `ptr` es un puntero a un entero.
+
+*** Inicialización de punteros
+Un puntero debe inicializarse con la dirección de una variable antes de ser utilizado. Para obtener la dirección de una variable, se emplea el operador `&`:
+
+#+BEGIN_SRC c
+int var = 10;
+int *ptr = &var;
+#+END_SRC
+
+Aquí, `ptr` almacena la dirección de `var`.
+
+*** Acceso al valor apuntado
+Para acceder o modificar el valor de la variable a la que apunta un puntero, se utiliza el operador de desreferencia `*`:
+
+#+BEGIN_SRC c
+printf("Valor de var: %d\n", *ptr); // Imprime: Valor de var: 10
+*ptr = 20; // Ahora var vale 20
+#+END_SRC
+
+*** Punteros y arreglos
+En C, el nombre de un arreglo actúa como un puntero al primer elemento del mismo. Por lo tanto, se puede utilizar aritmética de punteros para recorrer un arreglo:
+
+#+BEGIN_SRC c
+int arr[3] = {1, 2, 3};
+int *ptr = arr;
+
+for (int i = 0; i < 3; i++) {
+    printf("%d ", *(ptr + i));
+}
+// Salida: 1 2 3
+#+END_SRC
+
+*** Punteros y funciones
+Los punteros permiten que las funciones modifiquen variables fuera de su ámbito local. Al pasar la dirección de una variable a una función, esta puede alterar el valor original:
+
+#+BEGIN_SRC c
+#include <stdio.h>
+
+void incrementar(int *n) {
+    (*n)++;
+}
+
+int main() {
+    int num = 5;
+    incrementar(&num);
+    printf("Valor de num: %d\n", num); // Imprime: Valor de num: 6
+    return 0;
+}
+#+END_SRC
+
+*** Punteros nulos
+Un puntero nulo es un puntero que no apunta a ninguna dirección válida. Se inicializa asignándole el valor `NULL`:
+
+#+BEGIN_SRC c
+int *ptr = NULL;
+#+END_SRC
+
+Es una buena práctica inicializar los punteros a `NULL` para evitar errores al intentar acceder a direcciones de memoria no válidas.
+
+*** Aritmética de punteros
+Los punteros pueden incrementarse o decrementarse para navegar por estructuras de datos en memoria:
+
+#+BEGIN_SRC c
+int arr[3] = {10, 20, 30};
+int *ptr = arr;
+
+ptr++; // Ahora apunta a arr[1]
+printf("%d\n", *ptr); // Imprime: 20
+#+END_SRC
+
+*** Punteros a punteros
+Un puntero puede apuntar a otro puntero, lo que se denomina "puntero a puntero":
+
+#+BEGIN_SRC c
+int var = 100;
+int *ptr = &var;
+int **ptr2 = &ptr;
+
+printf("Valor de var: %d\n", **ptr2); // Imprime: Valor de var: 100
+#+END_SRC
+
+*** Dobles y triples punteros
+Un **doble puntero** es un puntero que apunta a otro puntero,
+permitiendo manejar niveles adicionales de indirección en la
+memoria. Estos son útiles en casos como el manejo de matrices
+dinámicas o la manipulación de punteros en funciones.
+
+#+BEGIN_SRC c
+int var = 50;
+int *ptr = &var;
+int **dbl_ptr = &ptr;
+
+printf("Valor de var usando dbl_ptr: %d\n", **dbl_ptr); // Imprime: 50
+#+END_SRC
+
+Los **triples punteros** (punteros a dobles punteros) permiten gestionar estructuras de datos de mayor complejidad, como matrices 3D o estructuras donde necesitas referencias a varios niveles de punteros.
+
+#+BEGIN_SRC c
+int var = 30;
+int *ptr = &var;
+int **dbl_ptr = &ptr;
+int ***trp_ptr = &dbl_ptr;
+
+printf("Valor de var usando trp_ptr: %d\n", ***trp_ptr); // Imprime: 30
+#+END_SRC
+
+Usar punteros de múltiples niveles requiere tener una buena comprensión de cómo funciona la memoria en C y saber manejar las referencias con cuidado para evitar errores de acceso a memoria.
+
+
+*** Punteros y cadenas de caracteres
+Las cadenas de caracteres en C son arreglos de caracteres terminados en un carácter nulo (`'\0'`). Los punteros se utilizan comúnmente para manipular estas cadenas:
+
+#+BEGIN_SRC c
+char str[] = "Hola";
+char *ptr = str;
+
+while (*ptr != '\0') {
+    printf("%c", *ptr);
+    ptr++;
+}
+// Salida: Hola
+#+END_SRC
+
+** Concepto de proceso
+Un proceso es una unidad de ejecución dentro de un sistema
+operativo. Cada proceso tiene su propio espacio de memoria, que
+incluye el código del programa, sus datos y su pila. La creación de un
+proceso implica varias operaciones del sistema operativo, como
+asignación de memoria y registro en la tabla de procesos. Los procesos
+permiten a los sistemas multitarea ejecutar múltiples programas de
+forma aparentemente simultánea.
+
+** Fork() en C
+*** ¿Qué es fork()?
+`fork()` es una llamada al sistema en C, utilizada para crear un nuevo
+proceso llamado "proceso hijo". Este proceso es una copia casi exacta
+del proceso que hizo la llamada, conocido como "proceso padre". La
+función `fork()` es esencial para el manejo de procesos en sistemas
+tipo Unix/Linux.
+
+*** Funcionamiento básico de fork()
+Cuando se llama a `fork()`, la ejecución continúa tanto en el proceso padre como en el proceso hijo. La llamada a `fork()` retorna un valor distinto en cada uno:
+- Al proceso **padre**, `fork()` devuelve el PID (identificador de proceso) del proceso hijo.
+- Al proceso **hijo**, `fork()` devuelve el valor `0`.
+- Si ocurre un error, `fork()` retorna `-1`.
+
+*** Ejemplo básico de fork()
+A continuación, un ejemplo sencillo que muestra cómo usar `fork()` para crear un proceso hijo:
+
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    pid_t pid = fork(); // Llamada a fork()
+
+    if (pid == -1) {
+        // Si ocurre un error en fork()
+        perror("fork failed");
+        return 1;
+    } else if (pid == 0) {
+        // Código que ejecuta el proceso hijo
+        printf("Este es el proceso hijo con PID: %d\n", getpid());
+    } else {
+        // Código que ejecuta el proceso padre
+        printf("Este es el proceso padre con PID: %d y el hijo tiene PID: %d\n", getpid(), pid);
+    }
+    return 0;
+}
+#+END_SRC
+
+*** Explicación del Ejemplo
+1. `fork()` es llamado y crea un proceso hijo.
+2. En el proceso hijo, `pid` será igual a `0`, por lo que se ejecutará el bloque de código que imprime el mensaje del hijo.
+3. En el proceso padre, `pid` es mayor que `0`, por lo que ejecuta el código para el proceso padre.
+4. Si `fork()` falla, devuelve `-1` y se imprime un mensaje de error.
+
+*** Espera del Proceso Padre con wait()
+Para que el proceso padre espere a que el proceso hijo termine antes de continuar, se puede utilizar la función `wait()`:
+
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+int main() {
+    pid_t pid = fork();
+
+    if (pid == 0) {
+        // Proceso hijo
+        printf("Proceso hijo con PID: %d\n", getpid());
+    } else {
+        // Proceso padre
+        wait(NULL); // Espera a que el proceso hijo termine
+        printf("Proceso padre con PID: %d, el hijo terminó.\n", getpid());
+    }
+    return 0;
+}
+#+END_SRC
+
+En este ejemplo, el proceso padre esperará hasta que el proceso hijo termine antes de imprimir su mensaje.
+
+*** fork() y Punteros
+`fork()` crea un espacio de memoria independiente para el proceso hijo, lo que significa que los punteros en el proceso hijo apuntan a las mismas posiciones relativas que en el proceso padre, pero en diferentes espacios de memoria. Esto evita que los cambios en las variables del proceso hijo afecten al padre, gracias al mecanismo de **Copy-on-Write (COW)**.
+
+*** Ejemplo con Punteros
+Este ejemplo demuestra cómo `fork()` maneja los punteros y el espacio de memoria independiente:
+
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr = (int*)malloc(sizeof(int));
+    *ptr = 100;
+
+    pid_t pid = fork();
+
+    if (pid == 0) {
+        // Proceso hijo
+        printf("Proceso hijo: valor de *ptr antes de cambiar = %d\n", *ptr);
+        *ptr = 200;
+        printf("Proceso hijo: valor de *ptr después de cambiar = %d\n", *ptr);
+    } else {
+        // Proceso padre
+        wait(NULL);
+        printf("Proceso padre: valor de *ptr = %d\n", *ptr);
+    }
+
+    free(ptr);
+    return 0;
+}
+#+END_SRC
+
+*** Salida esperada
+La salida de este código será algo similar a:
+
+: Proceso hijo: valor de *ptr antes de cambiar = 100
+: Proceso hijo: valor de *ptr después de cambiar = 200
+: Proceso padre: valor de *ptr = 100
+
+*** Explicación de Copy-on-Write (COW)
+Gracias a Copy-on-Write, ambos procesos (padre e hijo) comparten la misma memoria hasta que uno de ellos intenta modificarla. En ese momento, el sistema operativo crea una copia independiente de la memoria para el proceso que realiza la escritura, evitando que los cambios afecten al otro proceso.
+
+*** Conclusión
+La llamada a `fork()` es una herramienta poderosa en C para la creación de procesos en sistemas operativos Unix/Linux. Permite duplicar un proceso, crear nuevos flujos de ejecución, y manejar recursos compartidos de manera controlada. Es especialmente útil en programas multitarea como servidores o aplicaciones que requieren procesamiento paralelo.
+
+** Estados y transiciones de los procesos
+Los procesos en un sistema operativo pueden estar en diferentes
+estados, que determinan si están utilizando la CPU, esperando, o
+listos para ejecutarse. Los estados comunes incluyen:
+  - **Nuevo**: El proceso está siendo creado.
+  - **Listo**: El proceso está listo para ejecutarse.
+  - **Ejecución**: El proceso está ejecutándose en la CPU.
+  - **Bloqueado**: El proceso está esperando un evento externo (por ejemplo, entrada/salida).
+  - **Terminado**: El proceso ha completado su ejecución.
+
+Los sistemas operativos gestionan estas transiciones mediante una estructura de datos llamada tabla de procesos.
+
+
+*** Ejemplo en C: Creación de un proceso utilizando fork()
 #+BEGIN_SRC C :results output
 #include <stdio.h>
 #include <unistd.h>
@@ -109,19 +377,9 @@ int main() {
 : Soy el proceso padre con PID 61713
 : Soy el proceso hijo con PID 61714
 
-* Estados y transiciones de los procesos
-Los procesos en un sistema operativo pueden estar en diferentes
-estados, que determinan si están utilizando la CPU, esperando, o
-listos para ejecutarse. Los estados comunes incluyen:
-  - **Nuevo**: El proceso está siendo creado.
-  - **Listo**: El proceso está listo para ejecutarse.
-  - **Ejecución**: El proceso está ejecutándose en la CPU.
-  - **Bloqueado**: El proceso está esperando un evento externo (por ejemplo, entrada/salida).
-  - **Terminado**: El proceso ha completado su ejecución.
 
-Los sistemas operativos gestionan estas transiciones mediante una estructura de datos llamada tabla de procesos.
 
-** Ejemplo en C: Simulación de transiciones de estados
+*** Ejemplo en C: Simulación de transiciones de estados
 #+BEGIN_SRC C :results output
 #include <stdio.h>
 #include <unistd.h>
@@ -153,7 +411,131 @@ int main() {
 : Estado: Listo - Proceso padre
 : Estado: Terminado - Proceso padre
 
-* Procesos ligeros: Hilos o hebras
+** Tabla de Procesos
+*** ¿Qué es la Tabla de Procesos?
+La **Tabla de Procesos** es una estructura de datos utilizada por el
+sistema operativo para gestionar todos los procesos activos en el
+sistema. Cada proceso tiene un bloque específico, llamado **Bloque de
+Control de Proceso (PCB)**, que contiene la información necesaria para
+su administración.
+
+*** Información en la Tabla de Procesos
+Cada entrada en la tabla de procesos incluye un PCB con varios campos importantes:
+   - **PID (Process ID)**: Identificador único del proceso.
+   - **Estado del proceso**: Indica si el proceso está en ejecución, en espera, listo, o terminado.
+   - **Contador de programa (PC)**: Dirección de la siguiente instrucción que el proceso debe ejecutar.
+   - **Registros de la CPU**: Incluyen el estado de los registros del procesador.
+   - **Información de memoria**: Define las áreas de memoria asignadas al proceso.
+   - **Información de I/O**: Lista de archivos o dispositivos abiertos por el proceso.
+   - **Prioridad**: Define la importancia del proceso en relación a otros.
+
+*** Estados del Proceso
+Un proceso puede encontrarse en diferentes estados, y la tabla de procesos ayuda a rastrear el estado actual de cada proceso. Los estados típicos incluyen:
+   - **Nuevo**: El proceso está siendo creado.
+   - **Listo**: El proceso está esperando para ser ejecutado.
+   - **En ejecución**: El proceso está utilizando la CPU.
+   - **En espera/bloqueado**: El proceso espera un evento (como una operación de E/S).
+   - **Terminado**: El proceso ha finalizado su ejecución.
+
+*** Ejemplo en C de una Tabla de Procesos Simplificada
+El siguiente ejemplo en C muestra cómo se puede representar una tabla de procesos de manera simple mediante una estructura de datos.
+
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_PROCESSES 5
+
+// Definición de estructura para la tabla de procesos
+struct Process {
+    int pid;                 // ID del proceso
+    char state[20];          // Estado del proceso (ej: "Listo", "Ejecutando")
+    int priority;            // Prioridad del proceso
+    unsigned int pc;         // Contador de programa
+};
+
+// Función para inicializar los procesos
+void initializeProcesses(struct Process processes[], int size) {
+    for (int i = 0; i < size; i++) {
+        processes[i].pid = i + 1;
+        strcpy(processes[i].state, "Listo");
+        processes[i].priority = i % 3;  // Asigna prioridad de 0 a 2
+        processes[i].pc = 0;
+    }
+}
+
+// Función para mostrar la tabla de procesos
+void displayProcessTable(struct Process processes[], int size) {
+    printf("Tabla de Procesos:\n");
+    printf("PID\tEstado\t\tPrioridad\tPC\n");
+    printf("----\t-------\t\t---------\t----\n");
+    for (int i = 0; i < size; i++) {
+        printf("%d\t%s\t\t%d\t\t%u\n", 
+               processes[i].pid, processes[i].state, processes[i].priority, processes[i].pc);
+    }
+}
+
+// Función para simular el cambio de estado y actualizar el PC
+void updateProcess(struct Process *process, const char *newState, unsigned int newPC) {
+    strcpy(process->state, newState);
+    process->pc = newPC;
+}
+
+int main() {
+    struct Process processes[MAX_PROCESSES];
+
+    initializeProcesses(processes, MAX_PROCESSES);  // Inicializa los procesos
+    displayProcessTable(processes, MAX_PROCESSES);  // Muestra la tabla inicial
+
+    printf("\nActualizando estado del proceso 1...\n");
+    updateProcess(&processes[0], "Ejecutando", 100);  // Cambia el estado y PC del proceso 1
+    displayProcessTable(processes, MAX_PROCESSES);    // Muestra la tabla actualizada
+
+    return 0;
+}
+#+END_SRC
+
+*** Explicación del Ejemplo
+1. **Definición de Estructura**: La estructura `Process` representa cada proceso en la tabla. Incluye el **PID**, **estado**, **prioridad**, y **contador de programa (PC)**.
+2. **Inicialización de Procesos**: La función `initializeProcesses` asigna un PID, establece el estado en "Listo", y asigna una prioridad a cada proceso.
+3. **Visualización de la Tabla de Procesos**: La función `displayProcessTable` imprime la tabla de procesos, mostrando el estado actual de cada proceso.
+4. **Actualización de un Proceso**: La función `updateProcess` permite cambiar el estado y el contador de programa de un proceso específico, simulando una transición de estado.
+
+*** Salida Esperada
+Al ejecutar el programa, la salida muestra la tabla de procesos inicial y después de actualizar el estado de un proceso.
+
+: Tabla de Procesos:
+: PID   Estado       Prioridad     PC
+: ----  -------      ---------     ----
+: 1     Listo        0             0
+: 2     Listo        1             0
+: 3     Listo        2             0
+: 4     Listo        0             0
+: 5     Listo        1             0
+
+: Actualizando estado del proceso 1...
+: Tabla de Procesos:
+: PID   Estado       Prioridad     PC
+: ----  -------      ---------     ----
+: 1     Ejecutando   0             100
+: 2     Listo        1             0
+: 3     Listo        2             0
+: 4     Listo        0             0
+: 5     Listo        1             0
+
+*** Conclusión
+La tabla de procesos es fundamental para el seguimiento y administración
+de los procesos en un sistema operativo. Cada proceso tiene su propio
+bloque de control con información clave, y el sistema operativo
+utiliza esta tabla para planificar, controlar y administrar los
+recursos de cada proceso.
+
+
+
+
+
+
+** Procesos ligeros: Hilos o hebras
 
 Un proceso ligero o hilo es una unidad de ejecución que comparte el
 mismo espacio de memoria que otros hilos dentro del mismo proceso. Los
@@ -162,8 +544,8 @@ eficiencia sin crear procesos separados. Los sistemas operativos
 modernos proporcionan bibliotecas como POSIX threads (pthreads) para
 crear y gestionar hilos.
 
-** Ejemplo en C: Creación de hilos con pthread
-#+BEGIN_SRC C
+*** Ejemplo en C: Creación de hilos con pthread
+#+BEGIN_SRC C :results output
 #include <pthread.h>
 #include <stdio.h>
 
@@ -174,7 +556,7 @@ void* tarea(void* arg) {
 
 int main() {
     pthread_t hilo1, hilo2;
-    pthread_create(&hilo1, NULL, tarea, NULL);
+    pthread_create(&hilo1, NULL, tarea, NULL); 
     pthread_create(&hilo2, NULL, tarea, NULL);
 
     pthread_join(hilo1, NULL);
@@ -184,10 +566,107 @@ int main() {
 }
 #+END_SRC
 
-* Concurrencia y secuenciabilidad
+#+RESULTS:
+: Hilo en ejecución
+: Hilo en ejecución
+: Todos los hilos han terminado
+
+** pthread_create en C
+*** Descripción de pthread_create
+La función `pthread_create` en C se utiliza para crear y lanzar un
+nuevo hilo de ejecución en un programa. Esta función es parte de la
+biblioteca **POSIX Threads (pthreads)** y permite ejecutar tareas en
+paralelo, lo cual es útil para mejorar el rendimiento y realizar
+múltiples tareas de forma concurrente.
+
+*** Sintaxis de pthread_create
+#+BEGIN_SRC c
+int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg);
+#+END_SRC
+
+*** Parámetros
+- **`pthread_t *thread`**: Puntero a una variable de tipo `pthread_t`, que es el identificador del hilo que se está creando. Al terminar `pthread_create`, `*thread` contendrá un identificador único del hilo creado.
+- **`const pthread_attr_t *attr`**: Atributos específicos del hilo. Si `attr` es `NULL`, se usarán los atributos predeterminados. Puedes configurar atributos personalizados con `pthread_attr_init` y `pthread_attr_set`.
+- **`void *(*start_routine)(void *)`**: La función que ejecutará el hilo. Esta función debe ser de tipo `void*` y recibir un único argumento de tipo `void*`.
+- **`void *arg`**: Argumento que se pasa a la función `start_routine`. Permite pasar datos al hilo; si no necesitas pasar datos, este parámetro puede ser `NULL`.
+
+*** Valor de Retorno
+- **0**: La función se ejecuta exitosamente y el hilo se crea sin problemas.
+- **Distinto de 0**: Devuelve un código de error si la creación del hilo falla.
+
+*** Ejemplo Práctico de pthread_create
+Este ejemplo en C crea un hilo simple que imprime un mensaje utilizando `pthread_create`:
+
+#+BEGIN_SRC c
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+void* tarea(void* arg) {
+    int id = *(int*)arg; // Desreferenciar el puntero para obtener el ID
+    printf("Hilo %d en ejecución\n", id);
+    return NULL;
+}
+
+int main() {
+    pthread_t hilo;
+    int id = 1;
+
+    // Crear el hilo
+    if (pthread_create(&hilo, NULL, tarea, &id) != 0) {
+        fprintf(stderr, "Error al crear el hilo\n");
+        return 1;
+    }
+
+    // Esperar a que el hilo termine
+    pthread_join(hilo, NULL);
+    printf("El hilo ha terminado\n");
+    return 0;
+}
+#+END_SRC
+
+*** Explicación del Ejemplo
+1. **Declaración de Hilo y Argumento**:
+   - Se declara `pthread_t hilo` para almacenar el identificador del hilo.
+   - Se crea una variable `id` con un valor de `1` que se pasa como argumento a la función del hilo.
+
+2. **Llamada a `pthread_create`**:
+   - `pthread_create` toma como primer argumento la dirección de `hilo` para almacenar el identificador.
+   - `NULL` se usa como segundo argumento para utilizar los atributos predeterminados.
+   - `tarea` es la función que el hilo ejecutará. Debe coincidir con el tipo `void* (*)(void*)`.
+   - `&id` se pasa como argumento para que `tarea` reciba el valor del identificador del hilo.
+
+3. **Ejecuta la Función `tarea` en el Hilo**:
+   - `tarea` toma `arg` y lo desreferencia para obtener el valor de `id`.
+   - La función imprime `"Hilo 1 en ejecución"` y luego termina.
+
+4. **Espera a que el Hilo Termine con `pthread_join`**:
+   - *pthread_join* se usa para esperar a que el hilo termine antes de que el programa principal continúe.
+   - Una vez que el hilo finaliza, el programa principal imprime `"El hilo ha terminado"`.
+
+*** Consideraciones Importantes
+- **Sincronización**: *pthread_create* lanza el hilo inmediatamente,
+  pero el hilo principal puede necesitar esperar a que el hilo termine
+  usando *pthread_join*.
+- **Paso de Argumentos**: Si necesitas pasar múltiples datos a la
+  función del hilo, puedes crear una estructura para empaquetar todos
+  los datos y pasar un puntero a esa estructura.
+- **Atributos del Hilo**: Puedes controlar el tamaño de la pila, la
+  prioridad, o hacer que el hilo sea "desvinculado" (no esperable)
+  inicializando y configurando los atributos del hilo con
+  *pthread_attr_init* y *pthread_attr_set*.
+
+*** Resumen
+La función *pthread_create* permite crear un nuevo hilo y especificar
+la tarea que debe ejecutar, lo cual es útil para realizar múltiples
+tareas en paralelo dentro del mismo programa, compartiendo memoria y
+recursos, y controlando el comportamiento del hilo mediante su
+identificador y atributos personalizados.
+
+** Concurrencia y secuenciabilidad
 La concurrencia permite ejecutar múltiples tareas "simultáneamente". Aunque no siempre se ejecutan al mismo tiempo, se pueden intercalar en un mismo procesador mediante interrupciones y cambios de contexto. La secuenciabilidad define un orden en estas tareas concurrentes, permitiendo que se ejecute un bloque de código mientras otro espera, garantizando la sincronización.
 
-** Ejemplo en C: Concurrencia y sincronización de tareas
+*** Ejemplo en C: Concurrencia y sincronización de tareas
 #+BEGIN_SRC C
 #include <pthread.h>
 #include <stdio.h>
@@ -219,7 +698,7 @@ int main() {
 }
 #+END_SRC
 
-* Niveles, objetivos y criterios de planificación
+** Niveles, objetivos y criterios de planificación
 La planificación es el proceso de asignar recursos del sistema a los procesos. Existen varios niveles:
   - **Planificación a largo plazo**: Selecciona qué procesos ingresar al sistema.
   - **Planificación a medio plazo**: Decide qué procesos en espera se vuelven listos.
@@ -227,7 +706,7 @@ La planificación es el proceso de asignar recursos del sistema a los procesos. 
 
 Los criterios de planificación pueden incluir la equidad, la eficiencia y el tiempo de respuesta.
 
-** Ejemplo en C: Implementación simple de planificación Round Robin
+*** Ejemplo en C: Implementación simple de planificación Round Robin
 #+BEGIN_SRC C
 #include <stdio.h>
 #include <unistd.h>
@@ -247,13 +726,13 @@ int main() {
 }
 #+END_SRC
 
-* Técnicas de administración del planificador
+** Técnicas de administración del planificador
 El planificador utiliza varias técnicas para mejorar la gestión de procesos:
   - **Round Robin**: Asigna a cada proceso una franja de tiempo.
   - **Prioridad**: Da preferencia a procesos con alta prioridad.
   - **Planificación en tiempo real**: Asegura que tareas críticas se ejecuten en el momento correcto.
 
-** Ejemplo en C: Planificación simple basada en prioridades
+*** Ejemplo en C: Planificación simple basada en prioridades
 #+BEGIN_SRC C
 #include <stdio.h>
 #include <stdlib.h>
@@ -289,3 +768,4 @@ int main() {
     return 0;
 }
 #+END_SRC
+y
