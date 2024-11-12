@@ -107,7 +107,8 @@ int *ptr = &var;
 Aquí, `ptr` almacena la dirección de `var`.
 
 *** Acceso al valor apuntado
-Para acceder o modificar el valor de la variable a la que apunta un puntero, se utiliza el operador de desreferencia `*`:
+Para acceder o modificar el valor de la variable a la que apunta un
+puntero, se utiliza el operador de desreferencia `*`:
 
 #+BEGIN_SRC c
 printf("Valor de var: %d\n", *ptr); // Imprime: Valor de var: 10
@@ -115,7 +116,9 @@ printf("Valor de var: %d\n", *ptr); // Imprime: Valor de var: 10
 #+END_SRC
 
 *** Punteros y arreglos
-En C, el nombre de un arreglo actúa como un puntero al primer elemento del mismo. Por lo tanto, se puede utilizar aritmética de punteros para recorrer un arreglo:
+En C, el nombre de un arreglo actúa como un puntero al primer elemento
+del mismo. Por lo tanto, se puede utilizar aritmética de punteros para
+recorrer un arreglo:
 
 #+BEGIN_SRC c
 int arr[3] = {1, 2, 3};
@@ -128,15 +131,15 @@ for (int i = 0; i < 3; i++) {
 #+END_SRC
 
 *** Punteros y funciones
-Los punteros permiten que las funciones modifiquen variables fuera de su ámbito local. Al pasar la dirección de una variable a una función, esta puede alterar el valor original:
+Los punteros permiten que las funciones modifiquen variables fuera de
+su ámbito local. Al pasar la dirección de una variable a una función,
+esta puede alterar el valor original:
 
-#+BEGIN_SRC c
+#+BEGIN_SRC C :results output
 #include <stdio.h>
-
 void incrementar(int *n) {
     (*n)++;
 }
-
 int main() {
     int num = 5;
     incrementar(&num);
@@ -145,17 +148,23 @@ int main() {
 }
 #+END_SRC
 
+#+RESULTS:
+: Valor de num: 6
+
 *** Punteros nulos
-Un puntero nulo es un puntero que no apunta a ninguna dirección válida. Se inicializa asignándole el valor `NULL`:
+Un puntero nulo es un puntero que no apunta a ninguna dirección
+válida. Se inicializa asignándole el valor `NULL`:
 
 #+BEGIN_SRC c
 int *ptr = NULL;
 #+END_SRC
 
-Es una buena práctica inicializar los punteros a `NULL` para evitar errores al intentar acceder a direcciones de memoria no válidas.
+Es una buena práctica inicializar los punteros a `NULL` para evitar
+errores al intentar acceder a direcciones de memoria no válidas.
 
 *** Aritmética de punteros
-Los punteros pueden incrementarse o decrementarse para navegar por estructuras de datos en memoria:
+Los punteros pueden incrementarse o decrementarse para navegar por
+estructuras de datos en memoria:
 
 #+BEGIN_SRC c
 int arr[3] = {10, 20, 30};
@@ -190,7 +199,9 @@ int **dbl_ptr = &ptr;
 printf("Valor de var usando dbl_ptr: %d\n", **dbl_ptr); // Imprime: 50
 #+END_SRC
 
-Los **triples punteros** (punteros a dobles punteros) permiten gestionar estructuras de datos de mayor complejidad, como matrices 3D o estructuras donde necesitas referencias a varios niveles de punteros.
+Los **triples punteros** (punteros a dobles punteros) permiten gestionar
+estructuras de datos de mayor complejidad, como matrices 3D o
+estructuras donde necesitas referencias a varios niveles de punteros.
 
 #+BEGIN_SRC c
 int var = 30;
@@ -236,18 +247,21 @@ función `fork()` es esencial para el manejo de procesos en sistemas
 tipo Unix/Linux.
 
 *** Funcionamiento básico de fork()
-Cuando se llama a `fork()`, la ejecución continúa tanto en el proceso padre como en el proceso hijo. La llamada a `fork()` retorna un valor distinto en cada uno:
-- Al proceso **padre**, `fork()` devuelve el PID (identificador de proceso) del proceso hijo.
+Cuando se llama a `fork()`, la ejecución continúa tanto en el proceso
+padre como en el proceso hijo. La llamada a `fork()` retorna un valor
+distinto en cada uno:
+- Al proceso **padre**, `fork()` devuelve el PID (identificador de
+  proceso) del proceso hijo.
 - Al proceso **hijo**, `fork()` devuelve el valor `0`.
 - Si ocurre un error, `fork()` retorna `-1`.
 
 *** Ejemplo básico de fork()
-A continuación, un ejemplo sencillo que muestra cómo usar `fork()` para crear un proceso hijo:
+A continuación, un ejemplo sencillo que muestra cómo usar `fork()`
+para crear un proceso hijo:
 
-#+BEGIN_SRC c
+#+BEGIN_SRC C :results output
 #include <stdio.h>
 #include <unistd.h>
-
 int main() {
     pid_t pid = fork(); // Llamada a fork()
 
@@ -266,19 +280,26 @@ int main() {
 }
 #+END_SRC
 
+#+RESULTS:
+: Este es el proceso padre con PID: 194615 y el hijo tiene PID: 194616
+: Este es el proceso hijo con PID: 194616
+
 *** Explicación del Ejemplo
 1. `fork()` es llamado y crea un proceso hijo.
-2. En el proceso hijo, `pid` será igual a `0`, por lo que se ejecutará el bloque de código que imprime el mensaje del hijo.
-3. En el proceso padre, `pid` es mayor que `0`, por lo que ejecuta el código para el proceso padre.
+2. En el proceso hijo, `pid` será igual a `0`, por lo que se ejecutará
+   el bloque de código que imprime el mensaje del hijo.
+3. En el proceso padre, `pid` es mayor que `0`, por lo que ejecuta el
+   código para el proceso padre.
 4. Si `fork()` falla, devuelve `-1` y se imprime un mensaje de error.
 
 *** Espera del Proceso Padre con wait()
-Para que el proceso padre espere a que el proceso hijo termine antes de continuar, se puede utilizar la función `wait()`:
+Para que el proceso padre espere a que el proceso hijo termine antes
+de continuar, se puede utilizar la función `wait()`:
 
-#+BEGIN_SRC c
+#+BEGIN_SRC C :results output 
 #include <stdio.h>
 #include <unistd.h>
-#include <sys/wait.h>
+//#include <sys/wait.h>
 
 int main() {
     pid_t pid = fork();
@@ -288,17 +309,27 @@ int main() {
         printf("Proceso hijo con PID: %d\n", getpid());
     } else {
         // Proceso padre
-        wait(NULL); // Espera a que el proceso hijo termine
+//        wait(NULL); // Espera a que el proceso hijo termine
         printf("Proceso padre con PID: %d, el hijo terminó.\n", getpid());
     }
     return 0;
 }
 #+END_SRC
 
-En este ejemplo, el proceso padre esperará hasta que el proceso hijo termine antes de imprimir su mensaje.
+#+RESULTS:
+: Proceso hijo con PID: 197476
+: Proceso padre con PID: 197475, el hijo terminó.
+
+En este ejemplo, el proceso padre esperará hasta que el proceso hijo
+termine antes de imprimir su mensaje.
 
 *** fork() y Punteros
-`fork()` crea un espacio de memoria independiente para el proceso hijo, lo que significa que los punteros en el proceso hijo apuntan a las mismas posiciones relativas que en el proceso padre, pero en diferentes espacios de memoria. Esto evita que los cambios en las variables del proceso hijo afecten al padre, gracias al mecanismo de **Copy-on-Write (COW)**.
+`fork()` crea un espacio de memoria independiente para el proceso
+hijo, lo que significa que los punteros en el proceso hijo apuntan a
+las mismas posiciones relativas que en el proceso padre, pero en
+diferentes espacios de memoria. Esto evita que los cambios en las
+variables del proceso hijo afecten al padre, gracias al mecanismo de
+**Copy-on-Write (COW)**.
 
 *** Ejemplo con Punteros
 Este ejemplo demuestra cómo `fork()` maneja los punteros y el espacio de memoria independiente:
@@ -353,7 +384,8 @@ listos para ejecutarse. Los estados comunes incluyen:
   - **Bloqueado**: El proceso está esperando un evento externo (por ejemplo, entrada/salida).
   - **Terminado**: El proceso ha completado su ejecución.
 
-Los sistemas operativos gestionan estas transiciones mediante una estructura de datos llamada tabla de procesos.
+Los sistemas operativos gestionan estas transiciones mediante una
+estructura de datos llamada tabla de procesos.
 
 
 *** Ejemplo en C: Creación de un proceso utilizando fork()
@@ -422,8 +454,10 @@ su administración.
 *** Información en la Tabla de Procesos
 Cada entrada en la tabla de procesos incluye un PCB con varios campos importantes:
    - **PID (Process ID)**: Identificador único del proceso.
-   - **Estado del proceso**: Indica si el proceso está en ejecución, en espera, listo, o terminado.
-   - **Contador de programa (PC)**: Dirección de la siguiente instrucción que el proceso debe ejecutar.
+   - **Estado del proceso**: Indica si el proceso está en ejecución, en
+     espera, listo, o terminado.
+   - **Contador de programa (PC)**: Dirección de la siguiente
+     instrucción que el proceso debe ejecutar.
    - **Registros de la CPU**: Incluyen el estado de los registros del procesador.
    - **Información de memoria**: Define las áreas de memoria asignadas al proceso.
    - **Información de I/O**: Lista de archivos o dispositivos abiertos por el proceso.
@@ -438,21 +472,21 @@ Un proceso puede encontrarse en diferentes estados, y la tabla de procesos ayuda
    - **Terminado**: El proceso ha finalizado su ejecución.
 
 *** Ejemplo en C de una Tabla de Procesos Simplificada
-El siguiente ejemplo en C muestra cómo se puede representar una tabla de procesos de manera simple mediante una estructura de datos.
+El siguiente ejemplo en C muestra cómo se puede representar una tabla
+de procesos de manera simple mediante una estructura de datos.
 
 #+BEGIN_SRC c
 #include <stdio.h>
 #include <string.h>
-
 #define MAX_PROCESSES 5
 
 // Definición de estructura para la tabla de procesos
-struct Process {
+typedef struct Process {
     int pid;                 // ID del proceso
     char state[20];          // Estado del proceso (ej: "Listo", "Ejecutando")
     int priority;            // Prioridad del proceso
     unsigned int pc;         // Contador de programa
-};
+} Process;
 
 // Función para inicializar los procesos
 void initializeProcesses(struct Process processes[], int size) {
@@ -585,17 +619,28 @@ int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_
 #+END_SRC
 
 *** Parámetros
-- **`pthread_t *thread`**: Puntero a una variable de tipo `pthread_t`, que es el identificador del hilo que se está creando. Al terminar `pthread_create`, `*thread` contendrá un identificador único del hilo creado.
-- **`const pthread_attr_t *attr`**: Atributos específicos del hilo. Si `attr` es `NULL`, se usarán los atributos predeterminados. Puedes configurar atributos personalizados con `pthread_attr_init` y `pthread_attr_set`.
-- **`void *(*start_routine)(void *)`**: La función que ejecutará el hilo. Esta función debe ser de tipo `void*` y recibir un único argumento de tipo `void*`.
-- **`void *arg`**: Argumento que se pasa a la función `start_routine`. Permite pasar datos al hilo; si no necesitas pasar datos, este parámetro puede ser `NULL`.
+- **`pthread_t *thread`**: Puntero a una variable de tipo `pthread_t`,
+  que es el identificador del hilo que se está creando. Al terminar
+  `pthread_create`, `*thread` contendrá un identificador único del
+  hilo creado.
+- **`const pthread_attr_t *attr`**: Atributos específicos del hilo. Si
+  `attr` es `NULL`, se usarán los atributos predeterminados. Puedes
+  configurar atributos personalizados con `pthread_attr_init` y
+  `pthread_attr_set`.
+- **`void *(*start_routine)(void *)`**: La función que ejecutará el
+  hilo. Esta función debe ser de tipo `void*` y recibir un único
+  argumento de tipo `void*`.
+- **`void *arg`**: Argumento que se pasa a la función
+  `start_routine`. Permite pasar datos al hilo; si no necesitas pasar
+  datos, este parámetro puede ser `NULL`.
 
 *** Valor de Retorno
 - **0**: La función se ejecuta exitosamente y el hilo se crea sin problemas.
 - **Distinto de 0**: Devuelve un código de error si la creación del hilo falla.
 
 *** Ejemplo Práctico de pthread_create
-Este ejemplo en C crea un hilo simple que imprime un mensaje utilizando `pthread_create`:
+Este ejemplo en C crea un hilo simple que imprime un mensaje
+utilizando `pthread_create`:
 
 #+BEGIN_SRC c
 #include <pthread.h>
@@ -663,8 +708,156 @@ tareas en paralelo dentro del mismo programa, compartiendo memoria y
 recursos, y controlando el comportamiento del hilo mediante su
 identificador y atributos personalizados.
 
-** Concurrencia y secuenciabilidad
-La concurrencia permite ejecutar múltiples tareas "simultáneamente". Aunque no siempre se ejecutan al mismo tiempo, se pueden intercalar en un mismo procesador mediante interrupciones y cambios de contexto. La secuenciabilidad define un orden en estas tareas concurrentes, permitiendo que se ejecute un bloque de código mientras otro espera, garantizando la sincronización.
+
+** cola con prioridad
+
+#+BEGIN_SRC C
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+typedef struct _nodo {
+    int valor;
+    int prioridad;
+    struct _nodo *siguiente;
+} nodo;
+
+int numero_aleatorio() {
+    return (rand() % 4) + 1;
+}
+
+nodo* genera_proceso() {
+    static int contador = 1;
+    nodo* nuevo = (nodo*)malloc(sizeof(nodo));
+    if (nuevo == NULL) {
+        printf("Error al asignar memoria.\n");
+        exit(1);
+    }
+    nuevo->valor = contador++;
+    nuevo->prioridad = numero_aleatorio();
+    nuevo->siguiente = NULL;
+    return nuevo;
+}
+
+void insertar_final(nodo** cabeza) {
+    nodo* nuevoNodo = genera_proceso();
+
+    if (*cabeza == NULL) {
+        *cabeza = nuevoNodo;
+    } else {
+        nodo* temp = *cabeza;
+        while (temp->siguiente != NULL) {
+            temp = temp->siguiente;
+        }
+        temp->siguiente = nuevoNodo;
+    }
+}
+
+void imprimir_lista(nodo* cabeza) {
+    nodo* temp = cabeza;
+    while (temp != NULL) {
+        printf("Proceso %d (Prioridad %d) -> ", temp->valor, temp->prioridad);
+        temp = temp->siguiente;
+    }
+    printf("NULL\n");
+}
+
+void atender_prioridad_mas_alta(nodo** cabeza) {
+    if (*cabeza == NULL) {
+        printf("No hay procesos para atender.\n");
+        return;
+    }
+
+    nodo* temp = *cabeza;
+    nodo* maxNodo = temp;
+    nodo* maxNodoPrevio = NULL;
+    nodo* previo = NULL;
+
+    // Buscar el nodo con la prioridad más alta
+    while (temp != NULL) {
+        if (temp->prioridad > maxNodo->prioridad) {
+            maxNodo = temp;
+            maxNodoPrevio = previo;
+        }
+        previo = temp;
+        temp = temp->siguiente;
+    }
+
+    // Atender el nodo con prioridad más alta
+    printf("Atendiendo proceso %d con prioridad %d\n", maxNodo->valor, maxNodo->prioridad);
+
+    // Eliminar el nodo de la lista
+    if (maxNodoPrevio == NULL) {
+        *cabeza = maxNodo->siguiente;  // El nodo con mayor prioridad es la cabeza
+    } else {
+        maxNodoPrevio->siguiente = maxNodo->siguiente;
+    }
+
+    free(maxNodo);
+}
+
+int main() {
+    srand(time(NULL));
+    nodo* cabeza = NULL;
+    int op = 0;
+
+    do {
+        printf("1. Genera proceso\n");
+        printf("2. Atiende proceso\n");
+        printf("3. Mostrar Lista de Procesos\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &op);
+
+        switch (op) {
+            case 1:
+                insertar_final(&cabeza);
+                break;
+            case 2:
+                atender_prioridad_mas_alta(&cabeza);
+                break;
+            case 3:
+                imprimir_lista(cabeza);
+                break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción no válida\n");
+        }
+    } while (op != 4);
+
+    return 0;
+}
+
+
+#+end_src
+
+
+
+
+** Concurrencia y Secuenciabilidad 
+
+La concurrencia y secuenciabilidad son conceptos clave en el diseño
+y la gestión de sistemas operativos modernos. Permiten que
+múltiples procesos y threads se ejecuten de manera simultánea o
+alternada en un sistema, maximizando la utilización de recursos y
+mejorando la eficiencia general del sistema. 
+
+La concurrencia permite ejecutar múltiples tareas
+"simultáneamente". Aunque no siempre se ejecutan al mismo tiempo, se
+pueden intercalar en un mismo procesador mediante interrupciones y
+cambios de contexto. La secuenciabilidad define un orden en estas
+tareas concurrentes, permitiendo que se ejecute un bloque de código
+mientras otro espera, garantizando la sincronización. En sistemas de
+múltiples núcleos, esto puede significar ejecución paralela, mientras
+que en sistemas de un solo núcleo implica cambios de contexto rápidos.
+
+- *Objetivo*: Permitir que múltiples procesos compartan el CPU y otros
+  recursos de manera eficiente y sin conflictos.
+- *Desafíos*: Sincronización de acceso a recursos compartidos, evitar
+  condiciones de carrera y gestionar la exclusión mutua.
+
 
 *** Ejemplo en C: Concurrencia y sincronización de tareas
 #+BEGIN_SRC C
@@ -698,16 +891,334 @@ int main() {
 }
 #+END_SRC
 
+   
+*** 1.1 Exclusión Mutua
+    La exclusión mutua asegura que solo un proceso a la vez pueda acceder a una sección crítica que manipula recursos compartidos.
+    - Algoritmos comunes:
+      - Algoritmo de Dekker
+      - Algoritmo de Peterson
+      - Algoritmo de Lamport’s Bakery
+      - Semáforos y Mutexes
+
+
+**** 1. Algoritmo de Dekker
+El algoritmo de Dekker es un algoritmo de programación concurrente
+para exclusión mutua, que permite a dos procesos o hilos de ejecución
+compartir un recurso sin conflictos. Fue uno de los primeros
+algoritmos de exclusión mutua inventados, implementado por Edsger
+Dijkstra.
+
+Si ambos procesos intentan acceder a la sección crítica
+simultáneamente, el algoritmo elige un proceso según una variable de
+turno. Si el otro proceso está ejecutando en su sección crítica,
+deberá esperar su finalización.
+
+***** Condiciones
+
+- No hay prioridad entre procesos.
+- La capacidad de los equipos es irrelevante.
+- Si un proceso muere fuera de la región crítica, el algoritmo sigue funcionando.
+- Un bloqueo mutuo no se considera como solución válida.
+
+Existen cinco versiones del algoritmo Dekker, teniendo ciertos fallos
+los primeros cuatro. La versión 5 es la que trabaja más
+eficientemente, siendo una combinación de la 1 y la 4.
+
+- Versión 1: Alternancia estricta. Garantiza la exclusión mutua, pero
+  su desventaja es que acopla los procesos fuertemente, esto significa
+  que los procesos lentos atrasan a los procesos rápidos.
+- Versión 2: Problema interbloqueo. No existe la alternancia, aunque
+  ambos procesos caen a un mismo estado y nunca salen de ahí.
+- Versión 3: Colisión región crítica no garantiza la exclusión
+  mutua. Este algoritmo no evita que dos procesos puedan acceder al
+  mismo tiempo a la región crítica.
+- Versión 4: Postergación indefinida. Aunque los procesos no están en
+  interbloqueo, un proceso o varios se quedan esperando a que suceda
+  un evento que tal vez nunca suceda.
+
+- *Variables*: `flag[2]` es un arreglo booleano donde `flag[i]` indica si el proceso `i` desea entrar en la sección crítica.
+- *Turno*: `turn` indica el turno de los procesos para entrar en la sección crítica.
+
+- *Matemática*:
+  - Condiciones de entrada a la sección crítica:
+   1. Si un proceso quiere entrar, establece `flag[i] = true`.
+   2. Si el otro proceso también quiere entrar, se usa la variable `turn` para determinar quién tiene prioridad.
+   3. Un proceso entra a la sección crítica si `flag[j] == false` o `turn == i`.
+
+Ejemplo de del algoritmo de Dekker en C
+       
+
+ #+BEGIN_SRC C
+ #include <stdio.h>
+ #include <pthread.h>
+ #include <stdbool.h>
+
+ bool flag[2] = {false, false};
+ int turn = 0;
+
+ void* proceso(void* arg) {
+     int i = *(int*)arg;
+     int j = 1 - i;
+     flag[i] = true;
+     while (flag[j]) {
+         if (turn != i) {
+             flag[i] = false;
+             while (turn != i);
+             flag[i] = true;
+         }
+     }
+     // Sección Crítica
+     printf("Proceso %d en sección crítica\n", i);
+     turn = j;
+     flag[i] = false;
+     return NULL;
+ }
+
+ int main() {
+     pthread_t t0, t1;
+     int id0 = 0, id1 = 1;
+     pthread_create(&t0, NULL, proceso, &id0);
+     pthread_create(&t1, NULL, proceso, &id1);
+     pthread_join(t0, NULL);
+     pthread_join(t1, NULL);
+     return 0;
+ }
+ #+END_SRC
+
+**** 2. Algoritmo de Peterson
+El algoritmo de Peterson, también conocido como solución de
+Peterson,​ es un algoritmo de programación concurrente para exclusión
+mutua, que permite a dos o más procesos o hilos de ejecución compartir
+un recurso sin conflictos, utilizando sólo memoria compartida para la
+comunicación.
+
+Gary L. Peterson desarrolló en 1981 el algoritmo básico para dos
+procesos, como una simplificación del algoritmo de Dekker. El
+algoritmo básico puede generalizarse fácilmente a un número arbitrario
+de procesos.3​
+
+Este algoritmo es una mejora sobre Dekker, asegurando exclusión mutua
+con dos procesos de manera más simple y sin necesidad de turnos
+adicionales.
+
+- *Variables*: `flag[2]` es un arreglo booleano que indica si el proceso
+  desea entrar en la sección crítica. `turn` indica el proceso que
+  tiene prioridad para entrar.
+- *Condición de espera*: El proceso espera si el otro también quiere
+  entrar y si es su turno.
+
+ - *Matemática*:
+   - Exclusión mutua garantizada porque solo un proceso podrá cumplir `flag[j] == false || turn == i`.
+
+
+Ejemplo de del algoritmo de Peterson en C
+
+#+BEGIN_SRC C
+#include <stdio.h>
+#include <pthread.h>
+#include <stdbool.h>
+
+bool flag[2] = {false, false};
+int turn;
+
+void* proceso(void* arg) {
+    int i = *(int*)arg;
+    int j = 1 - i;
+    flag[i] = true;
+    turn = j;
+    while (flag[j] && turn == j);
+    // Sección Crítica
+    printf("Proceso %d en sección crítica\n", i);
+    flag[i] = false;
+    return NULL;
+}
+
+int main() {
+    pthread_t t0, t1;
+    int id0 = 0, id1 = 1;
+    pthread_create(&t0, NULL, proceso, &id0);
+    pthread_create(&t1, NULL, proceso, &id1);
+    pthread_join(t0, NULL);
+    pthread_join(t1, NULL);
+    return 0;
+}
+#+END_SRC
+
+** 3. Algoritmo de Lamport’s Bakery
+El algoritmo de Lamport’s Bakery es una generalización que permite la
+exclusión mutua para múltiples procesos, usando una "numeración"
+similar a la de una panadería.
+
+El algoritmo de la panadería toma su nombre de la costumbre de las
+panaderías y tiendas en general, donde las personas al entrar al local
+obtienen un número de turno (único) y lo utilizan para que el
+dependiente les vaya atendiendo en orden de llegada. El cliente
+obtiene su número de turno usando una cinta de papel que ofrece
+boletos con números consecutivos.
+
+El dependiente sólo puede atender a una persona al mismo tiempo, lo
+que concuerda con el uso de un recurso de forma exclusiva: el recurso
+es el dependiente y la sección crítica de un cliente es lo que realiza
+mientras es atendido.
+
+
+
+- *Variables*: `number[i]` representa el turno del proceso `i`. El valor más bajo en `number[i]` representa el turno de prioridad.
+- *Matemática*:
+  - Cada proceso `i` toma un "ticket" (el valor más alto de `number[j] + 1`) antes de entrar en la sección crítica.
+  - El proceso entra en la sección crítica si su "ticket" es el menor o si su índice `i` es menor en caso de empate en el ticket.
+
+Ejemplo de del algoritmo de Lamport’s Bakery en C
+
+          #+BEGIN_SRC C
+       #include <stdio.h>
+       #include <pthread.h>
+       #include <stdbool.h>
+
+       #define NUM_PROCESOS 3
+       bool choosing[NUM_PROCESOS];
+       int number[NUM_PROCESOS];
+
+       void* proceso(void* arg) {
+           int i = *(int*)arg;
+
+           choosing[i] = true;
+           number[i] = 1;
+           for (int j = 0; j < NUM_PROCESOS; j++) {
+               if (number[j] > number[i]) number[i] = number[j] + 1;
+           }
+           choosing[i] = false;
+
+           for (int j = 0; j < NUM_PROCESOS; j++) {
+               while (choosing[j]);
+               while (number[j] != 0 && (number[j] < number[i] || (number[j] == number[i] && j < i)));
+           }
+
+           printf("Proceso %d en sección crítica\n", i);
+
+           number[i] = 0;
+           return NULL;
+       }
+
+       int main() {
+           pthread_t threads[NUM_PROCESOS];
+           int ids[NUM_PROCESOS];
+           for (int i = 0; i < NUM_PROCESOS; i++) {
+               ids[i] = i;
+               pthread_create(&threads[i], NULL, proceso, &ids[i]);
+           }
+           for (int i = 0; i < NUM_PROCESOS; i++) {
+               pthread_join(threads[i], NULL);
+           }
+           return 0;
+       }
+       #+END_SRC
+
+** 4. Semáforos y Mutexes
+   Los semáforos y mutexes son mecanismos ampliamente utilizados para manejar la sincronización y exclusión mutua en sistemas operativos y multihilos.
+
+   - *Semáforo*: Un contador que controla el acceso de múltiples threads a un recurso compartido.
+     - `wait` (P): Decrementa el contador del semáforo. Si es negativo, el proceso espera.
+     - `signal` (V): Incrementa el contador, liberando un proceso en espera.
+   - *Mutex*: Similar a un semáforo binario, asegura que solo un thread acceda a la sección crítica.
+
+
+Ejemplo de del algoritmo de Semáforos y Mutexes en C
+   
+
+#+BEGIN_SRC C
+       #include <stdio.h>
+       #include <pthread.h>
+       #include <semaphore.h>
+
+       sem_t semaforo;
+
+       void* proceso(void* arg) {
+           sem_wait(&semaforo); // Entrada en la sección crítica
+           printf("Proceso en sección crítica\n");
+           sem_post(&semaforo); // Salida de la sección crítica
+           return NULL;
+       }
+
+       int main() {
+           pthread_t t1, t2;
+           sem_init(&semaforo, 0, 1); // Inicializa el semáforo con valor 1
+           pthread_create(&t1, NULL, proceso, NULL);
+           pthread_create(&t2, NULL, proceso, NULL);
+           pthread_join(t1, NULL);
+           pthread_join(t2, NULL);
+           sem_destroy(&semaforo);
+           return 0;
+       }
+       #+END_SRC
+
+	
+*** 1.2 Sincronización
+    La sincronización se encarga de coordinar la ejecución de múltiples procesos o threads para garantizar que operen de manera ordenada.
+    - *Semáforos de Dijkstra*: Usados para la sincronización y control de acceso a recursos mediante dos tipos:
+      - Semáforo binario (mutex)
+      - Semáforo contador (permite múltiples accesos)
+    - *Monitores*: Estructuras que permiten que los procesos esperen hasta que una condición se cumpla.
+    
+*** 1.3 Condiciones de carrera y sincronización
+    Las condiciones de carrera ocurren cuando dos o más procesos acceden a recursos compartidos de manera concurrente y el resultado depende del orden de ejecución. Esto se soluciona con:
+    - Bloqueos de exclusión mutua.
+    - Sincronización a través de semáforos y monitores.
+
+** 2. Secuenciabilidad
+   La secuenciabilidad implica gestionar el orden de ejecución de los procesos o threads en un sistema operativo para asegurar que se cumplan ciertos requisitos de rendimiento o justicia en el acceso a recursos. Es fundamental para la planificación de procesos.
+   
+   - *Objetivo*: Asignar CPU a los procesos de forma que se minimicen tiempos de espera y maximicen el uso del procesador.
+   
+*** 2.1 Algoritmos de Planificación de Procesos
+    Los algoritmos de planificación determinan el orden en que se ejecutan los procesos en la CPU. Los más comunes incluyen:
+    - *First-Come, First-Served (FCFS)*: Los procesos se ejecutan en el orden de llegada.
+    - *Shortest Job Next (SJN)*: El proceso con el tiempo de ejecución más corto tiene prioridad.
+    - *Round Robin (RR)*: Cada proceso recibe una cantidad fija de tiempo de CPU, después de la cual pasa al final de la cola.
+    - *Multilevel Queue Scheduling*: Los procesos se agrupan en diferentes colas, cada una con su propio algoritmo de planificación.
+    - *Priority Scheduling*: Los procesos con mayor prioridad se ejecutan primero, lo cual requiere un manejo cuidadoso para evitar el "hambruna" de procesos de baja prioridad.
+
+*** 2.2 Algoritmos de Detección y Prevención de Interbloqueos (Deadlocks)
+    Los interbloqueos ocurren cuando dos o más procesos esperan indefinidamente por recursos que otros procesos poseen.
+    - *Condiciones para un Interbloqueo*:
+      - Exclusión mutua
+      - Retención y espera
+      - No apropiación
+      - Espera circular
+
+    - *Métodos de Prevención*:
+      - *Algoritmo del banquero de Dijkstra*: Evalúa si la asignación de recursos puede llevar a un estado seguro o potencialmente inseguro.
+      - *Prevención de interbloqueos*: Evita que se cumplan las condiciones para un interbloqueo.
+
+*** 2.3 Sincronización y Secuenciabilidad
+    La sincronización y secuenciabilidad son clave para evitar conflictos y maximizar el rendimiento. Se utilizan técnicas como:
+    - *Wait-for Graphs*: Muestran dependencias de recursos para detectar posibles interbloqueos.
+    - *Petri Nets*: Herramientas visuales para analizar sistemas concurrentes y modelar sincronización y secuenciabilidad.
+
+*** 3. Conclusión
+La concurrencia y secuenciabilidad son fundamentales en la gestión de
+sistemas operativos modernos. Los algoritmos y métodos descritos
+permiten el uso eficiente de recursos, minimizan los tiempos de espera
+y evitan conflictos entre procesos. Comprender estos conceptos y sus
+implementaciones es esencial para el desarrollo de sistemas operativos
+y aplicaciones robustas en entornos concurrentes.
+
+
+
+
 ** Niveles, objetivos y criterios de planificación
-La planificación es el proceso de asignar recursos del sistema a los procesos. Existen varios niveles:
-  - **Planificación a largo plazo**: Selecciona qué procesos ingresar al sistema.
-  - **Planificación a medio plazo**: Decide qué procesos en espera se vuelven listos.
+La planificación es el proceso de asignar recursos del sistema a los
+procesos. Existen varios niveles:
+  - **Planificación a largo plazo**: Selecciona qué procesos ingresar al
+    sistema.
+  - **Planificación a medio plazo**: Decide qué procesos en espera se
+    vuelven listos.
   - **Planificación a corto plazo**: Selecciona qué proceso listo ocupará la CPU.
 
 Los criterios de planificación pueden incluir la equidad, la eficiencia y el tiempo de respuesta.
 
 *** Ejemplo en C: Implementación simple de planificación Round Robin
-#+BEGIN_SRC C
+#+BEGIN_SRC C results :output
 #include <stdio.h>
 #include <unistd.h>
 
@@ -725,6 +1236,8 @@ int main() {
     return 0;
 }
 #+END_SRC
+
+#+RESULTS:
 
 ** Técnicas de administración del planificador
 El planificador utiliza varias técnicas para mejorar la gestión de procesos:
@@ -769,3 +1282,143 @@ int main() {
 }
 #+END_SRC
 y
+
+*** ejercicios
+
+**** Procesos  División por restas, Potencias con sumas, Fork  
+
+#+BEGIN_SRC C :results output
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <stdlib.h>
+
+// Función recursiva para división por restas
+int division_por_restas(int dividendo, int divisor, int cociente) {
+    if (dividendo < divisor) {
+        printf("División por restas: Cociente = %d, Residuo = %d\n", cociente, dividendo);
+        return cociente;
+    }
+    return division_por_restas(dividendo - divisor, divisor, cociente + 1);
+}
+
+// Función recursiva para multiplicación por sumas
+int multiplicacion_por_sumas(int multiplicando, int multiplicador) {
+    if (multiplicador == 0) {
+        return 0;
+    }
+    return multiplicando + multiplicacion_por_sumas(multiplicando, multiplicador - 1);
+}
+
+int main() {
+
+  int pid = fork();
+	if (pid < 0) {
+        perror("Error al crear el proceso");
+        return 1;
+    } else if (pid == 0) {
+	  printf("valor del pid hijo %d \n", pid);
+	  // Proceso hijo: realiza la división por restas de forma recursiva
+        int dividendo = 20, divisor = 3;
+        division_por_restas(dividendo, divisor, 0);
+    } else {
+        // Proceso padre: realiza la multiplicación por sumas de forma recursiva
+	   printf("valor del pid padre %d \n", pid);
+	 
+	  int multiplicando = 4, multiplicador = 5;
+        wait(NULL);  // Espera a que el proceso hijo termine
+        int producto = multiplicacion_por_sumas(multiplicando, multiplicador);
+        printf("Multiplicación por sumas: Producto = %d\n", producto);
+    }
+
+    return 0;
+}
+
+#+END_SRC
+
+#+RESULTS:
+: valor del pid hijo 0 
+: División por restas: Cociente = 6, Residuo = 2
+: valor del pid padre 97991 
+: Multiplicación por sumas: Producto = 20
+
+
+**** Hilos División por restas, Potencias con sumas pthread
+
+#+BEGIN_SRC C :results output 
+#include <stdio.h>
+#include <pthread.h>
+
+// Estructura para los parámetros de los hilos
+typedef struct {
+    int numero1;
+    int numero2;
+} Parametros;
+
+// Función recursiva para división por restas
+void* division_por_restas(void* args) {
+    Parametros* params = (Parametros*) args;
+    int dividendo = params->numero1;
+    int divisor = params->numero2;
+
+    int division_recursiva(int dividendo, int divisor, int cociente) {
+        if (dividendo < divisor) {
+            printf("División por restas: Cociente = %d, Residuo = %d\n", cociente, dividendo);
+            return cociente;
+        }
+        return division_recursiva(dividendo - divisor, divisor, cociente + 1);
+    }
+
+    division_recursiva(dividendo, divisor, 0);
+    pthread_exit(NULL);
+}
+
+// Función recursiva para multiplicación por sumas
+void* multiplicacion_por_sumas(void* args) {
+    Parametros* params = (Parametros*) args;
+    int multiplicando = params->numero1;
+    int multiplicador = params->numero2;
+
+    int multiplicacion_recursiva(int multiplicando, int multiplicador) {
+        if (multiplicador == 0) {
+            return 0;
+        }
+        return multiplicando + multiplicacion_recursiva(multiplicando, multiplicador - 1);
+    }
+
+    int producto = multiplicacion_recursiva(multiplicando, multiplicador);
+    printf("Multiplicación por sumas: Producto = %d\n", producto);
+    pthread_exit(NULL);
+}
+
+int main() {
+    pthread_t hilo1, hilo2;
+    Parametros params_division = {20, 3};    // Parámetros para la división
+    Parametros params_multiplicacion = {4, 5}; // Parámetros para la multiplicación
+
+    // Crear el hilo para la división por restas recursiva
+    if (pthread_create(&hilo1, NULL, division_por_restas, (void*) &params_division) != 0) {
+        perror("Error al crear el hilo de división");
+        return 1;
+    }
+
+    // Crear el hilo para la multiplicación por sumas recursiva
+    if (pthread_create(&hilo2, NULL, multiplicacion_por_sumas, (void*) &params_multiplicacion) != 0) {
+        perror("Error al crear el hilo de multiplicación");
+        return 1;
+    }
+
+    // Esperar a que los hilos terminen
+    pthread_join(hilo1, NULL);
+    pthread_join(hilo2, NULL);
+
+    return 0;
+}
+
+
+
+#+END_SRC
+
+#+RESULTS:
+: División por restas: Cociente = 6, Residuo = 2
+: Multiplicación por sumas: Producto = 20
