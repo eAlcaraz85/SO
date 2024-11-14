@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2024-11-12 mar 09:13 -->
+<!-- 2024-11-14 jue 14:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Apuntes Sistemas Operativos</title>
@@ -209,115 +209,108 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org904f227">Administración de Procesos y del procesador</a>
+<li><a href="#org8f86182">Administración de Procesos y del procesador</a>
 <ul>
-<li><a href="#org80a5607">Comandos para manejar procesos en Linux</a>
+<li><a href="#orgc34c4f6">Comandos para manejar procesos en Linux</a>
 <ul>
-<li><a href="#org2b75745">1. Ver procesos activos</a></li>
-<li><a href="#org8331a31">2. Iniciar procesos</a></li>
-<li><a href="#org35d4c38">3. Controlar la ejecución de procesos</a></li>
-<li><a href="#org5233b44">4. Enviar señales a los procesos</a></li>
-<li><a href="#orge2ece73">5. Cambiar prioridad de procesos</a></li>
-<li><a href="#orge6e9528">6. Ver detalles específicos de los procesos</a></li>
+<li><a href="#orgc720916">1. Ver procesos activos</a></li>
+<li><a href="#org6a522e3">2. Iniciar procesos</a></li>
+<li><a href="#org7fd7bad">3. Controlar la ejecución de procesos</a></li>
+<li><a href="#org0ae2cde">4. Enviar señales a los procesos</a></li>
+<li><a href="#org4233f27">5. Cambiar prioridad de procesos</a></li>
+<li><a href="#org69316e0">6. Ver detalles específicos de los procesos</a></li>
 </ul>
 </li>
-<li><a href="#org69b7547">Punteros en C</a>
+<li><a href="#orgb9fdd9a">Punteros en C</a>
 <ul>
-<li><a href="#org7a21e51">¿Qué es un puntero?</a></li>
-<li><a href="#orgaaa6f6c">Declaración de punteros</a></li>
-<li><a href="#orga89ff55">Inicialización de punteros</a></li>
-<li><a href="#orgb13b1fb">Acceso al valor apuntado</a></li>
-<li><a href="#org3c59e26">Punteros y arreglos</a></li>
-<li><a href="#orgf2895da">Punteros y funciones</a></li>
-<li><a href="#org45a4685">Punteros nulos</a></li>
-<li><a href="#orgde233c7">Aritmética de punteros</a></li>
-<li><a href="#org83ea137">Punteros a punteros</a></li>
-<li><a href="#orgdad8395">Dobles y triples punteros</a></li>
-<li><a href="#orge1d4a8c">Punteros y cadenas de caracteres</a></li>
+<li><a href="#org561a078">¿Qué es un puntero?</a></li>
+<li><a href="#org93552bf">Declaración de punteros</a></li>
+<li><a href="#org1be0949">Inicialización de punteros</a></li>
+<li><a href="#org220186f">Acceso al valor apuntado</a></li>
+<li><a href="#org1873cb3">Punteros y arreglos</a></li>
+<li><a href="#org43d749b">Punteros y funciones</a></li>
+<li><a href="#org69fb881">Punteros nulos</a></li>
+<li><a href="#orge57c4ae">Aritmética de punteros</a></li>
+<li><a href="#org0adde77">Punteros a punteros</a></li>
+<li><a href="#orgd4be815">Dobles y triples punteros</a></li>
+<li><a href="#org241b0ed">Punteros y cadenas de caracteres</a></li>
 </ul>
 </li>
-<li><a href="#orgd5aa7d4">Concepto de proceso</a></li>
-<li><a href="#org79abcb9">Fork() en C</a>
+<li><a href="#org4f37d68">Concepto de proceso</a></li>
+<li><a href="#orgd6656c0">Fork() en C</a>
 <ul>
-<li><a href="#org4f7b13d">¿Qué es fork()?</a></li>
-<li><a href="#org0932d8b">Funcionamiento básico de fork()</a></li>
-<li><a href="#org280376c">Ejemplo básico de fork()</a></li>
-<li><a href="#org9ad31c9">Explicación del Ejemplo</a></li>
-<li><a href="#org4f98d08">Espera del Proceso Padre con wait()</a></li>
-<li><a href="#org3ce8c0f">fork() y Punteros</a></li>
-<li><a href="#org887c4d7">Ejemplo con Punteros</a></li>
-<li><a href="#org3ff3c2a">Salida esperada</a></li>
-<li><a href="#orgde001e5">Explicación de Copy-on-Write (COW)</a></li>
-<li><a href="#org4aa2866">Conclusión</a></li>
+<li><a href="#org8f91738">¿Qué es fork()?</a></li>
+<li><a href="#org541065b">Funcionamiento básico de fork()</a></li>
+<li><a href="#org4aeef86">Ejemplo básico de fork()</a></li>
+<li><a href="#org8a906e6">Explicación del Ejemplo</a></li>
+<li><a href="#org5a45311">Espera del Proceso Padre con wait()</a></li>
+<li><a href="#orgeb851fb">fork() y Punteros</a></li>
+<li><a href="#orge5c8721">Ejemplo con Punteros</a></li>
+<li><a href="#orgc63a393">Salida esperada</a></li>
+<li><a href="#org068455f">Explicación de Copy-on-Write (COW)</a></li>
+<li><a href="#org22cedbe">Conclusión</a></li>
 </ul>
 </li>
-<li><a href="#org8f1d942">Estados y transiciones de los procesos</a>
+<li><a href="#orgb01bacb">Estados y transiciones de los procesos</a>
 <ul>
-<li><a href="#orgbe9230d">Ejemplo en C: Creación de un proceso utilizando fork()</a></li>
-<li><a href="#orgd8e3aa0">Ejemplo en C: Simulación de transiciones de estados</a></li>
+<li><a href="#org4f525d0">Ejemplo en C: Creación de un proceso utilizando fork()</a></li>
+<li><a href="#orge0e818e">Ejemplo en C: Simulación de transiciones de estados</a></li>
 </ul>
 </li>
-<li><a href="#org4caf46b">Tabla de Procesos</a>
+<li><a href="#org8f96eff">Tabla de Procesos</a>
 <ul>
-<li><a href="#orgd643cf2">¿Qué es la Tabla de Procesos?</a></li>
-<li><a href="#org04f7994">Información en la Tabla de Procesos</a></li>
-<li><a href="#orga24de1f">Estados del Proceso</a></li>
-<li><a href="#org810eb85">Ejemplo en C de una Tabla de Procesos Simplificada</a></li>
-<li><a href="#orge75571a">Explicación del Ejemplo</a></li>
-<li><a href="#org4498380">Salida Esperada</a></li>
-<li><a href="#org2f84d65">Conclusión</a></li>
+<li><a href="#org3887587">¿Qué es la Tabla de Procesos?</a></li>
+<li><a href="#orgaecf3c1">Información en la Tabla de Procesos</a></li>
+<li><a href="#orgd56bf63">Estados del Proceso</a></li>
+<li><a href="#org7e3db98">Ejemplo en C de una Tabla de Procesos Simplificada</a></li>
+<li><a href="#org649d2b9">Explicación del Ejemplo</a></li>
+<li><a href="#orgc0df831">Salida Esperada</a></li>
+<li><a href="#orge6caad3">Conclusión</a></li>
 </ul>
 </li>
-<li><a href="#org22614dd">Procesos ligeros: Hilos o hebras</a>
+<li><a href="#org4ac77f2">Procesos ligeros: Hilos o hebras</a>
 <ul>
-<li><a href="#orgc1483b1">Ejemplo en C: Creación de hilos con pthread</a></li>
+<li><a href="#org2fe4a7c">Ejemplo en C: Creación de hilos con pthread</a></li>
 </ul>
 </li>
-<li><a href="#org64a695d">pthread<sub>create</sub> en C</a>
+<li><a href="#org648ea12">pthread<sub>create</sub> en C</a>
 <ul>
-<li><a href="#orga67b8f2">Descripción de pthread<sub>create</sub></a></li>
-<li><a href="#orgd5c4a35">Sintaxis de pthread<sub>create</sub></a></li>
-<li><a href="#org0b6e8b6">Parámetros</a></li>
-<li><a href="#org651c64c">Valor de Retorno</a></li>
-<li><a href="#org745d3fb">Ejemplo Práctico de pthread<sub>create</sub></a></li>
-<li><a href="#orgec5f250">Explicación del Ejemplo</a></li>
-<li><a href="#org66a0784">Consideraciones Importantes</a></li>
-<li><a href="#org3e7cdb7">Resumen</a></li>
+<li><a href="#orgd1fe37c">Descripción de pthread<sub>create</sub></a></li>
+<li><a href="#org5b1485a">Sintaxis de pthread<sub>create</sub></a></li>
+<li><a href="#org04b5b38">Parámetros</a></li>
+<li><a href="#org4e231ba">Valor de Retorno</a></li>
+<li><a href="#orgfcd771a">Ejemplo Práctico de pthread<sub>create</sub></a></li>
+<li><a href="#org4cb1908">Explicación del Ejemplo</a></li>
+<li><a href="#org9e62cde">Consideraciones Importantes</a></li>
+<li><a href="#org5cbb4cb">Resumen</a></li>
 </ul>
 </li>
-<li><a href="#org6a86638">cola con prioridad</a></li>
-<li><a href="#org710dc96">Concurrencia y Secuenciabilidad</a>
+<li><a href="#orgae066e8">cola con prioridad</a></li>
+<li><a href="#orgefa89ec">Concurrencia y Secuenciabilidad</a>
 <ul>
-<li><a href="#org974f25a">Ejemplo en C: Concurrencia y sincronización de tareas</a></li>
-<li><a href="#orgc12496a">1.1 Exclusión Mutua</a></li>
+<li><a href="#orge657b5a">Ejemplo en C: Concurrencia y sincronización de tareas</a></li>
+<li><a href="#org708e765">1.1 Exclusión Mutua</a></li>
+<li><a href="#org9b9a858">1.2 Sincronización</a></li>
+<li><a href="#org8abf2e1">1.3 Condiciones de carrera y sincronización</a></li>
 </ul>
 </li>
-<li><a href="#orgdfe83c3">3. Algoritmo de Lamport’s Bakery</a></li>
-<li><a href="#org1f35045">4. Semáforos y Mutexes</a>
+<li><a href="#orgc6a3054">2. Secuenciabilidad</a>
 <ul>
-<li><a href="#orgd7d08bc">1.2 Sincronización</a></li>
-<li><a href="#org9903a8f">1.3 Condiciones de carrera y sincronización</a></li>
+<li><a href="#org2afcf83">2.1 Algoritmos de Planificación de Procesos</a></li>
+<li><a href="#org68c74a7">2.2 Algoritmos de Detección y Prevención de Interbloqueos (Deadlocks)</a></li>
+<li><a href="#orgf0f56e6">2.3 Sincronización y Secuenciabilidad</a></li>
+<li><a href="#org025429c">3. Conclusión</a></li>
 </ul>
 </li>
-<li><a href="#org473b318">2. Secuenciabilidad</a>
+<li><a href="#orgb877425">Niveles, Objetivos y Criterios de Planificación</a>
 <ul>
-<li><a href="#org41c4473">2.1 Algoritmos de Planificación de Procesos</a></li>
-<li><a href="#org603b99b">2.2 Algoritmos de Detección y Prevención de Interbloqueos (Deadlocks)</a></li>
-<li><a href="#org37e7613">2.3 Sincronización y Secuenciabilidad</a></li>
-<li><a href="#orgfd34ce3">3. Conclusión</a></li>
+<li><a href="#orga501624">Niveles de Planificación</a></li>
+<li><a href="#org8f488f5">Objetivos de la Planificación</a></li>
+<li><a href="#orgd13b516">Criterios de Planificación</a></li>
+<li><a href="#org5d5c700">Ejemplo en C: Implementación Simple de Planificación Round Robin</a></li>
 </ul>
 </li>
-<li><a href="#org2db94b3">Niveles, objetivos y criterios de planificación</a>
-<ul>
-<li><a href="#org8c5cc71">Ejemplo en C: Implementación simple de planificación Round Robin</a></li>
-</ul>
-</li>
-<li><a href="#orgcf711dc">Técnicas de administración del planificador</a>
-<ul>
-<li><a href="#orge50432b">Ejemplo en C: Planificación simple basada en prioridades</a></li>
-<li><a href="#org150f9bb">ejercicios</a></li>
-</ul>
-</li>
+<li><a href="#orgd122261">Técnicas de Administración del Planificador</a></li>
 </ul>
 </li>
 </ul>
@@ -326,17 +319,17 @@
 
 
 
-<div id="outline-container-org904f227" class="outline-2">
-<h2 id="org904f227">Administración de Procesos y del procesador</h2>
-<div class="outline-text-2" id="text-org904f227">
+<div id="outline-container-org8f86182" class="outline-2">
+<h2 id="org8f86182">Administración de Procesos y del procesador</h2>
+<div class="outline-text-2" id="text-org8f86182">
 </div>
-<div id="outline-container-org80a5607" class="outline-3">
-<h3 id="org80a5607">Comandos para manejar procesos en Linux</h3>
-<div class="outline-text-3" id="text-org80a5607">
+<div id="outline-container-orgc34c4f6" class="outline-3">
+<h3 id="orgc34c4f6">Comandos para manejar procesos en Linux</h3>
+<div class="outline-text-3" id="text-orgc34c4f6">
 </div>
-<div id="outline-container-org2b75745" class="outline-4">
-<h4 id="org2b75745">1. Ver procesos activos</h4>
-<div class="outline-text-4" id="text-org2b75745">
+<div id="outline-container-orgc720916" class="outline-4">
+<h4 id="orgc720916">1. Ver procesos activos</h4>
+<div class="outline-text-4" id="text-orgc720916">
 <ul class="org-ul">
 <li>`ps`
 Muestra una lista de procesos en la terminal actual. Ofrece información sobre el PID, usuario, CPU, memoria, etc.
@@ -359,9 +352,9 @@ Busca el PID (Process ID) de un proceso específico por su nombre. Útil para ob
 </div>
 </div>
 
-<div id="outline-container-org8331a31" class="outline-4">
-<h4 id="org8331a31">2. Iniciar procesos</h4>
-<div class="outline-text-4" id="text-org8331a31">
+<div id="outline-container-org6a522e3" class="outline-4">
+<h4 id="org6a522e3">2. Iniciar procesos</h4>
+<div class="outline-text-4" id="text-org6a522e3">
 <ul class="org-ul">
 <li>`&amp;` 
 Ejecuta un comando en segundo plano, permitiendo que el usuario continúe usando la terminal. 
@@ -378,9 +371,9 @@ Inicia un proceso que continúa en ejecución incluso después de cerrar la term
 </div>
 </div>
 
-<div id="outline-container-org35d4c38" class="outline-4">
-<h4 id="org35d4c38">3. Controlar la ejecución de procesos</h4>
-<div class="outline-text-4" id="text-org35d4c38">
+<div id="outline-container-org7fd7bad" class="outline-4">
+<h4 id="org7fd7bad">3. Controlar la ejecución de procesos</h4>
+<div class="outline-text-4" id="text-org7fd7bad">
 <ul class="org-ul">
 <li>`fg` 
 Trae un proceso en segundo plano al primer plano, permitiendo interactuar directamente con él.</li>
@@ -394,9 +387,9 @@ Muestra los procesos en segundo plano o suspendidos asociados a la sesión de te
 </div>
 </div>
 
-<div id="outline-container-org5233b44" class="outline-4">
-<h4 id="org5233b44">4. Enviar señales a los procesos</h4>
-<div class="outline-text-4" id="text-org5233b44">
+<div id="outline-container-org0ae2cde" class="outline-4">
+<h4 id="org0ae2cde">4. Enviar señales a los procesos</h4>
+<div class="outline-text-4" id="text-org0ae2cde">
 <ul class="org-ul">
 <li>`kill &lt;PID&gt;` 
 Envía una señal de terminación al proceso especificado por su PID. Intenta cerrar el proceso de manera controlada.
@@ -425,9 +418,9 @@ Similar a `pkill`, detiene todos los procesos con un nombre específico.
 </div>
 </div>
 
-<div id="outline-container-orge2ece73" class="outline-4">
-<h4 id="orge2ece73">5. Cambiar prioridad de procesos</h4>
-<div class="outline-text-4" id="text-orge2ece73">
+<div id="outline-container-org4233f27" class="outline-4">
+<h4 id="org4233f27">5. Cambiar prioridad de procesos</h4>
+<div class="outline-text-4" id="text-org4233f27">
 <ul class="org-ul">
 <li>`nice -n &lt;prioridad&gt; &lt;comando&gt;`
 Inicia un proceso con una prioridad especificada, donde el rango va de -20 (mayor prioridad) a 19 (menor prioridad). La prioridad afecta el orden de planificación.
@@ -444,9 +437,9 @@ Cambia la prioridad de un proceso en ejecución.
 </div>
 </div>
 
-<div id="outline-container-orge6e9528" class="outline-4">
-<h4 id="orge6e9528">6. Ver detalles específicos de los procesos</h4>
-<div class="outline-text-4" id="text-orge6e9528">
+<div id="outline-container-org69316e0" class="outline-4">
+<h4 id="org69316e0">6. Ver detalles específicos de los procesos</h4>
+<div class="outline-text-4" id="text-org69316e0">
 <ul class="org-ul">
 <li>`pstree`
 Muestra los procesos en una estructura de árbol, permitiendo visualizar mejor las relaciones y jerarquías entre procesos en ejecución.</li>
@@ -463,13 +456,13 @@ Lista todos los archivos abiertos por un proceso específico, útil para ver con
 
 
 
-<div id="outline-container-org69b7547" class="outline-3">
-<h3 id="org69b7547">Punteros en C</h3>
-<div class="outline-text-3" id="text-org69b7547">
+<div id="outline-container-orgb9fdd9a" class="outline-3">
+<h3 id="orgb9fdd9a">Punteros en C</h3>
+<div class="outline-text-3" id="text-orgb9fdd9a">
 </div>
-<div id="outline-container-org7a21e51" class="outline-4">
-<h4 id="org7a21e51">¿Qué es un puntero?</h4>
-<div class="outline-text-4" id="text-org7a21e51">
+<div id="outline-container-org561a078" class="outline-4">
+<h4 id="org561a078">¿Qué es un puntero?</h4>
+<div class="outline-text-4" id="text-org561a078">
 <p>
 Un puntero es una variable que almacena la dirección de memoria de
 otra variable. En lugar de contener un valor directo, un puntero
@@ -478,9 +471,9 @@ otra variable. En lugar de contener un valor directo, un puntero
 </div>
 </div>
 
-<div id="outline-container-orgaaa6f6c" class="outline-4">
-<h4 id="orgaaa6f6c">Declaración de punteros</h4>
-<div class="outline-text-4" id="text-orgaaa6f6c">
+<div id="outline-container-org93552bf" class="outline-4">
+<h4 id="org93552bf">Declaración de punteros</h4>
+<div class="outline-text-4" id="text-org93552bf">
 <p>
 Para declarar un puntero, se utiliza el operador `*` antes del nombre
 de la variable:
@@ -497,9 +490,9 @@ En este ejemplo, `ptr` es un puntero a un entero.
 </div>
 </div>
 
-<div id="outline-container-orga89ff55" class="outline-4">
-<h4 id="orga89ff55">Inicialización de punteros</h4>
-<div class="outline-text-4" id="text-orga89ff55">
+<div id="outline-container-org1be0949" class="outline-4">
+<h4 id="org1be0949">Inicialización de punteros</h4>
+<div class="outline-text-4" id="text-org1be0949">
 <p>
 Un puntero debe inicializarse con la dirección de una variable antes de ser utilizado. Para obtener la dirección de una variable, se emplea el operador `&amp;`:
 </p>
@@ -516,9 +509,9 @@ Aquí, `ptr` almacena la dirección de `var`.
 </div>
 </div>
 
-<div id="outline-container-orgb13b1fb" class="outline-4">
-<h4 id="orgb13b1fb">Acceso al valor apuntado</h4>
-<div class="outline-text-4" id="text-orgb13b1fb">
+<div id="outline-container-org220186f" class="outline-4">
+<h4 id="org220186f">Acceso al valor apuntado</h4>
+<div class="outline-text-4" id="text-org220186f">
 <p>
 Para acceder o modificar el valor de la variable a la que apunta un
 puntero, se utiliza el operador de desreferencia `*`:
@@ -532,9 +525,9 @@ puntero, se utiliza el operador de desreferencia `*`:
 </div>
 </div>
 
-<div id="outline-container-org3c59e26" class="outline-4">
-<h4 id="org3c59e26">Punteros y arreglos</h4>
-<div class="outline-text-4" id="text-org3c59e26">
+<div id="outline-container-org1873cb3" class="outline-4">
+<h4 id="org1873cb3">Punteros y arreglos</h4>
+<div class="outline-text-4" id="text-org1873cb3">
 <p>
 En C, el nombre de un arreglo actúa como un puntero al primer elemento
 del mismo. Por lo tanto, se puede utilizar aritmética de punteros para
@@ -554,9 +547,9 @@ recorrer un arreglo:
 </div>
 </div>
 
-<div id="outline-container-orgf2895da" class="outline-4">
-<h4 id="orgf2895da">Punteros y funciones</h4>
-<div class="outline-text-4" id="text-orgf2895da">
+<div id="outline-container-org43d749b" class="outline-4">
+<h4 id="org43d749b">Punteros y funciones</h4>
+<div class="outline-text-4" id="text-org43d749b">
 <p>
 Los punteros permiten que las funciones modifiquen variables fuera de
 su ámbito local. Al pasar la dirección de una variable a una función,
@@ -579,9 +572,9 @@ esta puede alterar el valor original:
 </div>
 </div>
 
-<div id="outline-container-org45a4685" class="outline-4">
-<h4 id="org45a4685">Punteros nulos</h4>
-<div class="outline-text-4" id="text-org45a4685">
+<div id="outline-container-org69fb881" class="outline-4">
+<h4 id="org69fb881">Punteros nulos</h4>
+<div class="outline-text-4" id="text-org69fb881">
 <p>
 Un puntero nulo es un puntero que no apunta a ninguna dirección
 válida. Se inicializa asignándole el valor `NULL`:
@@ -599,9 +592,9 @@ errores al intentar acceder a direcciones de memoria no válidas.
 </div>
 </div>
 
-<div id="outline-container-orgde233c7" class="outline-4">
-<h4 id="orgde233c7">Aritmética de punteros</h4>
-<div class="outline-text-4" id="text-orgde233c7">
+<div id="outline-container-orge57c4ae" class="outline-4">
+<h4 id="orge57c4ae">Aritmética de punteros</h4>
+<div class="outline-text-4" id="text-orge57c4ae">
 <p>
 Los punteros pueden incrementarse o decrementarse para navegar por
 estructuras de datos en memoria:
@@ -618,9 +611,9 @@ printf<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"%d\n"
 </div>
 </div>
 
-<div id="outline-container-org83ea137" class="outline-4">
-<h4 id="org83ea137">Punteros a punteros</h4>
-<div class="outline-text-4" id="text-org83ea137">
+<div id="outline-container-org0adde77" class="outline-4">
+<h4 id="org0adde77">Punteros a punteros</h4>
+<div class="outline-text-4" id="text-org0adde77">
 <p>
 Un puntero puede apuntar a otro puntero, lo que se denomina "puntero a puntero":
 </p>
@@ -636,9 +629,9 @@ printf<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"Valor
 </div>
 </div>
 
-<div id="outline-container-orgdad8395" class="outline-4">
-<h4 id="orgdad8395">Dobles y triples punteros</h4>
-<div class="outline-text-4" id="text-orgdad8395">
+<div id="outline-container-orgd4be815" class="outline-4">
+<h4 id="orgd4be815">Dobles y triples punteros</h4>
+<div class="outline-text-4" id="text-orgd4be815">
 <p>
 Un <b><b>doble puntero</b></b> es un puntero que apunta a otro puntero,
 permitiendo manejar niveles adicionales de indirección en la
@@ -678,9 +671,9 @@ Usar punteros de múltiples niveles requiere tener una buena comprensión de có
 </div>
 
 
-<div id="outline-container-orge1d4a8c" class="outline-4">
-<h4 id="orge1d4a8c">Punteros y cadenas de caracteres</h4>
-<div class="outline-text-4" id="text-orge1d4a8c">
+<div id="outline-container-org241b0ed" class="outline-4">
+<h4 id="org241b0ed">Punteros y cadenas de caracteres</h4>
+<div class="outline-text-4" id="text-org241b0ed">
 <p>
 Las cadenas de caracteres en C son arreglos de caracteres terminados en un carácter nulo (`'\0'`). Los punteros se utilizan comúnmente para manipular estas cadenas:
 </p>
@@ -700,9 +693,9 @@ Las cadenas de caracteres en C son arreglos de caracteres terminados en un cará
 </div>
 </div>
 
-<div id="outline-container-orgd5aa7d4" class="outline-3">
-<h3 id="orgd5aa7d4">Concepto de proceso</h3>
-<div class="outline-text-3" id="text-orgd5aa7d4">
+<div id="outline-container-org4f37d68" class="outline-3">
+<h3 id="org4f37d68">Concepto de proceso</h3>
+<div class="outline-text-3" id="text-org4f37d68">
 <p>
 Un proceso es una unidad de ejecución dentro de un sistema
 operativo. Cada proceso tiene su propio espacio de memoria, que
@@ -715,13 +708,13 @@ forma aparentemente simultánea.
 </div>
 </div>
 
-<div id="outline-container-org79abcb9" class="outline-3">
-<h3 id="org79abcb9">Fork() en C</h3>
-<div class="outline-text-3" id="text-org79abcb9">
+<div id="outline-container-orgd6656c0" class="outline-3">
+<h3 id="orgd6656c0">Fork() en C</h3>
+<div class="outline-text-3" id="text-orgd6656c0">
 </div>
-<div id="outline-container-org4f7b13d" class="outline-4">
-<h4 id="org4f7b13d">¿Qué es fork()?</h4>
-<div class="outline-text-4" id="text-org4f7b13d">
+<div id="outline-container-org8f91738" class="outline-4">
+<h4 id="org8f91738">¿Qué es fork()?</h4>
+<div class="outline-text-4" id="text-org8f91738">
 <p>
 `fork()` es una llamada al sistema en C, utilizada para crear un nuevo
 proceso llamado "proceso hijo". Este proceso es una copia casi exacta
@@ -732,9 +725,9 @@ tipo Unix/Linux.
 </div>
 </div>
 
-<div id="outline-container-org0932d8b" class="outline-4">
-<h4 id="org0932d8b">Funcionamiento básico de fork()</h4>
-<div class="outline-text-4" id="text-org0932d8b">
+<div id="outline-container-org541065b" class="outline-4">
+<h4 id="org541065b">Funcionamiento básico de fork()</h4>
+<div class="outline-text-4" id="text-org541065b">
 <p>
 Cuando se llama a `fork()`, la ejecución continúa tanto en el proceso
 padre como en el proceso hijo. La llamada a `fork()` retorna un valor
@@ -749,9 +742,9 @@ proceso) del proceso hijo.</li>
 </div>
 </div>
 
-<div id="outline-container-org280376c" class="outline-4">
-<h4 id="org280376c">Ejemplo básico de fork()</h4>
-<div class="outline-text-4" id="text-org280376c">
+<div id="outline-container-org4aeef86" class="outline-4">
+<h4 id="org4aeef86">Ejemplo básico de fork()</h4>
+<div class="outline-text-4" id="text-org4aeef86">
 <p>
 A continuación, un ejemplo sencillo que muestra cómo usar `fork()`
 para crear un proceso hijo:
@@ -781,9 +774,9 @@ para crear un proceso hijo:
 </div>
 </div>
 
-<div id="outline-container-org9ad31c9" class="outline-4">
-<h4 id="org9ad31c9">Explicación del Ejemplo</h4>
-<div class="outline-text-4" id="text-org9ad31c9">
+<div id="outline-container-org8a906e6" class="outline-4">
+<h4 id="org8a906e6">Explicación del Ejemplo</h4>
+<div class="outline-text-4" id="text-org8a906e6">
 <ol class="org-ol">
 <li>`fork()` es llamado y crea un proceso hijo.</li>
 <li>En el proceso hijo, `pid` será igual a `0`, por lo que se ejecutará
@@ -795,9 +788,9 @@ código para el proceso padre.</li>
 </div>
 </div>
 
-<div id="outline-container-org4f98d08" class="outline-4">
-<h4 id="org4f98d08">Espera del Proceso Padre con wait()</h4>
-<div class="outline-text-4" id="text-org4f98d08">
+<div id="outline-container-org5a45311" class="outline-4">
+<h4 id="org5a45311">Espera del Proceso Padre con wait()</h4>
+<div class="outline-text-4" id="text-org5a45311">
 <p>
 Para que el proceso padre espere a que el proceso hijo termine antes
 de continuar, se puede utilizar la función `wait()`:
@@ -831,9 +824,9 @@ termine antes de imprimir su mensaje.
 </div>
 </div>
 
-<div id="outline-container-org3ce8c0f" class="outline-4">
-<h4 id="org3ce8c0f">fork() y Punteros</h4>
-<div class="outline-text-4" id="text-org3ce8c0f">
+<div id="outline-container-orgeb851fb" class="outline-4">
+<h4 id="orgeb851fb">fork() y Punteros</h4>
+<div class="outline-text-4" id="text-orgeb851fb">
 <p>
 `fork()` crea un espacio de memoria independiente para el proceso
 hijo, lo que significa que los punteros en el proceso hijo apuntan a
@@ -845,9 +838,9 @@ variables del proceso hijo afecten al padre, gracias al mecanismo de
 </div>
 </div>
 
-<div id="outline-container-org887c4d7" class="outline-4">
-<h4 id="org887c4d7">Ejemplo con Punteros</h4>
-<div class="outline-text-4" id="text-org887c4d7">
+<div id="outline-container-orge5c8721" class="outline-4">
+<h4 id="orge5c8721">Ejemplo con Punteros</h4>
+<div class="outline-text-4" id="text-orge5c8721">
 <p>
 Este ejemplo demuestra cómo `fork()` maneja los punteros y el espacio de memoria independiente:
 </p>
@@ -882,9 +875,9 @@ Este ejemplo demuestra cómo `fork()` maneja los punteros y el espacio de memori
 </div>
 </div>
 
-<div id="outline-container-org3ff3c2a" class="outline-4">
-<h4 id="org3ff3c2a">Salida esperada</h4>
-<div class="outline-text-4" id="text-org3ff3c2a">
+<div id="outline-container-orgc63a393" class="outline-4">
+<h4 id="orgc63a393">Salida esperada</h4>
+<div class="outline-text-4" id="text-orgc63a393">
 <p>
 La salida de este código será algo similar a:
 </p>
@@ -897,18 +890,18 @@ Proceso padre: valor de *ptr = 100
 </div>
 </div>
 
-<div id="outline-container-orgde001e5" class="outline-4">
-<h4 id="orgde001e5">Explicación de Copy-on-Write (COW)</h4>
-<div class="outline-text-4" id="text-orgde001e5">
+<div id="outline-container-org068455f" class="outline-4">
+<h4 id="org068455f">Explicación de Copy-on-Write (COW)</h4>
+<div class="outline-text-4" id="text-org068455f">
 <p>
 Gracias a Copy-on-Write, ambos procesos (padre e hijo) comparten la misma memoria hasta que uno de ellos intenta modificarla. En ese momento, el sistema operativo crea una copia independiente de la memoria para el proceso que realiza la escritura, evitando que los cambios afecten al otro proceso.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4aa2866" class="outline-4">
-<h4 id="org4aa2866">Conclusión</h4>
-<div class="outline-text-4" id="text-org4aa2866">
+<div id="outline-container-org22cedbe" class="outline-4">
+<h4 id="org22cedbe">Conclusión</h4>
+<div class="outline-text-4" id="text-org22cedbe">
 <p>
 La llamada a `fork()` es una herramienta poderosa en C para la creación de procesos en sistemas operativos Unix/Linux. Permite duplicar un proceso, crear nuevos flujos de ejecución, y manejar recursos compartidos de manera controlada. Es especialmente útil en programas multitarea como servidores o aplicaciones que requieren procesamiento paralelo.
 </p>
@@ -916,9 +909,9 @@ La llamada a `fork()` es una herramienta poderosa en C para la creación de proc
 </div>
 </div>
 
-<div id="outline-container-org8f1d942" class="outline-3">
-<h3 id="org8f1d942">Estados y transiciones de los procesos</h3>
-<div class="outline-text-3" id="text-org8f1d942">
+<div id="outline-container-orgb01bacb" class="outline-3">
+<h3 id="orgb01bacb">Estados y transiciones de los procesos</h3>
+<div class="outline-text-3" id="text-orgb01bacb">
 <p>
 Los procesos en un sistema operativo pueden estar en diferentes
 estados, que determinan si están utilizando la CPU, esperando, o
@@ -939,9 +932,9 @@ estructura de datos llamada tabla de procesos.
 </div>
 
 
-<div id="outline-container-orgbe9230d" class="outline-4">
-<h4 id="orgbe9230d">Ejemplo en C: Creación de un proceso utilizando fork()</h4>
-<div class="outline-text-4" id="text-orgbe9230d">
+<div id="outline-container-org4f525d0" class="outline-4">
+<h4 id="org4f525d0">Ejemplo en C: Creación de un proceso utilizando fork()</h4>
+<div class="outline-text-4" id="text-org4f525d0">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">unistd.h</span><span style="color: #c099ff;">&gt;</span>
@@ -963,9 +956,9 @@ estructura de datos llamada tabla de procesos.
 
 
 
-<div id="outline-container-orgd8e3aa0" class="outline-4">
-<h4 id="orgd8e3aa0">Ejemplo en C: Simulación de transiciones de estados</h4>
-<div class="outline-text-4" id="text-orgd8e3aa0">
+<div id="outline-container-orge0e818e" class="outline-4">
+<h4 id="orge0e818e">Ejemplo en C: Simulación de transiciones de estados</h4>
+<div class="outline-text-4" id="text-orge0e818e">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">unistd.h</span><span style="color: #c099ff;">&gt;</span>
@@ -993,13 +986,13 @@ estructura de datos llamada tabla de procesos.
 </div>
 </div>
 
-<div id="outline-container-org4caf46b" class="outline-3">
-<h3 id="org4caf46b">Tabla de Procesos</h3>
-<div class="outline-text-3" id="text-org4caf46b">
+<div id="outline-container-org8f96eff" class="outline-3">
+<h3 id="org8f96eff">Tabla de Procesos</h3>
+<div class="outline-text-3" id="text-org8f96eff">
 </div>
-<div id="outline-container-orgd643cf2" class="outline-4">
-<h4 id="orgd643cf2">¿Qué es la Tabla de Procesos?</h4>
-<div class="outline-text-4" id="text-orgd643cf2">
+<div id="outline-container-org3887587" class="outline-4">
+<h4 id="org3887587">¿Qué es la Tabla de Procesos?</h4>
+<div class="outline-text-4" id="text-org3887587">
 <p>
 La <b><b>Tabla de Procesos</b></b> es una estructura de datos utilizada por el
 sistema operativo para gestionar todos los procesos activos en el
@@ -1010,9 +1003,9 @@ su administración.
 </div>
 </div>
 
-<div id="outline-container-org04f7994" class="outline-4">
-<h4 id="org04f7994">Información en la Tabla de Procesos</h4>
-<div class="outline-text-4" id="text-org04f7994">
+<div id="outline-container-orgaecf3c1" class="outline-4">
+<h4 id="orgaecf3c1">Información en la Tabla de Procesos</h4>
+<div class="outline-text-4" id="text-orgaecf3c1">
 <p>
 Cada entrada en la tabla de procesos incluye un PCB con varios campos importantes:
 </p>
@@ -1030,9 +1023,9 @@ instrucción que el proceso debe ejecutar.</li>
 </div>
 </div>
 
-<div id="outline-container-orga24de1f" class="outline-4">
-<h4 id="orga24de1f">Estados del Proceso</h4>
-<div class="outline-text-4" id="text-orga24de1f">
+<div id="outline-container-orgd56bf63" class="outline-4">
+<h4 id="orgd56bf63">Estados del Proceso</h4>
+<div class="outline-text-4" id="text-orgd56bf63">
 <p>
 Un proceso puede encontrarse en diferentes estados, y la tabla de procesos ayuda a rastrear el estado actual de cada proceso. Los estados típicos incluyen:
 </p>
@@ -1046,9 +1039,9 @@ Un proceso puede encontrarse en diferentes estados, y la tabla de procesos ayuda
 </div>
 </div>
 
-<div id="outline-container-org810eb85" class="outline-4">
-<h4 id="org810eb85">Ejemplo en C de una Tabla de Procesos Simplificada</h4>
-<div class="outline-text-4" id="text-org810eb85">
+<div id="outline-container-org7e3db98" class="outline-4">
+<h4 id="org7e3db98">Ejemplo en C de una Tabla de Procesos Simplificada</h4>
+<div class="outline-text-4" id="text-org7e3db98">
 <p>
 El siguiente ejemplo en C muestra cómo se puede representar una tabla
 de procesos de manera simple mediante una estructura de datos.
@@ -1111,9 +1104,9 @@ de procesos de manera simple mediante una estructura de datos.
 </div>
 </div>
 
-<div id="outline-container-orge75571a" class="outline-4">
-<h4 id="orge75571a">Explicación del Ejemplo</h4>
-<div class="outline-text-4" id="text-orge75571a">
+<div id="outline-container-org649d2b9" class="outline-4">
+<h4 id="org649d2b9">Explicación del Ejemplo</h4>
+<div class="outline-text-4" id="text-org649d2b9">
 <ol class="org-ol">
 <li><b><b>Definición de Estructura</b></b>: La estructura `Process` representa cada proceso en la tabla. Incluye el <b><b>PID</b></b>, <b><b>estado</b></b>, <b><b>prioridad</b></b>, y <b><b>contador de programa (PC)</b></b>.</li>
 <li><b><b>Inicialización de Procesos</b></b>: La función `initializeProcesses` asigna un PID, establece el estado en "Listo", y asigna una prioridad a cada proceso.</li>
@@ -1123,9 +1116,9 @@ de procesos de manera simple mediante una estructura de datos.
 </div>
 </div>
 
-<div id="outline-container-org4498380" class="outline-4">
-<h4 id="org4498380">Salida Esperada</h4>
-<div class="outline-text-4" id="text-org4498380">
+<div id="outline-container-orgc0df831" class="outline-4">
+<h4 id="orgc0df831">Salida Esperada</h4>
+<div class="outline-text-4" id="text-orgc0df831">
 <p>
 Al ejecutar el programa, la salida muestra la tabla de procesos inicial y después de actualizar el estado de un proceso.
 </p>
@@ -1156,9 +1149,9 @@ PID   Estado       Prioridad     PC
 </div>
 </div>
 
-<div id="outline-container-org2f84d65" class="outline-4">
-<h4 id="org2f84d65">Conclusión</h4>
-<div class="outline-text-4" id="text-org2f84d65">
+<div id="outline-container-orge6caad3" class="outline-4">
+<h4 id="orge6caad3">Conclusión</h4>
+<div class="outline-text-4" id="text-orge6caad3">
 <p>
 La tabla de procesos es fundamental para el seguimiento y administración
 de los procesos en un sistema operativo. Cada proceso tiene su propio
@@ -1175,9 +1168,9 @@ recursos de cada proceso.
 
 
 
-<div id="outline-container-org22614dd" class="outline-3">
-<h3 id="org22614dd">Procesos ligeros: Hilos o hebras</h3>
-<div class="outline-text-3" id="text-org22614dd">
+<div id="outline-container-org4ac77f2" class="outline-3">
+<h3 id="org4ac77f2">Procesos ligeros: Hilos o hebras</h3>
+<div class="outline-text-3" id="text-org4ac77f2">
 <p>
 Un proceso ligero o hilo es una unidad de ejecución que comparte el
 mismo espacio de memoria que otros hilos dentro del mismo proceso. Los
@@ -1188,9 +1181,9 @@ crear y gestionar hilos.
 </p>
 </div>
 
-<div id="outline-container-orgc1483b1" class="outline-4">
-<h4 id="orgc1483b1">Ejemplo en C: Creación de hilos con pthread</h4>
-<div class="outline-text-4" id="text-orgc1483b1">
+<div id="outline-container-org2fe4a7c" class="outline-4">
+<h4 id="org2fe4a7c">Ejemplo en C: Creación de hilos con pthread</h4>
+<div class="outline-text-4" id="text-org2fe4a7c">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">pthread.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1216,13 +1209,13 @@ crear y gestionar hilos.
 </div>
 </div>
 
-<div id="outline-container-org64a695d" class="outline-3">
-<h3 id="org64a695d">pthread<sub>create</sub> en C</h3>
-<div class="outline-text-3" id="text-org64a695d">
+<div id="outline-container-org648ea12" class="outline-3">
+<h3 id="org648ea12">pthread<sub>create</sub> en C</h3>
+<div class="outline-text-3" id="text-org648ea12">
 </div>
-<div id="outline-container-orga67b8f2" class="outline-4">
-<h4 id="orga67b8f2">Descripción de pthread<sub>create</sub></h4>
-<div class="outline-text-4" id="text-orga67b8f2">
+<div id="outline-container-orgd1fe37c" class="outline-4">
+<h4 id="orgd1fe37c">Descripción de pthread<sub>create</sub></h4>
+<div class="outline-text-4" id="text-orgd1fe37c">
 <p>
 La función `pthread<sub>create</sub>` en C se utiliza para crear y lanzar un
 nuevo hilo de ejecución en un programa. Esta función es parte de la
@@ -1233,9 +1226,9 @@ múltiples tareas de forma concurrente.
 </div>
 </div>
 
-<div id="outline-container-orgd5c4a35" class="outline-4">
-<h4 id="orgd5c4a35">Sintaxis de pthread<sub>create</sub></h4>
-<div class="outline-text-4" id="text-orgd5c4a35">
+<div id="outline-container-org5b1485a" class="outline-4">
+<h4 id="org5b1485a">Sintaxis de pthread<sub>create</sub></h4>
+<div class="outline-text-4" id="text-org5b1485a">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #ffc777;">int</span> <span style="color: #82aaff;">pthread_create</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">pthread_t</span> *<span style="color: #ff98a4;">thread</span>, <span style="color: #c099ff;">const</span> <span style="color: #ffc777;">pthread_attr_t</span> *<span style="color: #ff98a4;">attr</span>, <span style="color: #ffc777;">void</span> *<span style="color: #ff995e;">(</span>*<span style="color: #82aaff;">start_routine</span><span style="color: #ff995e;">)(</span><span style="color: #ffc777;">void</span> *<span style="color: #ff995e;">)</span>, <span style="color: #ffc777;">void</span> *<span style="color: #ff98a4;">arg</span><span style="color: #c099ff;">)</span>;
 </pre>
@@ -1243,9 +1236,9 @@ múltiples tareas de forma concurrente.
 </div>
 </div>
 
-<div id="outline-container-org0b6e8b6" class="outline-4">
-<h4 id="org0b6e8b6">Parámetros</h4>
-<div class="outline-text-4" id="text-org0b6e8b6">
+<div id="outline-container-org04b5b38" class="outline-4">
+<h4 id="org04b5b38">Parámetros</h4>
+<div class="outline-text-4" id="text-org04b5b38">
 <ul class="org-ul">
 <li><b><b>`pthread<sub>t</sub> *thread`</b></b>: Puntero a una variable de tipo `pthread<sub>t</sub>`,
 que es el identificador del hilo que se está creando. Al terminar
@@ -1265,9 +1258,9 @@ datos, este parámetro puede ser `NULL`.</li>
 </div>
 </div>
 
-<div id="outline-container-org651c64c" class="outline-4">
-<h4 id="org651c64c">Valor de Retorno</h4>
-<div class="outline-text-4" id="text-org651c64c">
+<div id="outline-container-org4e231ba" class="outline-4">
+<h4 id="org4e231ba">Valor de Retorno</h4>
+<div class="outline-text-4" id="text-org4e231ba">
 <ul class="org-ul">
 <li><b><b>0</b></b>: La función se ejecuta exitosamente y el hilo se crea sin problemas.</li>
 <li><b><b>Distinto de 0</b></b>: Devuelve un código de error si la creación del hilo falla.</li>
@@ -1275,9 +1268,9 @@ datos, este parámetro puede ser `NULL`.</li>
 </div>
 </div>
 
-<div id="outline-container-org745d3fb" class="outline-4">
-<h4 id="org745d3fb">Ejemplo Práctico de pthread<sub>create</sub></h4>
-<div class="outline-text-4" id="text-org745d3fb">
+<div id="outline-container-orgfcd771a" class="outline-4">
+<h4 id="orgfcd771a">Ejemplo Práctico de pthread<sub>create</sub></h4>
+<div class="outline-text-4" id="text-orgfcd771a">
 <p>
 Este ejemplo en C crea un hilo simple que imprime un mensaje
 utilizando `pthread<sub>create</sub>`:
@@ -1314,9 +1307,9 @@ utilizando `pthread<sub>create</sub>`:
 </div>
 </div>
 
-<div id="outline-container-orgec5f250" class="outline-4">
-<h4 id="orgec5f250">Explicación del Ejemplo</h4>
-<div class="outline-text-4" id="text-orgec5f250">
+<div id="outline-container-org4cb1908" class="outline-4">
+<h4 id="org4cb1908">Explicación del Ejemplo</h4>
+<div class="outline-text-4" id="text-org4cb1908">
 <ol class="org-ol">
 <li><b><b>Declaración de Hilo y Argumento</b></b>:
 <ul class="org-ul">
@@ -1347,9 +1340,9 @@ utilizando `pthread<sub>create</sub>`:
 </div>
 </div>
 
-<div id="outline-container-org66a0784" class="outline-4">
-<h4 id="org66a0784">Consideraciones Importantes</h4>
-<div class="outline-text-4" id="text-org66a0784">
+<div id="outline-container-org9e62cde" class="outline-4">
+<h4 id="org9e62cde">Consideraciones Importantes</h4>
+<div class="outline-text-4" id="text-org9e62cde">
 <ul class="org-ul">
 <li><b><b>Sincronización</b></b>: <b>pthread<sub>create</sub></b> lanza el hilo inmediatamente,
 pero el hilo principal puede necesitar esperar a que el hilo termine
@@ -1365,9 +1358,9 @@ inicializando y configurando los atributos del hilo con
 </div>
 </div>
 
-<div id="outline-container-org3e7cdb7" class="outline-4">
-<h4 id="org3e7cdb7">Resumen</h4>
-<div class="outline-text-4" id="text-org3e7cdb7">
+<div id="outline-container-org5cbb4cb" class="outline-4">
+<h4 id="org5cbb4cb">Resumen</h4>
+<div class="outline-text-4" id="text-org5cbb4cb">
 <p>
 La función <b>pthread<sub>create</sub></b> permite crear un nuevo hilo y especificar
 la tarea que debe ejecutar, lo cual es útil para realizar múltiples
@@ -1380,9 +1373,9 @@ identificador y atributos personalizados.
 </div>
 
 
-<div id="outline-container-org6a86638" class="outline-3">
-<h3 id="org6a86638">cola con prioridad</h3>
-<div class="outline-text-3" id="text-org6a86638">
+<div id="outline-container-orgae066e8" class="outline-3">
+<h3 id="orgae066e8">cola con prioridad</h3>
+<div class="outline-text-3" id="text-orgae066e8">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1511,9 +1504,9 @@ identificador y atributos personalizados.
 
 
 
-<div id="outline-container-org710dc96" class="outline-3">
-<h3 id="org710dc96">Concurrencia y Secuenciabilidad</h3>
-<div class="outline-text-3" id="text-org710dc96">
+<div id="outline-container-orgefa89ec" class="outline-3">
+<h3 id="orgefa89ec">Concurrencia y Secuenciabilidad</h3>
+<div class="outline-text-3" id="text-orgefa89ec">
 <p>
 La concurrencia y secuenciabilidad son conceptos clave en el diseño
 y la gestión de sistemas operativos modernos. Permiten que
@@ -1542,9 +1535,9 @@ condiciones de carrera y gestionar la exclusión mutua.</li>
 </div>
 
 
-<div id="outline-container-org974f25a" class="outline-4">
-<h4 id="org974f25a">Ejemplo en C: Concurrencia y sincronización de tareas</h4>
-<div class="outline-text-4" id="text-org974f25a">
+<div id="outline-container-orge657b5a" class="outline-4">
+<h4 id="orge657b5a">Ejemplo en C: Concurrencia y sincronización de tareas</h4>
+<div class="outline-text-4" id="text-orge657b5a">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">pthread.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1580,11 +1573,12 @@ condiciones de carrera y gestionar la exclusión mutua.</li>
 </div>
 
 
-<div id="outline-container-orgc12496a" class="outline-4">
-<h4 id="orgc12496a">1.1 Exclusión Mutua</h4>
-<div class="outline-text-4" id="text-orgc12496a">
+<div id="outline-container-org708e765" class="outline-4">
+<h4 id="org708e765">1.1 Exclusión Mutua</h4>
+<div class="outline-text-4" id="text-org708e765">
 <p>
-La exclusión mutua asegura que solo un proceso a la vez pueda acceder a una sección crítica que manipula recursos compartidos.
+La exclusión mutua asegura que solo un proceso a la vez pueda acceder
+a una sección crítica que manipula recursos compartidos.
 </p>
 <ul class="org-ul">
 <li>Algoritmos comunes:
@@ -1599,8 +1593,8 @@ La exclusión mutua asegura que solo un proceso a la vez pueda acceder a una sec
 
 
 <ul class="org-ul">
-<li><a id="org0044719"></a>1. Algoritmo de Dekker<br />
-<div class="outline-text-5" id="text-org0044719">
+<li><a id="org1659dfd"></a>1. Algoritmo de Dekker<br />
+<div class="outline-text-5" id="text-org1659dfd">
 <p>
 El algoritmo de Dekker es un algoritmo de programación concurrente
 para exclusión mutua, que permite a dos procesos o hilos de ejecución
@@ -1618,8 +1612,8 @@ deberá esperar su finalización.
 </div>
 
 <ul class="org-ul">
-<li><a id="org2df7d9d"></a>Condiciones<br />
-<div class="outline-text-6" id="text-org2df7d9d">
+<li><a id="org7daf337"></a>Condiciones<br />
+<div class="outline-text-6" id="text-org7daf337">
 <ul class="org-ul">
 <li>No hay prioridad entre procesos.</li>
 <li>La capacidad de los equipos es irrelevante.</li>
@@ -1646,7 +1640,8 @@ mismo tiempo a la región crítica.</li>
 interbloqueo, un proceso o varios se quedan esperando a que suceda
 un evento que tal vez nunca suceda.</li>
 
-<li><b>Variables</b>: `flag[2]` es un arreglo booleano donde `flag[i]` indica si el proceso `i` desea entrar en la sección crítica.</li>
+<li><b>Variables</b>: `flag[2]` es un arreglo booleano donde `flag[i]` indica
+si el proceso `i` desea entrar en la sección crítica.</li>
 <li><b>Turno</b>: `turn` indica el turno de los procesos para entrar en la sección crítica.</li>
 
 <li><b>Matemática</b>:
@@ -1654,7 +1649,8 @@ un evento que tal vez nunca suceda.</li>
 <li>Condiciones de entrada a la sección crítica:
 <ol class="org-ol">
 <li>Si un proceso quiere entrar, establece `flag[i] = true`.</li>
-<li>Si el otro proceso también quiere entrar, se usa la variable `turn` para determinar quién tiene prioridad.</li>
+<li>Si el otro proceso también quiere entrar, se usa la variable
+`turn` para determinar quién tiene prioridad.</li>
 <li>Un proceso entra a la sección crítica si `flag[j] <code>= false` o `turn =</code> i`.</li>
 </ol></li>
 </ul></li>
@@ -1688,7 +1684,7 @@ Ejemplo de del algoritmo de Dekker en C
      printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"Proceso %d en secci&#243;n cr&#237;tica\n"</span>, i<span style="color: #ff995e;">)</span>;
      turn = j;
      flag<span style="color: #ff995e;">[</span>i<span style="color: #ff995e;">]</span> = <span style="color: #ff995e;">false</span>;
-     <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">NULL</span>;
+     
  <span style="color: #c099ff;">}</span>
 
  <span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
@@ -1704,11 +1700,110 @@ Ejemplo de del algoritmo de Dekker en C
 </div>
 </div>
 </li>
+
+
+<li><a id="org1cec6d7"></a>Productor Consumidor Dekker<br />
+<div class="outline-text-6" id="text-org1cec6d7">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">pthread.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">unistd.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #c099ff;">typedef</span> <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">_nodo</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span>;
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">_nodo</span> *<span style="color: #ff98a4;">siguiente</span>;
+<span style="color: #c099ff;">}</span> <span style="color: #ffc777;">nodo</span>;
+
+<span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">cabeza</span> = <span style="color: #ff995e;">NULL</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Cola de procesos</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">turno</span> = 0;           <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Variable de turno para el algoritmo de Dekker</span>
+<span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">interesado</span><span style="color: #c099ff;">[</span>2<span style="color: #c099ff;">]</span> = <span style="color: #c099ff;">{</span>0, 0<span style="color: #c099ff;">}</span>;  <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Indica si el productor o consumidor est&#225;n interesados</span>
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">insertar_final</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">nuevo</span> = <span style="color: #ff995e;">(</span><span style="color: #ffc777;">nodo</span>*<span style="color: #ff995e;">)</span>malloc<span style="color: #ff995e;">(</span><span style="color: #c099ff;">sizeof</span><span style="color: #ff98a4;">(</span>nodo<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;
+    nuevo-&gt;valor = valor;
+    nuevo-&gt;siguiente = cabeza;
+    cabeza = nuevo;
+    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"Productor produjo: %d\n"</span>, valor<span style="color: #ff995e;">)</span>;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">atender_proceso</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>cabeza != <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">temp</span> = cabeza;
+        cabeza = cabeza-&gt;siguiente;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Consumidor atendi&#243;: %d\n"</span>, temp-&gt;valor<span style="color: #ff98a4;">)</span>;
+        free<span style="color: #ff98a4;">(</span>temp<span style="color: #ff98a4;">)</span>;
+    <span style="color: #ff995e;">}</span> <span style="color: #c099ff;">else</span> <span style="color: #ff995e;">{</span>
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"No hay procesos para consumir\n"</span><span style="color: #ff98a4;">)</span>;
+    <span style="color: #ff995e;">}</span>
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Funci&#243;n de productor utilizando algoritmo de Dekker</span>
+<span style="color: #ffc777;">void</span>* <span style="color: #82aaff;">productor</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">void</span>* <span style="color: #ff98a4;">arg</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; 5; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        interesado<span style="color: #ff98a4;">[</span>0<span style="color: #ff98a4;">]</span> = 1;
+        <span style="color: #c099ff;">while</span> <span style="color: #ff98a4;">(</span>interesado<span style="color: #b4f9f8;">[</span>1<span style="color: #b4f9f8;">]</span><span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            <span style="color: #c099ff;">if</span> <span style="color: #b4f9f8;">(</span>turno != 0<span style="color: #b4f9f8;">)</span> <span style="color: #b4f9f8;">{</span>
+                interesado<span style="color: #f989d3;">[</span>0<span style="color: #f989d3;">]</span> = 0;
+                <span style="color: #c099ff;">while</span> <span style="color: #f989d3;">(</span>turno != 0<span style="color: #f989d3;">)</span>;
+                interesado<span style="color: #f989d3;">[</span>0<span style="color: #f989d3;">]</span> = 1;
+            <span style="color: #b4f9f8;">}</span>
+        <span style="color: #ff98a4;">}</span>
+        
+        insertar_final<span style="color: #ff98a4;">(</span>i + 1<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Zona cr&#237;tica</span>
+        
+        turno = 1;
+        interesado<span style="color: #ff98a4;">[</span>0<span style="color: #ff98a4;">]</span> = 0;
+        sleep<span style="color: #ff98a4;">(</span>1<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Simular producci&#243;n</span>
+    <span style="color: #ff995e;">}</span>
+    <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">NULL</span>;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Funci&#243;n de consumidor utilizando algoritmo de Dekker</span>
+<span style="color: #ffc777;">void</span>* <span style="color: #82aaff;">consumidor</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">void</span>* <span style="color: #ff98a4;">arg</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; 5; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        interesado<span style="color: #ff98a4;">[</span>1<span style="color: #ff98a4;">]</span> = 1;
+        <span style="color: #c099ff;">while</span> <span style="color: #ff98a4;">(</span>interesado<span style="color: #b4f9f8;">[</span>0<span style="color: #b4f9f8;">]</span><span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            <span style="color: #c099ff;">if</span> <span style="color: #b4f9f8;">(</span>turno != 1<span style="color: #b4f9f8;">)</span> <span style="color: #b4f9f8;">{</span>
+                interesado<span style="color: #f989d3;">[</span>1<span style="color: #f989d3;">]</span> = 0;
+                <span style="color: #c099ff;">while</span> <span style="color: #f989d3;">(</span>turno != 1<span style="color: #f989d3;">)</span>;
+                interesado<span style="color: #f989d3;">[</span>1<span style="color: #f989d3;">]</span> = 1;
+            <span style="color: #b4f9f8;">}</span>
+        <span style="color: #ff98a4;">}</span>
+        
+        atender_proceso<span style="color: #ff98a4;">()</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Zona cr&#237;tica</span>
+        
+        turno = 0;
+        interesado<span style="color: #ff98a4;">[</span>1<span style="color: #ff98a4;">]</span> = 0;
+        sleep<span style="color: #ff98a4;">(</span>1<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Simular consumo</span>
+    <span style="color: #ff995e;">}</span>
+    <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">NULL</span>;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">pthread_t</span> <span style="color: #ff98a4;">hilo_productor</span>, <span style="color: #ff98a4;">hilo_consumidor</span>;
+    
+    pthread_create<span style="color: #ff995e;">(</span>&amp;hilo_productor, <span style="color: #ff995e;">NULL</span>, productor, <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span>;
+    pthread_create<span style="color: #ff995e;">(</span>&amp;hilo_consumidor, <span style="color: #ff995e;">NULL</span>, consumidor, <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span>;
+    
+    pthread_join<span style="color: #ff995e;">(</span>hilo_productor, <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span>;
+    pthread_join<span style="color: #ff995e;">(</span>hilo_consumidor, <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span>;
+    
+    <span style="color: #c099ff;">return</span> 0;
+<span style="color: #c099ff;">}</span>
+
+</pre>
+</div>
+</div>
+</li>
 </ul>
 </li>
 
-<li><a id="org02ad80e"></a>2. Algoritmo de Peterson<br />
-<div class="outline-text-5" id="text-org02ad80e">
+
+
+<li><a id="org14e7599"></a>2. Algoritmo de Peterson<br />
+<div class="outline-text-5" id="text-org14e7599">
 <p>
 El algoritmo de Peterson, también conocido como solución de
 Peterson,​ es un algoritmo de programación concurrente para exclusión
@@ -1740,7 +1835,8 @@ entrar y si es su turno.
 <ul class="org-ul">
 <li><b>Matemática</b>:
 <ul class="org-ul">
-<li>Exclusión mutua garantizada porque solo un proceso podrá cumplir `flag[j] <code>= false || turn =</code> i`.</li>
+<li>Exclusión mutua garantizada porque solo un proceso podrá cumplir
+`flag[j] <code>= false || turn =</code> i`.</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1782,14 +1878,104 @@ Ejemplo de del algoritmo de Peterson en C
 </pre>
 </div>
 </div>
+
+<ul class="org-ul">
+<li><a id="orge26671b"></a>Productor Consumidor<br />
+<div class="outline-text-6" id="text-orge26671b">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">pthread.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">unistd.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #86e1fc; font-weight: bold;">#define</span> <span style="color: #ff98a4;">MAX_PROCESOS</span> 10
+
+<span style="color: #c099ff;">typedef</span> <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">_nodo</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">prioridad</span>;
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">_nodo</span> *<span style="color: #ff98a4;">siguiente</span>;
+<span style="color: #c099ff;">}</span> <span style="color: #ffc777;">nodo</span>;
+
+<span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">cabeza</span> = <span style="color: #ff995e;">NULL</span>;
+
+<span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">turno</span> = 0;
+<span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">interesado</span><span style="color: #c099ff;">[</span>2<span style="color: #c099ff;">]</span> = <span style="color: #c099ff;">{</span>0, 0<span style="color: #c099ff;">}</span>;
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">numero_aleatorio</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">(</span>rand<span style="color: #ff98a4;">()</span> % 4<span style="color: #ff995e;">)</span> + 1;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">nodo</span>* <span style="color: #82aaff;">genera_proceso</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">nuevo</span> = <span style="color: #ff995e;">(</span><span style="color: #ffc777;">nodo</span>*<span style="color: #ff995e;">)</span>malloc<span style="color: #ff995e;">(</span><span style="color: #c099ff;">sizeof</span><span style="color: #ff98a4;">(</span>nodo<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;
+    nuevo-&gt;valor = id;
+    nuevo-&gt;prioridad = numero_aleatorio<span style="color: #ff995e;">()</span>;
+    nuevo-&gt;siguiente = <span style="color: #ff995e;">NULL</span>;
+    <span style="color: #c099ff;">return</span> nuevo;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">void</span>* <span style="color: #82aaff;">productor</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">void</span>* <span style="color: #ff98a4;">arg</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id</span> = *<span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span>*<span style="color: #ff995e;">)</span>arg;
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; 5; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        interesado<span style="color: #ff98a4;">[</span>0<span style="color: #ff98a4;">]</span> = 1;
+        turno = 1;
+        <span style="color: #c099ff;">while</span> <span style="color: #ff98a4;">(</span>interesado<span style="color: #b4f9f8;">[</span>1<span style="color: #b4f9f8;">]</span> &amp;&amp; turno == 1<span style="color: #ff98a4;">)</span>;
+
+        <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">nuevo</span> = genera_proceso<span style="color: #ff98a4;">(</span>id * 10 + i<span style="color: #ff98a4;">)</span>;
+        nuevo-&gt;siguiente = cabeza;
+        cabeza = nuevo;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Productor %d gener&#243; proceso %d con prioridad %d\n"</span>, id, nuevo-&gt;valor, nuevo-&gt;prioridad<span style="color: #ff98a4;">)</span>;
+
+        interesado<span style="color: #ff98a4;">[</span>0<span style="color: #ff98a4;">]</span> = 0;
+        sleep<span style="color: #ff98a4;">(</span>1<span style="color: #ff98a4;">)</span>;
+    <span style="color: #ff995e;">}</span>
+    <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">NULL</span>;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">void</span>* <span style="color: #82aaff;">consumidor</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">void</span>* <span style="color: #ff98a4;">arg</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id</span> = *<span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span>*<span style="color: #ff995e;">)</span>arg;
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; 5; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        interesado<span style="color: #ff98a4;">[</span>1<span style="color: #ff98a4;">]</span> = 1;
+        turno = 0;
+        <span style="color: #c099ff;">while</span> <span style="color: #ff98a4;">(</span>interesado<span style="color: #b4f9f8;">[</span>0<span style="color: #b4f9f8;">]</span> &amp;&amp; turno == 0<span style="color: #ff98a4;">)</span>;
+
+        <span style="color: #c099ff;">if</span> <span style="color: #ff98a4;">(</span>cabeza != <span style="color: #ff995e;">NULL</span><span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">temp</span> = cabeza;
+            cabeza = cabeza-&gt;siguiente;
+            printf<span style="color: #b4f9f8;">(</span><span style="color: #c3e88d;">"Consumidor %d atendi&#243; proceso %d con prioridad %d\n"</span>, id, temp-&gt;valor, temp-&gt;prioridad<span style="color: #b4f9f8;">)</span>;
+            free<span style="color: #b4f9f8;">(</span>temp<span style="color: #b4f9f8;">)</span>;
+        <span style="color: #ff98a4;">}</span> <span style="color: #c099ff;">else</span> <span style="color: #ff98a4;">{</span>
+            printf<span style="color: #b4f9f8;">(</span><span style="color: #c3e88d;">"No hay procesos para consumir\n"</span><span style="color: #b4f9f8;">)</span>;
+        <span style="color: #ff98a4;">}</span>
+
+        interesado<span style="color: #ff98a4;">[</span>1<span style="color: #ff98a4;">]</span> = 0;
+        sleep<span style="color: #ff98a4;">(</span>1<span style="color: #ff98a4;">)</span>;
+    <span style="color: #ff995e;">}</span>
+    <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">NULL</span>;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    srand<span style="color: #ff995e;">(</span>time<span style="color: #ff98a4;">(</span><span style="color: #ff995e;">NULL</span><span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;
+    <span style="color: #ffc777;">pthread_t</span> <span style="color: #ff98a4;">hilo_productor</span>, <span style="color: #ff98a4;">hilo_consumidor</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id_productor</span> = 1, <span style="color: #ff98a4;">id_consumidor</span> = 2;
+
+    pthread_create<span style="color: #ff995e;">(</span>&amp;hilo_productor, <span style="color: #ff995e;">NULL</span>, productor, &amp;id_productor<span style="color: #ff995e;">)</span>;
+    pthread_create<span style="color: #ff995e;">(</span>&amp;hilo_consumidor, <span style="color: #ff995e;">NULL</span>, consumidor, &amp;id_consumidor<span style="color: #ff995e;">)</span>;
+
+    pthread_join<span style="color: #ff995e;">(</span>hilo_productor, <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span>;
+    pthread_join<span style="color: #ff995e;">(</span>hilo_consumidor, <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span>;
+
+    <span style="color: #c099ff;">return</span> 0;
+<span style="color: #c099ff;">}</span>
+
+</pre>
+</div>
+</div>
 </li>
 </ul>
-</div>
-</div>
+</li>
 
-<div id="outline-container-orgdfe83c3" class="outline-3">
-<h3 id="orgdfe83c3">3. Algoritmo de Lamport’s Bakery</h3>
-<div class="outline-text-3" id="text-orgdfe83c3">
+<li><a id="org2da0187"></a>3. Algoritmo de Lamport’s Bakery<br />
+<div class="outline-text-5" id="text-org2da0187">
 <p>
 El algoritmo de Lamport’s Bakery es una generalización que permite la
 exclusión mutua para múltiples procesos, usando una "numeración"
@@ -1812,7 +1998,45 @@ es el dependiente y la sección crítica de un cliente es lo que realiza
 mientras es atendido.
 </p>
 
+<p>
+Panaderia 
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">-&gt;</td>
+<td class="org-right">2</td>
+<td class="org-left">-&gt;</td>
+<td class="org-right">3</td>
+<td class="org-left">-&gt;</td>
+<td class="org-right">4</td>
+<td class="org-left">-&gt;</td>
+<td class="org-right">5</td>
+</tr>
+</tbody>
+</table>
 
 <ul class="org-ul">
 <li><b>Variables</b>: `number[i]` representa el turno del proceso `i`. El valor más bajo en `number[i]` representa el turno de prioridad.</li>
@@ -1872,22 +2096,121 @@ Ejemplo de del algoritmo de Lamport’s Bakery en C
 </pre>
 </div>
 </div>
-</div>
+</li>
 
-<div id="outline-container-org1f35045" class="outline-3">
-<h3 id="org1f35045">4. Semáforos y Mutexes</h3>
-<div class="outline-text-3" id="text-org1f35045">
+<li><a id="org9bb7c28"></a>Productor Consumidor<br />
+<div class="outline-text-5" id="text-org9bb7c28">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">pthread.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">unistd.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #86e1fc; font-weight: bold;">#define</span> <span style="color: #ff98a4;">MAX_PROCESOS</span> 10
+
+<span style="color: #c099ff;">typedef</span> <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">_nodo</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">prioridad</span>;
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">_nodo</span> *<span style="color: #ff98a4;">siguiente</span>;
+<span style="color: #c099ff;">}</span> <span style="color: #ffc777;">nodo</span>;
+
+<span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">cabeza</span> = <span style="color: #ff995e;">NULL</span>;
+
+<span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">turno</span><span style="color: #c099ff;">[</span>2<span style="color: #c099ff;">]</span>;
+<span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">eligiendo</span><span style="color: #c099ff;">[</span>2<span style="color: #c099ff;">]</span> = <span style="color: #c099ff;">{</span>0, 0<span style="color: #c099ff;">}</span>;
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">numero_aleatorio</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">(</span>rand<span style="color: #ff98a4;">()</span> % 4<span style="color: #ff995e;">)</span> + 1;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">nodo</span>* <span style="color: #82aaff;">genera_proceso</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">nuevo</span> = <span style="color: #ff995e;">(</span><span style="color: #ffc777;">nodo</span>*<span style="color: #ff995e;">)</span>malloc<span style="color: #ff995e;">(</span><span style="color: #c099ff;">sizeof</span><span style="color: #ff98a4;">(</span>nodo<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;
+    nuevo-&gt;valor = id;
+    nuevo-&gt;prioridad = numero_aleatorio<span style="color: #ff995e;">()</span>;
+    nuevo-&gt;siguiente = <span style="color: #ff995e;">NULL</span>;
+    <span style="color: #c099ff;">return</span> nuevo;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">max_turno</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">return</span> turno<span style="color: #ff995e;">[</span>0<span style="color: #ff995e;">]</span> &gt; turno<span style="color: #ff995e;">[</span>1<span style="color: #ff995e;">]</span> ? turno<span style="color: #ff995e;">[</span>0<span style="color: #ff995e;">]</span> : turno<span style="color: #ff995e;">[</span>1<span style="color: #ff995e;">]</span>;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">void</span>* <span style="color: #82aaff;">productor</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">void</span>* <span style="color: #ff98a4;">arg</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id</span> = *<span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span>*<span style="color: #ff995e;">)</span>arg;
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; 5; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        eligiendo<span style="color: #ff98a4;">[</span>0<span style="color: #ff98a4;">]</span> = 1;
+        turno<span style="color: #ff98a4;">[</span>0<span style="color: #ff98a4;">]</span> = max_turno<span style="color: #ff98a4;">()</span> + 1;
+        eligiendo<span style="color: #ff98a4;">[</span>0<span style="color: #ff98a4;">]</span> = 0;
+
+        <span style="color: #c099ff;">while</span> <span style="color: #ff98a4;">(</span>eligiendo<span style="color: #b4f9f8;">[</span>1<span style="color: #b4f9f8;">]</span><span style="color: #ff98a4;">)</span>;
+        <span style="color: #c099ff;">while</span> <span style="color: #ff98a4;">(</span>turno<span style="color: #b4f9f8;">[</span>1<span style="color: #b4f9f8;">]</span> != 0 &amp;&amp; <span style="color: #b4f9f8;">(</span>turno<span style="color: #f989d3;">[</span>1<span style="color: #f989d3;">]</span> &lt; turno<span style="color: #f989d3;">[</span>0<span style="color: #f989d3;">]</span> || <span style="color: #f989d3;">(</span>turno<span style="color: #ffc777;">[</span>1<span style="color: #ffc777;">]</span> == turno<span style="color: #ffc777;">[</span>0<span style="color: #ffc777;">]</span> &amp;&amp; 1 &lt; 0<span style="color: #f989d3;">)</span><span style="color: #b4f9f8;">)</span><span style="color: #ff98a4;">)</span>;
+
+        <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">nuevo</span> = genera_proceso<span style="color: #ff98a4;">(</span>id * 10 + i<span style="color: #ff98a4;">)</span>;
+        nuevo-&gt;siguiente = cabeza;
+        cabeza = nuevo;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Productor %d gener&#243; proceso %d con prioridad %d\n"</span>, id, nuevo-&gt;valor, nuevo-&gt;prioridad<span style="color: #ff98a4;">)</span>;
+
+        turno<span style="color: #ff98a4;">[</span>0<span style="color: #ff98a4;">]</span> = 0;
+        sleep<span style="color: #ff98a4;">(</span>1<span style="color: #ff98a4;">)</span>;
+    <span style="color: #ff995e;">}</span>
+    <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">NULL</span>;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">void</span>* <span style="color: #82aaff;">consumidor</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">void</span>* <span style="color: #ff98a4;">arg</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id</span> = *<span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span>*<span style="color: #ff995e;">)</span>arg;
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; 5; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        eligiendo<span style="color: #ff98a4;">[</span>1<span style="color: #ff98a4;">]</span> = 1;
+        turno<span style="color: #ff98a4;">[</span>1<span style="color: #ff98a4;">]</span> = max_turno<span style="color: #ff98a4;">()</span> + 1;
+        eligiendo<span style="color: #ff98a4;">[</span>1<span style="color: #ff98a4;">]</span> = 0;
+
+        <span style="color: #c099ff;">while</span> <span style="color: #ff98a4;">(</span>eligiendo<span style="color: #b4f9f8;">[</span>0<span style="color: #b4f9f8;">]</span><span style="color: #ff98a4;">)</span>;
+        <span style="color: #c099ff;">while</span> <span style="color: #ff98a4;">(</span>turno<span style="color: #b4f9f8;">[</span>0<span style="color: #b4f9f8;">]</span> != 0 &amp;&amp; <span style="color: #b4f9f8;">(</span>turno<span style="color: #f989d3;">[</span>0<span style="color: #f989d3;">]</span> &lt; turno<span style="color: #f989d3;">[</span>1<span style="color: #f989d3;">]</span> || <span style="color: #f989d3;">(</span>turno<span style="color: #ffc777;">[</span>0<span style="color: #ffc777;">]</span> == turno<span style="color: #ffc777;">[</span>1<span style="color: #ffc777;">]</span> &amp;&amp; 0 &lt; 1<span style="color: #f989d3;">)</span><span style="color: #b4f9f8;">)</span><span style="color: #ff98a4;">)</span>;
+
+        <span style="color: #c099ff;">if</span> <span style="color: #ff98a4;">(</span>cabeza != <span style="color: #ff995e;">NULL</span><span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">temp</span> = cabeza;
+            cabeza = cabeza-&gt;siguiente;
+            printf<span style="color: #b4f9f8;">(</span><span style="color: #c3e88d;">"Consumidor %d atendi&#243; proceso %d con prioridad %d\n"</span>, id, temp-&gt;valor, temp-&gt;prioridad<span style="color: #b4f9f8;">)</span>;
+            free<span style="color: #b4f9f8;">(</span>temp<span style="color: #b4f9f8;">)</span>;
+        <span style="color: #ff98a4;">}</span> <span style="color: #c099ff;">else</span> <span style="color: #ff98a4;">{</span>
+            printf<span style="color: #b4f9f8;">(</span><span style="color: #c3e88d;">"No hay procesos para consumir\n"</span><span style="color: #b4f9f8;">)</span>;
+        <span style="color: #ff98a4;">}</span>
+
+        turno<span style="color: #ff98a4;">[</span>1<span style="color: #ff98a4;">]</span> = 0;
+        sleep<span style="color: #ff98a4;">(</span>1<span style="color: #ff98a4;">)</span>;
+    <span style="color: #ff995e;">}</span>
+    <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">NULL</span>;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    srand<span style="color: #ff995e;">(</span>time<span style="color: #ff98a4;">(</span><span style="color: #ff995e;">NULL</span><span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;
+    <span style="color: #ffc777;">pthread_t</span> <span style="color: #ff98a4;">hilo_productor</span>, <span style="color: #ff98a4;">hilo_consumidor</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id_productor</span> = 1, <span style="color: #ff98a4;">id_consumidor</span> = 2;
+
+    pthread_create<span style="color: #ff995e;">(</span>&amp;hilo_productor, <span style="color: #ff995e;">NULL</span>
+
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org8055381"></a>4. Semáforos y Mutexes<br />
+<div class="outline-text-5" id="text-org8055381">
 <p>
-Los semáforos y mutexes son mecanismos ampliamente utilizados para manejar la sincronización y exclusión mutua en sistemas operativos y multihilos.
+Los semáforos y mutexes son mecanismos ampliamente utilizados para
+manejar la sincronización y exclusión mutua en sistemas operativos
+y multihilos.
 </p>
 
 <ul class="org-ul">
-<li><b>Semáforo</b>: Un contador que controla el acceso de múltiples threads a un recurso compartido.
+<li><b>Semáforo</b>: Un contador que controla el acceso de múltiples threads
+a un recurso compartido.
 <ul class="org-ul">
-<li>`wait` (P): Decrementa el contador del semáforo. Si es negativo, el proceso espera.</li>
+<li>`wait` (P): Decrementa el contador del semáforo. Si es
+negativo, el proceso espera.</li>
 <li>`signal` (V): Incrementa el contador, liberando un proceso en espera.</li>
 </ul></li>
-<li><b>Mutex</b>: Similar a un semáforo binario, asegura que solo un thread acceda a la sección crítica.</li>
+<li><b>Mutex</b>: Similar a un semáforo binario, asegura que solo un thread
+acceda a la sección crítica.</li>
 </ul>
 
 
@@ -1922,12 +2245,293 @@ Ejemplo de del algoritmo de Semáforos y Mutexes en C
        <span style="color: #c099ff;">}</span>
 </pre>
 </div>
+
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">time.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">pthread.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #c099ff;">typedef</span> <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">_nodo</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">prioridad</span>;
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">_nodo</span> *<span style="color: #ff98a4;">siguiente</span>;
+<span style="color: #c099ff;">}</span> <span style="color: #ffc777;">nodo</span>;
+
+<span style="color: #ffc777;">pthread_mutex_t</span> <span style="color: #ff98a4;">mutex</span> = PTHREAD_MUTEX_INITIALIZER; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Inicializar el mutex para la sincronizaci&#243;n</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">numero_aleatorio</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">(</span>rand<span style="color: #ff98a4;">()</span> % 4<span style="color: #ff995e;">)</span> + 1;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">nodo</span>* <span style="color: #82aaff;">genera_proceso</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">static</span> <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">contador</span> = 1;
+    <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">nuevo</span> = <span style="color: #ff995e;">(</span><span style="color: #ffc777;">nodo</span>*<span style="color: #ff995e;">)</span>malloc<span style="color: #ff995e;">(</span><span style="color: #c099ff;">sizeof</span><span style="color: #ff98a4;">(</span>nodo<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>nuevo == <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Error al asignar memoria.\n"</span><span style="color: #ff98a4;">)</span>;
+        exit<span style="color: #ff98a4;">(</span>1<span style="color: #ff98a4;">)</span>;
+    <span style="color: #ff995e;">}</span>
+    nuevo-&gt;valor = contador++;
+    nuevo-&gt;prioridad = numero_aleatorio<span style="color: #ff995e;">()</span>;
+    nuevo-&gt;siguiente = <span style="color: #ff995e;">NULL</span>;
+    <span style="color: #c099ff;">return</span> nuevo;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">insertar_final</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">nodo</span>** <span style="color: #ff98a4;">cabeza</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    pthread_mutex_lock<span style="color: #ff995e;">(</span>&amp;mutex<span style="color: #ff995e;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Bloquear el acceso a la lista</span>
+    <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">nuevoNodo</span> = genera_proceso<span style="color: #ff995e;">()</span>;
+
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>*cabeza == <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        *cabeza = nuevoNodo;
+    <span style="color: #ff995e;">}</span> <span style="color: #c099ff;">else</span> <span style="color: #ff995e;">{</span>
+        <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">temp</span> = *cabeza;
+        <span style="color: #c099ff;">while</span> <span style="color: #ff98a4;">(</span>temp-&gt;siguiente != <span style="color: #ff995e;">NULL</span><span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            temp = temp-&gt;siguiente;
+        <span style="color: #ff98a4;">}</span>
+        temp-&gt;siguiente = nuevoNodo;
+    <span style="color: #ff995e;">}</span>
+    pthread_mutex_unlock<span style="color: #ff995e;">(</span>&amp;mutex<span style="color: #ff995e;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Liberar el acceso a la lista</span>
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">imprimir_lista</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">cabeza</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    pthread_mutex_lock<span style="color: #ff995e;">(</span>&amp;mutex<span style="color: #ff995e;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Bloquear el acceso a la lista</span>
+    <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">temp</span> = cabeza;
+    <span style="color: #c099ff;">while</span> <span style="color: #ff995e;">(</span>temp != <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Proceso %d (Prioridad %d) -&gt; "</span>, temp-&gt;valor, temp-&gt;prioridad<span style="color: #ff98a4;">)</span>;
+        temp = temp-&gt;siguiente;
+    <span style="color: #ff995e;">}</span>
+    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"NULL\n"</span><span style="color: #ff995e;">)</span>;
+    pthread_mutex_unlock<span style="color: #ff995e;">(</span>&amp;mutex<span style="color: #ff995e;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Liberar el acceso a la lista</span>
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">atender_prioridad_mas_alta</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">nodo</span>** <span style="color: #ff98a4;">cabeza</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    pthread_mutex_lock<span style="color: #ff995e;">(</span>&amp;mutex<span style="color: #ff995e;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Bloquear el acceso a la lista</span>
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>*cabeza == <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"No hay procesos para atender.\n"</span><span style="color: #ff98a4;">)</span>;
+        pthread_mutex_unlock<span style="color: #ff98a4;">(</span>&amp;mutex<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Liberar el acceso a la lista</span>
+        <span style="color: #c099ff;">return</span>;
+    <span style="color: #ff995e;">}</span>
+
+    <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">temp</span> = *cabeza;
+    <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">maxNodo</span> = temp;
+    <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">maxNodoPrevio</span> = <span style="color: #ff995e;">NULL</span>;
+    <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">previo</span> = <span style="color: #ff995e;">NULL</span>;
+
+    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Buscar el nodo con la prioridad m&#225;s alta</span>
+    <span style="color: #c099ff;">while</span> <span style="color: #ff995e;">(</span>temp != <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        <span style="color: #c099ff;">if</span> <span style="color: #ff98a4;">(</span>temp-&gt;prioridad &gt; maxNodo-&gt;prioridad<span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            maxNodo = temp;
+            maxNodoPrevio = previo;
+        <span style="color: #ff98a4;">}</span>
+        previo = temp;
+        temp = temp-&gt;siguiente;
+    <span style="color: #ff995e;">}</span>
+
+    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Atender el nodo con prioridad m&#225;s alta</span>
+    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"Atendiendo proceso %d con prioridad %d\n"</span>, maxNodo-&gt;valor, maxNodo-&gt;prioridad<span style="color: #ff995e;">)</span>;
+
+    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Eliminar el nodo de la lista</span>
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>maxNodoPrevio == <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        *cabeza = maxNodo-&gt;siguiente;  <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">El nodo con mayor prioridad es la cabeza</span>
+    <span style="color: #ff995e;">}</span> <span style="color: #c099ff;">else</span> <span style="color: #ff995e;">{</span>
+        maxNodoPrevio-&gt;siguiente = maxNodo-&gt;siguiente;
+    <span style="color: #ff995e;">}</span>
+
+    free<span style="color: #ff995e;">(</span>maxNodo<span style="color: #ff995e;">)</span>;
+    pthread_mutex_unlock<span style="color: #ff995e;">(</span>&amp;mutex<span style="color: #ff995e;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Liberar el acceso a la lista</span>
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    srand<span style="color: #ff995e;">(</span>time<span style="color: #ff98a4;">(</span><span style="color: #ff995e;">NULL</span><span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;
+    <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">cabeza</span> = <span style="color: #ff995e;">NULL</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">op</span> = 0;
+
+    <span style="color: #c099ff;">do</span> <span style="color: #ff995e;">{</span>
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"1. Genera proceso\n"</span><span style="color: #ff98a4;">)</span>;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"2. Atiende proceso\n"</span><span style="color: #ff98a4;">)</span>;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"3. Mostrar Lista de Procesos\n"</span><span style="color: #ff98a4;">)</span>;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"4. Salir\n"</span><span style="color: #ff98a4;">)</span>;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Seleccione una opci&#243;n: "</span><span style="color: #ff98a4;">)</span>;
+        scanf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"%d"</span>, &amp;op<span style="color: #ff98a4;">)</span>;
+
+        <span style="color: #c099ff;">switch</span> <span style="color: #ff98a4;">(</span>op<span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            <span style="color: #c099ff;">case</span> 1:
+                insertar_final<span style="color: #b4f9f8;">(</span>&amp;cabeza<span style="color: #b4f9f8;">)</span>;
+                <span style="color: #c099ff;">break</span>;
+            <span style="color: #c099ff;">case</span> 2:
+                atender_prioridad_mas_alta<span style="color: #b4f9f8;">(</span>&amp;cabeza<span style="color: #b4f9f8;">)</span>;
+                <span style="color: #c099ff;">break</span>;
+            <span style="color: #c099ff;">case</span> 3:
+                imprimir_lista<span style="color: #b4f9f8;">(</span>cabeza<span style="color: #b4f9f8;">)</span>;
+                <span style="color: #c099ff;">break</span>;
+            <span style="color: #c099ff;">case</span> 4:
+                printf<span style="color: #b4f9f8;">(</span><span style="color: #c3e88d;">"Saliendo...\n"</span><span style="color: #b4f9f8;">)</span>;
+                <span style="color: #c099ff;">break</span>;
+            <span style="color: #c099ff;">default</span>:
+                printf<span style="color: #b4f9f8;">(</span><span style="color: #c3e88d;">"Opci&#243;n no v&#225;lida\n"</span><span style="color: #b4f9f8;">)</span>;
+        <span style="color: #ff98a4;">}</span>
+    <span style="color: #ff995e;">}</span> <span style="color: #c099ff;">while</span> <span style="color: #ff995e;">(</span>op != 4<span style="color: #ff995e;">)</span>;
+
+    pthread_mutex_destroy<span style="color: #ff995e;">(</span>&amp;mutex<span style="color: #ff995e;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Destruir el mutex al finalizar</span>
+    <span style="color: #c099ff;">return</span> 0;
+<span style="color: #c099ff;">}</span>
+
+</pre>
+</div>
+</div>
+
+<ul class="org-ul">
+<li><a id="org9232d49"></a>Productor Consumidos<br />
+<div class="outline-text-6" id="text-org9232d49">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">pthread.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">semaphore.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">unistd.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #86e1fc; font-weight: bold;">#define</span> <span style="color: #ff98a4;">MAX_PROCESOS</span> 10  <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Capacidad m&#225;xima de la cola de procesos</span>
+<span style="color: #86e1fc; font-weight: bold;">#define</span> <span style="color: #ff98a4;">NUM_PRODUCTORES</span> 3
+<span style="color: #86e1fc; font-weight: bold;">#define</span> <span style="color: #ff98a4;">NUM_CONSUMIDORES</span> 2
+
+<span style="color: #c099ff;">typedef</span> <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">_nodo</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">prioridad</span>;
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">_nodo</span> *<span style="color: #ff98a4;">siguiente</span>;
+<span style="color: #c099ff;">}</span> <span style="color: #ffc777;">nodo</span>;
+
+<span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">cabeza</span> = <span style="color: #ff995e;">NULL</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Cabeza de la lista de procesos</span>
+<span style="color: #ffc777;">pthread_mutex_t</span> <span style="color: #ff98a4;">mutex</span> = PTHREAD_MUTEX_INITIALIZER; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Mutex para sincronizar acceso a la lista</span>
+<span style="color: #ffc777;">sem_t</span> <span style="color: #ff98a4;">espacios</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Sem&#225;foro para los espacios libres en la cola</span>
+<span style="color: #ffc777;">sem_t</span> <span style="color: #ff98a4;">elementos</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Sem&#225;foro para los elementos presentes en la cola</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">numero_aleatorio</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">(</span>rand<span style="color: #ff98a4;">()</span> % 4<span style="color: #ff995e;">)</span> + 1;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Genera un nuevo proceso</span>
+<span style="color: #ffc777;">nodo</span>* <span style="color: #82aaff;">genera_proceso</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">nuevo</span> = <span style="color: #ff995e;">(</span><span style="color: #ffc777;">nodo</span>*<span style="color: #ff995e;">)</span>malloc<span style="color: #ff995e;">(</span><span style="color: #c099ff;">sizeof</span><span style="color: #ff98a4;">(</span>nodo<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>nuevo == <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Error al asignar memoria.\n"</span><span style="color: #ff98a4;">)</span>;
+        exit<span style="color: #ff98a4;">(</span>1<span style="color: #ff98a4;">)</span>;
+    <span style="color: #ff995e;">}</span>
+    nuevo-&gt;valor = id;
+    nuevo-&gt;prioridad = numero_aleatorio<span style="color: #ff995e;">()</span>;
+    nuevo-&gt;siguiente = <span style="color: #ff995e;">NULL</span>;
+    <span style="color: #c099ff;">return</span> nuevo;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Funci&#243;n para que el productor agregue procesos a la cola</span>
+<span style="color: #ffc777;">void</span>* <span style="color: #82aaff;">productor</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">void</span>* <span style="color: #ff98a4;">arg</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id</span> = *<span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span>*<span style="color: #ff995e;">)</span>arg;
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; 5; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span> <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Cada productor produce 5 procesos</span>
+        sem_wait<span style="color: #ff98a4;">(</span>&amp;espacios<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Espera a que haya espacio en la cola</span>
+        <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">nuevo</span> = genera_proceso<span style="color: #ff98a4;">(</span>id * 10 + i<span style="color: #ff98a4;">)</span>;
+
+        pthread_mutex_lock<span style="color: #ff98a4;">(</span>&amp;mutex<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Bloqueo de acceso a la cola</span>
+        nuevo-&gt;siguiente = cabeza;
+        cabeza = nuevo;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Productor %d gener&#243; proceso %d con prioridad %d\n"</span>, id, nuevo-&gt;valor, nuevo-&gt;prioridad<span style="color: #ff98a4;">)</span>;
+        pthread_mutex_unlock<span style="color: #ff98a4;">(</span>&amp;mutex<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Liberar acceso a la cola</span>
+
+        sem_post<span style="color: #ff98a4;">(</span>&amp;elementos<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Incrementa el contador de elementos</span>
+        sleep<span style="color: #ff98a4;">(</span>1<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Simula tiempo de producci&#243;n</span>
+    <span style="color: #ff995e;">}</span>
+    pthread_exit<span style="color: #ff995e;">(</span><span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span>;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Funci&#243;n para que el consumidor retire y procese el elemento con mayor prioridad</span>
+<span style="color: #ffc777;">void</span>* <span style="color: #82aaff;">consumidor</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">void</span>* <span style="color: #ff98a4;">arg</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id</span> = *<span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span>*<span style="color: #ff995e;">)</span>arg;
+    <span style="color: #c099ff;">while</span> <span style="color: #ff995e;">(</span>1<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        sem_wait<span style="color: #ff98a4;">(</span>&amp;elementos<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Espera a que haya elementos en la cola</span>
+
+        pthread_mutex_lock<span style="color: #ff98a4;">(</span>&amp;mutex<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Bloqueo de acceso a la cola</span>
+        <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Buscar el proceso de mayor prioridad</span>
+        <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">temp</span> = cabeza;
+        <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">maxNodo</span> = temp;
+        <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">maxNodoPrevio</span> = <span style="color: #ff995e;">NULL</span>;
+        <span style="color: #ffc777;">nodo</span>* <span style="color: #ff98a4;">previo</span> = <span style="color: #ff995e;">NULL</span>;
+
+        <span style="color: #c099ff;">while</span> <span style="color: #ff98a4;">(</span>temp != <span style="color: #ff995e;">NULL</span><span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            <span style="color: #c099ff;">if</span> <span style="color: #b4f9f8;">(</span>temp-&gt;prioridad &gt; maxNodo-&gt;prioridad<span style="color: #b4f9f8;">)</span> <span style="color: #b4f9f8;">{</span>
+                maxNodo = temp;
+                maxNodoPrevio = previo;
+            <span style="color: #b4f9f8;">}</span>
+            previo = temp;
+            temp = temp-&gt;siguiente;
+        <span style="color: #ff98a4;">}</span>
+
+        <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Procesar el nodo de mayor prioridad</span>
+        <span style="color: #c099ff;">if</span> <span style="color: #ff98a4;">(</span>maxNodoPrevio == <span style="color: #ff995e;">NULL</span><span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            cabeza = maxNodo-&gt;siguiente;
+        <span style="color: #ff98a4;">}</span> <span style="color: #c099ff;">else</span> <span style="color: #ff98a4;">{</span>
+            maxNodoPrevio-&gt;siguiente = maxNodo-&gt;siguiente;
+        <span style="color: #ff98a4;">}</span>
+
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Consumidor %d atendiendo proceso %d con prioridad %d\n"</span>, id, maxNodo-&gt;valor, maxNodo-&gt;prioridad<span style="color: #ff98a4;">)</span>;
+        free<span style="color: #ff98a4;">(</span>maxNodo<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Liberar el proceso de la memoria</span>
+        pthread_mutex_unlock<span style="color: #ff98a4;">(</span>&amp;mutex<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Liberar acceso a la cola</span>
+
+        sem_post<span style="color: #ff98a4;">(</span>&amp;espacios<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Incrementa el contador de espacios libres</span>
+        sleep<span style="color: #ff98a4;">(</span>1<span style="color: #ff98a4;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Simula tiempo de procesamiento</span>
+    <span style="color: #ff995e;">}</span>
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    srand<span style="color: #ff995e;">(</span>time<span style="color: #ff98a4;">(</span><span style="color: #ff995e;">NULL</span><span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;
+    <span style="color: #ffc777;">pthread_t</span> <span style="color: #ff98a4;">productores</span><span style="color: #ff995e;">[</span>NUM_PRODUCTORES<span style="color: #ff995e;">]</span>;
+    <span style="color: #ffc777;">pthread_t</span> <span style="color: #ff98a4;">consumidores</span><span style="color: #ff995e;">[</span>NUM_CONSUMIDORES<span style="color: #ff995e;">]</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">ids_productores</span><span style="color: #ff995e;">[</span>NUM_PRODUCTORES<span style="color: #ff995e;">]</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">ids_consumidores</span><span style="color: #ff995e;">[</span>NUM_CONSUMIDORES<span style="color: #ff995e;">]</span>;
+
+    sem_init<span style="color: #ff995e;">(</span>&amp;espacios, 0, MAX_PROCESOS<span style="color: #ff995e;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Inicializa el sem&#225;foro de espacios con el tama&#241;o m&#225;ximo de la cola</span>
+    sem_init<span style="color: #ff995e;">(</span>&amp;elementos, 0, 0<span style="color: #ff995e;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Inicializa el sem&#225;foro de elementos en 0, ya que la cola est&#225; inicialmente vac&#237;a</span>
+
+    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Crear hilos productores</span>
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; NUM_PRODUCTORES; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        ids_productores<span style="color: #ff98a4;">[</span>i<span style="color: #ff98a4;">]</span> = i + 1;
+        pthread_create<span style="color: #ff98a4;">(</span>&amp;productores<span style="color: #b4f9f8;">[</span>i<span style="color: #b4f9f8;">]</span>, <span style="color: #ff995e;">NULL</span>, productor, &amp;ids_productores<span style="color: #b4f9f8;">[</span>i<span style="color: #b4f9f8;">]</span><span style="color: #ff98a4;">)</span>;
+    <span style="color: #ff995e;">}</span>
+
+    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Crear hilos consumidores</span>
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; NUM_CONSUMIDORES; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        ids_consumidores<span style="color: #ff98a4;">[</span>i<span style="color: #ff98a4;">]</span> = i + 1;
+        pthread_create<span style="color: #ff98a4;">(</span>&amp;consumidores<span style="color: #b4f9f8;">[</span>i<span style="color: #b4f9f8;">]</span>, <span style="color: #ff995e;">NULL</span>, consumidor, &amp;ids_consumidores<span style="color: #b4f9f8;">[</span>i<span style="color: #b4f9f8;">]</span><span style="color: #ff98a4;">)</span>;
+    <span style="color: #ff995e;">}</span>
+
+    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Esperar a que los productores terminen</span>
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; NUM_PRODUCTORES; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        pthread_join<span style="color: #ff98a4;">(</span>productores<span style="color: #b4f9f8;">[</span>i<span style="color: #b4f9f8;">]</span>, <span style="color: #ff995e;">NULL</span><span style="color: #ff98a4;">)</span>;
+    <span style="color: #ff995e;">}</span>
+
+    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Terminar el programa despu&#233;s de un tiempo</span>
+    sleep<span style="color: #ff995e;">(</span>10<span style="color: #ff995e;">)</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Permitir que los consumidores trabajen un poco antes de finalizar</span>
+    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"Finalizando...\n"</span><span style="color: #ff995e;">)</span>;
+
+    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Liberar los recursos</span>
+    sem_destroy<span style="color: #ff995e;">(</span>&amp;espacios<span style="color: #ff995e;">)</span>;
+    sem_destroy<span style="color: #ff995e;">(</span>&amp;elementos<span style="color: #ff995e;">)</span>;
+    pthread_mutex_destroy<span style="color: #ff995e;">(</span>&amp;mutex<span style="color: #ff995e;">)</span>;
+    <span style="color: #c099ff;">return</span> 0;
+<span style="color: #c099ff;">}</span>
+
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
 </div>
 
 
-<div id="outline-container-orgd7d08bc" class="outline-4">
-<h4 id="orgd7d08bc">1.2 Sincronización</h4>
-<div class="outline-text-4" id="text-orgd7d08bc">
+
+<div id="outline-container-org9b9a858" class="outline-4">
+<h4 id="org9b9a858">1.2 Sincronización</h4>
+<div class="outline-text-4" id="text-org9b9a858">
 <p>
 La sincronización se encarga de coordinar la ejecución de múltiples procesos o threads para garantizar que operen de manera ordenada.
 </p>
@@ -1942,9 +2546,9 @@ La sincronización se encarga de coordinar la ejecución de múltiples procesos 
 </div>
 </div>
 
-<div id="outline-container-org9903a8f" class="outline-4">
-<h4 id="org9903a8f">1.3 Condiciones de carrera y sincronización</h4>
-<div class="outline-text-4" id="text-org9903a8f">
+<div id="outline-container-org8abf2e1" class="outline-4">
+<h4 id="org8abf2e1">1.3 Condiciones de carrera y sincronización</h4>
+<div class="outline-text-4" id="text-org8abf2e1">
 <p>
 Las condiciones de carrera ocurren cuando dos o más procesos acceden a recursos compartidos de manera concurrente y el resultado depende del orden de ejecución. Esto se soluciona con:
 </p>
@@ -1956,9 +2560,9 @@ Las condiciones de carrera ocurren cuando dos o más procesos acceden a recursos
 </div>
 </div>
 
-<div id="outline-container-org473b318" class="outline-3">
-<h3 id="org473b318">2. Secuenciabilidad</h3>
-<div class="outline-text-3" id="text-org473b318">
+<div id="outline-container-orgc6a3054" class="outline-3">
+<h3 id="orgc6a3054">2. Secuenciabilidad</h3>
+<div class="outline-text-3" id="text-orgc6a3054">
 <p>
 La secuenciabilidad implica gestionar el orden de ejecución de los procesos o threads en un sistema operativo para asegurar que se cumplan ciertos requisitos de rendimiento o justicia en el acceso a recursos. Es fundamental para la planificación de procesos.
 </p>
@@ -1968,9 +2572,9 @@ La secuenciabilidad implica gestionar el orden de ejecución de los procesos o t
 </ul>
 </div>
 
-<div id="outline-container-org41c4473" class="outline-4">
-<h4 id="org41c4473">2.1 Algoritmos de Planificación de Procesos</h4>
-<div class="outline-text-4" id="text-org41c4473">
+<div id="outline-container-org2afcf83" class="outline-4">
+<h4 id="org2afcf83">2.1 Algoritmos de Planificación de Procesos</h4>
+<div class="outline-text-4" id="text-org2afcf83">
 <p>
 Los algoritmos de planificación determinan el orden en que se ejecutan los procesos en la CPU. Los más comunes incluyen:
 </p>
@@ -1984,9 +2588,9 @@ Los algoritmos de planificación determinan el orden en que se ejecutan los proc
 </div>
 </div>
 
-<div id="outline-container-org603b99b" class="outline-4">
-<h4 id="org603b99b">2.2 Algoritmos de Detección y Prevención de Interbloqueos (Deadlocks)</h4>
-<div class="outline-text-4" id="text-org603b99b">
+<div id="outline-container-org68c74a7" class="outline-4">
+<h4 id="org68c74a7">2.2 Algoritmos de Detección y Prevención de Interbloqueos (Deadlocks)</h4>
+<div class="outline-text-4" id="text-org68c74a7">
 <p>
 Los interbloqueos ocurren cuando dos o más procesos esperan indefinidamente por recursos que otros procesos poseen.
 </p>
@@ -2008,9 +2612,9 @@ Los interbloqueos ocurren cuando dos o más procesos esperan indefinidamente por
 </div>
 </div>
 
-<div id="outline-container-org37e7613" class="outline-4">
-<h4 id="org37e7613">2.3 Sincronización y Secuenciabilidad</h4>
-<div class="outline-text-4" id="text-org37e7613">
+<div id="outline-container-orgf0f56e6" class="outline-4">
+<h4 id="orgf0f56e6">2.3 Sincronización y Secuenciabilidad</h4>
+<div class="outline-text-4" id="text-orgf0f56e6">
 <p>
 La sincronización y secuenciabilidad son clave para evitar conflictos y maximizar el rendimiento. Se utilizan técnicas como:
 </p>
@@ -2021,9 +2625,9 @@ La sincronización y secuenciabilidad son clave para evitar conflictos y maximiz
 </div>
 </div>
 
-<div id="outline-container-orgfd34ce3" class="outline-4">
-<h4 id="orgfd34ce3">3. Conclusión</h4>
-<div class="outline-text-4" id="text-orgfd34ce3">
+<div id="outline-container-org025429c" class="outline-4">
+<h4 id="org025429c">3. Conclusión</h4>
+<div class="outline-text-4" id="text-org025429c">
 <p>
 La concurrencia y secuenciabilidad son fundamentales en la gestión de
 sistemas operativos modernos. Los algoritmos y métodos descritos
@@ -2039,29 +2643,75 @@ y aplicaciones robustas en entornos concurrentes.
 
 
 
-<div id="outline-container-org2db94b3" class="outline-3">
-<h3 id="org2db94b3">Niveles, objetivos y criterios de planificación</h3>
-<div class="outline-text-3" id="text-org2db94b3">
+<div id="outline-container-orgb877425" class="outline-3">
+<h3 id="orgb877425">Niveles, Objetivos y Criterios de Planificación</h3>
+<div class="outline-text-3" id="text-orgb877425">
 <p>
-La planificación es el proceso de asignar recursos del sistema a los
-procesos. Existen varios niveles:
-</p>
-<ul class="org-ul">
-<li><b><b>Planificación a largo plazo</b></b>: Selecciona qué procesos ingresar al
-sistema.</li>
-<li><b><b>Planificación a medio plazo</b></b>: Decide qué procesos en espera se
-vuelven listos.</li>
-<li><b><b>Planificación a corto plazo</b></b>: Selecciona qué proceso listo ocupará la CPU.</li>
-</ul>
-
-<p>
-Los criterios de planificación pueden incluir la equidad, la eficiencia y el tiempo de respuesta.
+La planificación es el proceso de asignar recursos del sistema a los procesos, y su objetivo principal es optimizar el rendimiento del sistema en función de ciertos criterios como el tiempo de respuesta, la eficiencia y la equidad. Existen varios niveles de planificación, que determinan cómo se gestionan los procesos en diferentes etapas de su ciclo de vida.
 </p>
 </div>
 
-<div id="outline-container-org8c5cc71" class="outline-4">
-<h4 id="org8c5cc71">Ejemplo en C: Implementación simple de planificación Round Robin</h4>
-<div class="outline-text-4" id="text-org8c5cc71">
+<div id="outline-container-orga501624" class="outline-4">
+<h4 id="orga501624">Niveles de Planificación</h4>
+<div class="outline-text-4" id="text-orga501624">
+<ul class="org-ul">
+<li><b><b>Planificación a largo plazo</b></b>: 
+<ul class="org-ul">
+<li>Este nivel de planificación se encarga de seleccionar qué procesos deben entrar en el sistema para su ejecución.</li>
+<li>Controla el grado de multiprogramación del sistema, es decir, el número de procesos que se ejecutan en un momento dado.</li>
+<li>Decisiones de planificación a largo plazo suelen tomarse con menor frecuencia y se realizan en sistemas de tipo batch o procesamiento por lotes.</li>
+</ul></li>
+<li><b><b>Planificación a medio plazo</b></b>:
+<ul class="org-ul">
+<li>Se encarga de manejar los procesos que están en espera o en suspensión, decidiendo cuáles de ellos pasarán a estado "listo" para su ejecución.</li>
+<li>Es importante en sistemas donde existe una limitación de recursos, ya que ayuda a equilibrar la carga liberando o activando procesos según el estado de los recursos del sistema.</li>
+<li>Este nivel ayuda a optimizar la eficiencia en sistemas donde algunos procesos deben esperar debido a la disponibilidad limitada de memoria o CPU.</li>
+</ul></li>
+<li><b><b>Planificación a corto plazo</b></b>:
+<ul class="org-ul">
+<li>Este nivel se encarga de seleccionar cuál de los procesos en estado "listo" va a ser ejecutado por la CPU.</li>
+<li>Es el nivel más frecuente de planificación y su objetivo es minimizar el tiempo de inactividad de la CPU, cambiando de proceso rápidamente.</li>
+<li>Los algoritmos de planificación a corto plazo incluyen Round Robin, SJF y planificación por prioridad.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8f488f5" class="outline-4">
+<h4 id="org8f488f5">Objetivos de la Planificación</h4>
+<div class="outline-text-4" id="text-org8f488f5">
+<ul class="org-ul">
+<li><b><b>Optimización del tiempo de respuesta</b></b>: Especialmente importante en sistemas interactivos, donde los usuarios esperan respuestas rápidas.</li>
+<li><b><b>Maximización del rendimiento</b></b>: Ejecutar la mayor cantidad de procesos posible en un tiempo determinado.</li>
+<li><b><b>Equidad</b></b>: Asegurar que todos los procesos tengan una oportunidad justa de utilizar la CPU y evitar la inanición o starvation de procesos.</li>
+<li><b><b>Minimización del tiempo de espera</b></b>: Reducir el tiempo que un proceso permanece en la cola esperando ser ejecutado.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd13b516" class="outline-4">
+<h4 id="orgd13b516">Criterios de Planificación</h4>
+<div class="outline-text-4" id="text-orgd13b516">
+<ul class="org-ul">
+<li><b><b>Equidad</b></b>: El sistema debe asignar recursos de manera equitativa, evitando el bloqueo de procesos de baja prioridad.</li>
+<li><b><b>Eficiencia</b></b>: Aumentar la utilización de la CPU al máximo, minimizando el tiempo de inactividad.</li>
+<li><b><b>Tiempo de respuesta</b></b>: Reducir el tiempo que tarda el sistema en responder a una solicitud del usuario.</li>
+<li><b><b>Tiempo de espera</b></b>: Minimizar el tiempo que un proceso pasa esperando en la cola de "listos".</li>
+<li><b><b>Tiempo de retorno</b></b>: Minimizar el tiempo total que un proceso tarda desde que se envía hasta que finaliza.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5d5c700" class="outline-4">
+<h4 id="org5d5c700">Ejemplo en C: Implementación Simple de Planificación Round Robin</h4>
+<div class="outline-text-4" id="text-org5d5c700">
+<p>
+El siguiente código en C es una implementación simple de un esquema de
+planificación Round Robin. En este ejemplo, se simulan tres procesos
+que se ejecutan en un bucle y cada proceso tiene un intervalo de
+tiempo fijo para su ejecución.
+</p>
+
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">unistd.h</span><span style="color: #c099ff;">&gt;</span>
@@ -2085,202 +2735,34 @@ Los criterios de planificación pueden incluir la equidad, la eficiencia y el ti
 </div>
 </div>
 
-<div id="outline-container-orgcf711dc" class="outline-3">
-<h3 id="orgcf711dc">Técnicas de administración del planificador</h3>
-<div class="outline-text-3" id="text-orgcf711dc">
+<div id="outline-container-orgd122261" class="outline-3">
+<h3 id="orgd122261">Técnicas de Administración del Planificador</h3>
+<div class="outline-text-3" id="text-orgd122261">
 <p>
-El planificador utiliza varias técnicas para mejorar la gestión de procesos:
+El planificador utiliza varias técnicas para mejorar la gestión de procesos y optimizar el rendimiento del sistema. Algunas de las técnicas principales incluyen:
 </p>
+
 <ul class="org-ul">
-<li><b><b>Round Robin</b></b>: Asigna a cada proceso una franja de tiempo.</li>
-<li><b><b>Prioridad</b></b>: Da preferencia a procesos con alta prioridad.</li>
-<li><b><b>Planificación en tiempo real</b></b>: Asegura que tareas críticas se ejecuten en el momento correcto.</li>
-</ul>
-</div>
-
-<div id="outline-container-orge50432b" class="outline-4">
-<h4 id="orge50432b">Ejemplo en C: Planificación simple basada en prioridades</h4>
-<div class="outline-text-4" id="text-orge50432b">
-<div class="org-src-container">
-<pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
-<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
-
-<span style="color: #c099ff;">typedef</span> <span style="color: #c099ff;">struct</span> <span style="color: #c099ff;">{</span>
-    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id</span>;
-    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">prioridad</span>;
-<span style="color: #c099ff;">}</span> <span style="color: #ffc777;">Proceso</span>;
-
-<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">ejecutar</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">Proceso</span> <span style="color: #ff98a4;">p</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
-    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"Ejecutando proceso %d con prioridad %d\n"</span>, p.id, p.prioridad<span style="color: #ff995e;">)</span>;
-<span style="color: #c099ff;">}</span>
-
-<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
-    <span style="color: #ffc777;">Proceso</span> <span style="color: #ff98a4;">procesos</span><span style="color: #ff995e;">[]</span> = <span style="color: #ff995e;">{</span><span style="color: #ff98a4;">{</span>1, 2<span style="color: #ff98a4;">}</span>, <span style="color: #ff98a4;">{</span>2, 1<span style="color: #ff98a4;">}</span>, <span style="color: #ff98a4;">{</span>3, 3<span style="color: #ff98a4;">}</span><span style="color: #ff995e;">}</span>;
-    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">n</span> = <span style="color: #c099ff;">sizeof</span><span style="color: #ff995e;">(</span>procesos<span style="color: #ff995e;">)</span> / <span style="color: #c099ff;">sizeof</span><span style="color: #ff995e;">(</span>procesos<span style="color: #ff98a4;">[</span>0<span style="color: #ff98a4;">]</span><span style="color: #ff995e;">)</span>;
-
-    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Ordenar procesos por prioridad</span>
-    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; n - 1; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
-        <span style="color: #c099ff;">for</span> <span style="color: #ff98a4;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">j</span> = i + 1; j &lt; n; j++<span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
-            <span style="color: #c099ff;">if</span> <span style="color: #b4f9f8;">(</span>procesos<span style="color: #f989d3;">[</span>i<span style="color: #f989d3;">]</span>.prioridad &gt; procesos<span style="color: #f989d3;">[</span>j<span style="color: #f989d3;">]</span>.prioridad<span style="color: #b4f9f8;">)</span> <span style="color: #b4f9f8;">{</span>
-                <span style="color: #ffc777;">Proceso</span> <span style="color: #ff98a4;">temp</span> = procesos<span style="color: #f989d3;">[</span>i<span style="color: #f989d3;">]</span>;
-                procesos<span style="color: #f989d3;">[</span>i<span style="color: #f989d3;">]</span> = procesos<span style="color: #f989d3;">[</span>j<span style="color: #f989d3;">]</span>;
-                procesos<span style="color: #f989d3;">[</span>j<span style="color: #f989d3;">]</span> = temp;
-            <span style="color: #b4f9f8;">}</span>
-        <span style="color: #ff98a4;">}</span>
-    <span style="color: #ff995e;">}</span>
-
-    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; n; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
-        ejecutar<span style="color: #ff98a4;">(</span>procesos<span style="color: #b4f9f8;">[</span>i<span style="color: #b4f9f8;">]</span><span style="color: #ff98a4;">)</span>;
-    <span style="color: #ff995e;">}</span>
-
-    <span style="color: #c099ff;">return</span> 0;
-<span style="color: #c099ff;">}</span>
-</pre>
-</div>
-<p>
-y
-</p>
-</div>
-</div>
-
-<div id="outline-container-org150f9bb" class="outline-4">
-<h4 id="org150f9bb">ejercicios</h4>
-<div class="outline-text-4" id="text-org150f9bb">
-</div>
+<li><b><b>Round Robin</b></b>: 
 <ul class="org-ul">
-<li><a id="orge4b308d"></a>Procesos  División por restas, Potencias con sumas, Fork<br />
-<div class="outline-text-5" id="text-orge4b308d">
-<div class="org-src-container">
-<pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
-<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">unistd.h</span><span style="color: #c099ff;">&gt;</span>
-<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">sys/wait.h</span><span style="color: #c099ff;">&gt;</span>
-<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
+<li>En este algoritmo, cada proceso recibe una franja de tiempo fija (quantum) para su ejecución.</li>
+<li>Si un proceso no se completa durante su quantum, se coloca al final de la cola de procesos listos, y la CPU se asigna al siguiente proceso.</li>
+<li>Es una técnica equitativa y adecuada para sistemas de tiempo compartido, aunque el tamaño del quantum debe elegirse con cuidado.</li>
+</ul></li>
 
-<span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Funci&#243;n recursiva para divisi&#243;n por restas</span>
-<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">division_por_restas</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">dividendo</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">divisor</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">cociente</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
-    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>dividendo &lt; divisor<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
-        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Divisi&#243;n por restas: Cociente = %d, Residuo = %d\n"</span>, cociente, dividendo<span style="color: #ff98a4;">)</span>;
-        <span style="color: #c099ff;">return</span> cociente;
-    <span style="color: #ff995e;">}</span>
-    <span style="color: #c099ff;">return</span> division_por_restas<span style="color: #ff995e;">(</span>dividendo - divisor, divisor, cociente + 1<span style="color: #ff995e;">)</span>;
-<span style="color: #c099ff;">}</span>
+<li><b><b>Prioridad</b></b>:
+<ul class="org-ul">
+<li>Este algoritmo asigna a cada proceso una prioridad, y los procesos con mayor prioridad tienen preferencia para ser ejecutados.</li>
+<li>La prioridad puede ser estática (fija) o dinámica (cambia durante la ejecución).</li>
+<li>A veces se emplea un mecanismo de "envejecimiento" para aumentar la prioridad de procesos que llevan mucho tiempo esperando, evitando que queden bloqueados.</li>
+</ul></li>
 
-<span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Funci&#243;n recursiva para multiplicaci&#243;n por sumas</span>
-<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">multiplicacion_por_sumas</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">multiplicando</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">multiplicador</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
-    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>multiplicador == 0<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
-        <span style="color: #c099ff;">return</span> 0;
-    <span style="color: #ff995e;">}</span>
-    <span style="color: #c099ff;">return</span> multiplicando + multiplicacion_por_sumas<span style="color: #ff995e;">(</span>multiplicando, multiplicador - 1<span style="color: #ff995e;">)</span>;
-<span style="color: #c099ff;">}</span>
-
-<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
-
-  <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">pid</span> = fork<span style="color: #ff995e;">()</span>;
-    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>pid &lt; 0<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
-        perror<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Error al crear el proceso"</span><span style="color: #ff98a4;">)</span>;
-        <span style="color: #c099ff;">return</span> 1;
-    <span style="color: #ff995e;">}</span> <span style="color: #c099ff;">else</span> <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>pid == 0<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
-      printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"valor del pid hijo %d \n"</span>, pid<span style="color: #ff98a4;">)</span>;
-      <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Proceso hijo: realiza la divisi&#243;n por restas de forma recursiva</span>
-        <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">dividendo</span> = 20, <span style="color: #ff98a4;">divisor</span> = 3;
-        division_por_restas<span style="color: #ff98a4;">(</span>dividendo, divisor, 0<span style="color: #ff98a4;">)</span>;
-    <span style="color: #ff995e;">}</span> <span style="color: #c099ff;">else</span> <span style="color: #ff995e;">{</span>
-        <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Proceso padre: realiza la multiplicaci&#243;n por sumas de forma recursiva</span>
-       printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"valor del pid padre %d \n"</span>, pid<span style="color: #ff98a4;">)</span>;
-     
-      <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">multiplicando</span> = 4, <span style="color: #ff98a4;">multiplicador</span> = 5;
-        wait<span style="color: #ff98a4;">(</span><span style="color: #ff995e;">NULL</span><span style="color: #ff98a4;">)</span>;  <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Espera a que el proceso hijo termine</span>
-        <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">producto</span> = multiplicacion_por_sumas<span style="color: #ff98a4;">(</span>multiplicando, multiplicador<span style="color: #ff98a4;">)</span>;
-        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Multiplicaci&#243;n por sumas: Producto = %d\n"</span>, producto<span style="color: #ff98a4;">)</span>;
-    <span style="color: #ff995e;">}</span>
-
-    <span style="color: #c099ff;">return</span> 0;
-<span style="color: #c099ff;">}</span>
-
-</pre>
-</div>
-</div>
-</li>
-
-
-<li><a id="org372532c"></a>Hilos División por restas, Potencias con sumas pthread<br />
-<div class="outline-text-5" id="text-org372532c">
-<div class="org-src-container">
-<pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
-<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">pthread.h</span><span style="color: #c099ff;">&gt;</span>
-
-<span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Estructura para los par&#225;metros de los hilos</span>
-<span style="color: #c099ff;">typedef</span> <span style="color: #c099ff;">struct</span> <span style="color: #c099ff;">{</span>
-    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">numero1</span>;
-    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">numero2</span>;
-<span style="color: #c099ff;">}</span> <span style="color: #ffc777;">Parametros</span>;
-
-<span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Funci&#243;n recursiva para divisi&#243;n por restas</span>
-<span style="color: #ffc777;">void</span>* <span style="color: #82aaff;">division_por_restas</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">void</span>* <span style="color: #ff98a4;">args</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
-    <span style="color: #ffc777;">Parametros</span>* <span style="color: #ff98a4;">params</span> = <span style="color: #ff995e;">(</span><span style="color: #ffc777;">Parametros</span>*<span style="color: #ff995e;">)</span> args;
-    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">dividendo</span> = params-&gt;numero1;
-    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">divisor</span> = params-&gt;numero2;
-
-    <span style="color: #ffc777;">int</span> <span style="color: #82aaff;">division_recursiva</span><span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">dividendo</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">divisor</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">cociente</span><span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
-        <span style="color: #c099ff;">if</span> <span style="color: #ff98a4;">(</span>dividendo &lt; divisor<span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
-            printf<span style="color: #b4f9f8;">(</span><span style="color: #c3e88d;">"Divisi&#243;n por restas: Cociente = %d, Residuo = %d\n"</span>, cociente, dividendo<span style="color: #b4f9f8;">)</span>;
-            <span style="color: #c099ff;">return</span> cociente;
-        <span style="color: #ff98a4;">}</span>
-        <span style="color: #c099ff;">return</span> division_recursiva<span style="color: #ff98a4;">(</span>dividendo - divisor, divisor, cociente + 1<span style="color: #ff98a4;">)</span>;
-    <span style="color: #ff995e;">}</span>
-
-    division_recursiva<span style="color: #ff995e;">(</span>dividendo, divisor, 0<span style="color: #ff995e;">)</span>;
-    pthread_exit<span style="color: #ff995e;">(</span><span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span>;
-<span style="color: #c099ff;">}</span>
-
-<span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Funci&#243;n recursiva para multiplicaci&#243;n por sumas</span>
-<span style="color: #ffc777;">void</span>* <span style="color: #82aaff;">multiplicacion_por_sumas</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">void</span>* <span style="color: #ff98a4;">args</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
-    <span style="color: #ffc777;">Parametros</span>* <span style="color: #ff98a4;">params</span> = <span style="color: #ff995e;">(</span><span style="color: #ffc777;">Parametros</span>*<span style="color: #ff995e;">)</span> args;
-    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">multiplicando</span> = params-&gt;numero1;
-    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">multiplicador</span> = params-&gt;numero2;
-
-    <span style="color: #ffc777;">int</span> <span style="color: #82aaff;">multiplicacion_recursiva</span><span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">multiplicando</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">multiplicador</span><span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
-        <span style="color: #c099ff;">if</span> <span style="color: #ff98a4;">(</span>multiplicador == 0<span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
-            <span style="color: #c099ff;">return</span> 0;
-        <span style="color: #ff98a4;">}</span>
-        <span style="color: #c099ff;">return</span> multiplicando + multiplicacion_recursiva<span style="color: #ff98a4;">(</span>multiplicando, multiplicador - 1<span style="color: #ff98a4;">)</span>;
-    <span style="color: #ff995e;">}</span>
-
-    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">producto</span> = multiplicacion_recursiva<span style="color: #ff995e;">(</span>multiplicando, multiplicador<span style="color: #ff995e;">)</span>;
-    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"Multiplicaci&#243;n por sumas: Producto = %d\n"</span>, producto<span style="color: #ff995e;">)</span>;
-    pthread_exit<span style="color: #ff995e;">(</span><span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span>;
-<span style="color: #c099ff;">}</span>
-
-<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
-    <span style="color: #ffc777;">pthread_t</span> <span style="color: #ff98a4;">hilo1</span>, <span style="color: #ff98a4;">hilo2</span>;
-    <span style="color: #ffc777;">Parametros</span> <span style="color: #ff98a4;">params_division</span> = <span style="color: #ff995e;">{</span>20, 3<span style="color: #ff995e;">}</span>;    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Par&#225;metros para la divisi&#243;n</span>
-    <span style="color: #ffc777;">Parametros</span> <span style="color: #ff98a4;">params_multiplicacion</span> = <span style="color: #ff995e;">{</span>4, 5<span style="color: #ff995e;">}</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Par&#225;metros para la multiplicaci&#243;n</span>
-
-    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Crear el hilo para la divisi&#243;n por restas recursiva</span>
-    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>pthread_create<span style="color: #ff98a4;">(</span>&amp;hilo1, <span style="color: #ff995e;">NULL</span>, division_por_restas, <span style="color: #b4f9f8;">(</span><span style="color: #ffc777;">void</span>*<span style="color: #b4f9f8;">)</span> &amp;params_division<span style="color: #ff98a4;">)</span> != 0<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
-        perror<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Error al crear el hilo de divisi&#243;n"</span><span style="color: #ff98a4;">)</span>;
-        <span style="color: #c099ff;">return</span> 1;
-    <span style="color: #ff995e;">}</span>
-
-    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Crear el hilo para la multiplicaci&#243;n por sumas recursiva</span>
-    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>pthread_create<span style="color: #ff98a4;">(</span>&amp;hilo2, <span style="color: #ff995e;">NULL</span>, multiplicacion_por_sumas, <span style="color: #b4f9f8;">(</span><span style="color: #ffc777;">void</span>*<span style="color: #b4f9f8;">)</span> &amp;params_multiplicacion<span style="color: #ff98a4;">)</span> != 0<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
-        perror<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Error al crear el hilo de multiplicaci&#243;n"</span><span style="color: #ff98a4;">)</span>;
-        <span style="color: #c099ff;">return</span> 1;
-    <span style="color: #ff995e;">}</span>
-
-    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Esperar a que los hilos terminen</span>
-    pthread_join<span style="color: #ff995e;">(</span>hilo1, <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span>;
-    pthread_join<span style="color: #ff995e;">(</span>hilo2, <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span>;
-
-    <span style="color: #c099ff;">return</span> 0;
-<span style="color: #c099ff;">}</span>
-
-
-
-</pre>
-</div>
-</div>
-</li>
+<li><b><b>Planificación en tiempo real</b></b>:
+<ul class="org-ul">
+<li>Utilizada en sistemas donde las tareas deben completarse dentro de plazos específicos, como sistemas de control industrial o de aviación.</li>
+<li><b><b>Tiempo real estricto</b></b>: Las tareas deben completarse en un momento específico; una falla en el tiempo se considera una falla total.</li>
+<li><b><b>Tiempo real flexible</b></b>: Es tolerante a algunos retrasos, pero prioriza la finalización de tareas dentro de límites razonables.</li>
+</ul></li>
 </ul>
 </div>
 </div>
@@ -2288,7 +2770,7 @@ y
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: likcos</p>
-<p class="date">Created: 2024-11-12 mar 09:13</p>
+<p class="date">Created: 2024-11-14 jue 14:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
