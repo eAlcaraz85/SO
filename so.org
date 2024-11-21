@@ -1724,32 +1724,46 @@ int main() {
 
 	   
 *** 1.2 Sincronización
-    La sincronización se encarga de coordinar la ejecución de múltiples procesos o threads para garantizar que operen de manera ordenada.
-    - *Semáforos de Dijkstra*: Usados para la sincronización y control de acceso a recursos mediante dos tipos:
+    La sincronización se encarga de coordinar la ejecución de
+    múltiples procesos o threads para garantizar que operen de manera
+    ordenada.
+    - *Semáforos de Dijkstra*: Usados para la sincronización y control
+      de acceso a recursos mediante dos tipos:
       - Semáforo binario (mutex)
       - Semáforo contador (permite múltiples accesos)
-    - *Monitores*: Estructuras que permiten que los procesos esperen hasta que una condición se cumpla.
+    - *Monitores*: Estructuras que permiten que los procesos esperen
+      hasta que una condición se cumpla.
     
 *** 1.3 Condiciones de carrera y sincronización
     Las condiciones de carrera ocurren cuando dos o más procesos acceden a recursos compartidos de manera concurrente y el resultado depende del orden de ejecución. Esto se soluciona con:
     - Bloqueos de exclusión mutua.
     - Sincronización a través de semáforos y monitores.
 
-** 2. Secuenciabilidad
-   La secuenciabilidad implica gestionar el orden de ejecución de los procesos o threads en un sistema operativo para asegurar que se cumplan ciertos requisitos de rendimiento o justicia en el acceso a recursos. Es fundamental para la planificación de procesos.
+** Secuenciabilidad
+   La secuenciabilidad implica gestionar el orden de ejecución de los
+   procesos o threads en un sistema operativo para asegurar que se
+   cumplan ciertos requisitos de rendimiento o justicia en el acceso a
+   recursos. Es fundamental para la planificación de procesos.
    
-   - *Objetivo*: Asignar CPU a los procesos de forma que se minimicen tiempos de espera y maximicen el uso del procesador.
+   - *Objetivo*: Asignar CPU a los procesos de forma que se minimicen
+     tiempos de espera y maximicen el uso del procesador.
    
 *** 2.1 Algoritmos de Planificación de Procesos
-    Los algoritmos de planificación determinan el orden en que se ejecutan los procesos en la CPU. Los más comunes incluyen:
+    Los algoritmos de planificación determinan el orden en que se
+    ejecutan los procesos en la CPU. Los más comunes incluyen:
     - *First-Come, First-Served (FCFS)*: Los procesos se ejecutan en el orden de llegada.
-    - *Shortest Job Next (SJN)*: El proceso con el tiempo de ejecución más corto tiene prioridad.
-    - *Round Robin (RR)*: Cada proceso recibe una cantidad fija de tiempo de CPU, después de la cual pasa al final de la cola.
+    - *Shortest Job Next (SJN)*: El proceso con el tiempo de ejecución
+      más corto tiene prioridad.
+    - *Round Robin (RR)*: Cada proceso recibe una cantidad fija de
+      tiempo de CPU, después de la cual pasa al final de la cola.
     - *Multilevel Queue Scheduling*: Los procesos se agrupan en diferentes colas, cada una con su propio algoritmo de planificación.
-    - *Priority Scheduling*: Los procesos con mayor prioridad se ejecutan primero, lo cual requiere un manejo cuidadoso para evitar el "hambruna" de procesos de baja prioridad.
+    - *Priority Scheduling*: Los procesos con mayor prioridad se
+      ejecutan primero, lo cual requiere un manejo cuidadoso para
+      evitar el "hambruna" de procesos de baja prioridad.
 
 *** 2.2 Algoritmos de Detección y Prevención de Interbloqueos (Deadlocks)
-    Los interbloqueos ocurren cuando dos o más procesos esperan indefinidamente por recursos que otros procesos poseen.
+    Los interbloqueos ocurren cuando dos o más procesos esperan
+    indefinidamente por recursos que otros procesos poseen.
     - *Condiciones para un Interbloqueo*:
       - Exclusión mutua
       - Retención y espera
@@ -1757,13 +1771,19 @@ int main() {
       - Espera circular
 
     - *Métodos de Prevención*:
-      - *Algoritmo del banquero de Dijkstra*: Evalúa si la asignación de recursos puede llevar a un estado seguro o potencialmente inseguro.
-      - *Prevención de interbloqueos*: Evita que se cumplan las condiciones para un interbloqueo.
+      - *Algoritmo del banquero de Dijkstra*: Evalúa si la asignación de
+        recursos puede llevar a un estado seguro o potencialmente
+        inseguro.
+      - *Prevención de interbloqueos*: Evita que se cumplan las
+        condiciones para un interbloqueo.
 
 *** 2.3 Sincronización y Secuenciabilidad
-    La sincronización y secuenciabilidad son clave para evitar conflictos y maximizar el rendimiento. Se utilizan técnicas como:
-    - *Wait-for Graphs*: Muestran dependencias de recursos para detectar posibles interbloqueos.
-    - *Petri Nets*: Herramientas visuales para analizar sistemas concurrentes y modelar sincronización y secuenciabilidad.
+    La sincronización y secuenciabilidad son clave para evitar
+    conflictos y maximizar el rendimiento. Se utilizan técnicas como:
+    - *Wait-for Graphs*: Muestran dependencias de recursos para detectar
+      posibles interbloqueos.
+    - *Petri Nets*: Herramientas visuales para analizar sistemas
+      concurrentes y modelar sincronización y secuenciabilidad.
 
 *** 3. Conclusión
 La concurrencia y secuenciabilidad son fundamentales en la gestión de
@@ -1777,7 +1797,12 @@ y aplicaciones robustas en entornos concurrentes.
 
 
 ** Niveles, Objetivos y Criterios de Planificación
-La planificación es el proceso de asignar recursos del sistema a los procesos, y su objetivo principal es optimizar el rendimiento del sistema en función de ciertos criterios como el tiempo de respuesta, la eficiencia y la equidad. Existen varios niveles de planificación, que determinan cómo se gestionan los procesos en diferentes etapas de su ciclo de vida.
+La planificación es el proceso de asignar recursos del sistema a los
+procesos, y su objetivo principal es optimizar el rendimiento del
+sistema en función de ciertos criterios como el tiempo de respuesta,
+la eficiencia y la equidad. Existen varios niveles de planificación,
+que determinan cómo se gestionan los procesos en diferentes etapas de
+su ciclo de vida.
 
 *** Niveles de Planificación
    - **Planificación a largo plazo**: 
@@ -1834,19 +1859,312 @@ int main() {
 #+RESULTS:
 
 ** Técnicas de Administración del Planificador
-El planificador utiliza varias técnicas para mejorar la gestión de procesos y optimizar el rendimiento del sistema. Algunas de las técnicas principales incluyen:
+El planificador utiliza varias técnicas para mejorar la gestión de
+procesos y optimizar el rendimiento del sistema. Algunas de las
+técnicas principales incluyen:
 
    - **Round Robin**: 
-     - En este algoritmo, cada proceso recibe una franja de tiempo fija (quantum) para su ejecución.
-     - Si un proceso no se completa durante su quantum, se coloca al final de la cola de procesos listos, y la CPU se asigna al siguiente proceso.
-     - Es una técnica equitativa y adecuada para sistemas de tiempo compartido, aunque el tamaño del quantum debe elegirse con cuidado.
+     - En este algoritmo, cada proceso recibe una franja de tiempo
+       fija (quantum) para su ejecución.
+     - Si un proceso no se completa durante su quantum, se coloca al
+       final de la cola de procesos listos, y la CPU se asigna al
+       siguiente proceso.
+     - Es una técnica equitativa y adecuada para sistemas de tiempo
+       compartido, aunque el tamaño del quantum debe elegirse con
+       cuidado.
    
    - **Prioridad**:
-     - Este algoritmo asigna a cada proceso una prioridad, y los procesos con mayor prioridad tienen preferencia para ser ejecutados.
-     - La prioridad puede ser estática (fija) o dinámica (cambia durante la ejecución).
-     - A veces se emplea un mecanismo de "envejecimiento" para aumentar la prioridad de procesos que llevan mucho tiempo esperando, evitando que queden bloqueados.
+     - Este algoritmo asigna a cada proceso una prioridad, y los
+       procesos con mayor prioridad tienen preferencia para ser
+       ejecutados.
+     - La prioridad puede ser estática (fija) o dinámica (cambia
+       durante la ejecución).
+     - A veces se emplea un mecanismo de "envejecimiento" para
+       aumentar la prioridad de procesos que llevan mucho tiempo
+       esperando, evitando que queden bloqueados.
    
    - **Planificación en tiempo real**:
-     - Utilizada en sistemas donde las tareas deben completarse dentro de plazos específicos, como sistemas de control industrial o de aviación.
-     - **Tiempo real estricto**: Las tareas deben completarse en un momento específico; una falla en el tiempo se considera una falla total.
-     - **Tiempo real flexible**: Es tolerante a algunos retrasos, pero prioriza la finalización de tareas dentro de límites razonables.
+     - Utilizada en sistemas donde las tareas deben completarse dentro
+       de plazos específicos, como sistemas de control industrial o de
+       aviación.
+     - **Tiempo real estricto**: Las tareas deben completarse en un
+       momento específico; una falla en el tiempo se considera una
+       falla total.
+     - **Tiempo real flexible**: Es tolerante a algunos retrasos, pero
+       prioriza la finalización de tareas dentro de límites
+       razonables.
+
+
+* Administración de la memoria    
+
+
+** Política y filosofía de la administración de memoria
+La administración de memoria en los sistemas operativos sigue
+principios fundamentales que guían su diseño y operación. Entre las
+políticas más comunes están:
+
+- **Asignación dinámica vs. estática**: ¿Se asigna memoria en tiempo de
+  ejecución o durante la compilación?
+- **Swapping**: ¿Cómo se manejan los procesos que no caben en la memoria física?
+- **Fragmentación**: Estrategias para minimizar la fragmentación interna y externa.
+- **Prioridades**: Asignación de memoria basada en la prioridad de los procesos.
+
+**Ejemplo**: La política de "First Fit" en la asignación de memoria
+busca el primer bloque libre suficiente, promoviendo la velocidad pero
+pudiendo causar fragmentación.
+
+
+
+*** Ejemplos de administración de memoria
+
+**** Asignación dinámica vs. estática
+La asignación dinámica y estática se refiere al momento en el que se
+reserva la memoria para un programa.
+
+- **Asignación estática**: La memoria se asigna durante la compilación y no cambia en tiempo de ejecución.
+  + Ejemplo en C:
+    #+BEGIN_SRC c
+    nodo arr[1000000]; // Asignación estática
+    #+END_SRC
+  + Limitación: El tamaño es fijo y debe conocerse antes de la ejecución.
+0x21[1°°°°°°°°°°°°°°°°°°°°°°][  ]
+- **Asignación dinámica**: La memoria se asigna durante la ejecución según las necesidades del programa.
+  + Ejemplo en C:
+    #+BEGIN_SRC c
+    int *arr = malloc(10 * sizeof(int));
+               realloc    // Asignación dinámica
+    free(arr); // Liberación de memoria
+ox34[°°°°°°][                    ]
+
+   #+END_SRC
+  + Ventaja: Permite manejar estructuras cuyo tamaño no es conocido previamente.
+
+*** Swapping
+El swapping consiste en mover procesos completos entre la memoria
+principal y el disco para liberar espacio.
+
+- **Ejemplo de uso**:
+  + Un proceso que no cabe en memoria se guarda temporalmente en el disco.
+  + Cuando se necesita, se carga nuevamente en memoria.
+
+- **Diagrama**:
+  #+BEGIN_EXAMPLE
+  Memoria principal:
+  [Proceso A] [Proceso B] [Libre]
+  
+  Disco:
+  [Proceso C]
+
+  Acción: Mover "Proceso C" del disco a la memoria y "Proceso B" al disco.
+  #+END_EXAMPLE
+
+- **Ventajas**: Mejora la utilización de memoria.
+- **Desventajas**: Incrementa el tiempo de acceso debido a operaciones en disco.
+
+*** Fragmentación
+La fragmentación ocurre cuando la memoria se utiliza de manera
+ineficiente, dejando pequeños bloques no utilizables.
+
+- **Fragmentación interna**:
+  + Bloques asignados son más grandes de lo necesario.
+  + Estrategia: Usar bloques más pequeños o ajustar el tamaño según la solicitud.
+  + Ejemplo:
+    #+BEGIN_EXAMPLE
+    Solicitud: 10 KB
+    Bloque asignado: 16 KB (6 KB desperdiciados)
+    #+END_EXAMPLE
+
+- **Fragmentación externa**:
+  + Bloques libres no son contiguos, impidiendo asignaciones grandes.
+  + Estrategia: Compactación de memoria o paginación.
+  + Ejemplo:
+    #+BEGIN_EXAMPLE
+    [Libre 10 KB] [Usado 50 KB] [Libre 15 KB]
+    Solicitud: 20 KB -> Fallo (No hay bloques contiguos de 20 KB)
+    #+END_EXAMPLE
+
+*** Prioridades
+La asignación basada en prioridades otorga más recursos a procesos críticos.
+
+- **Ejemplo**:
+  + Procesos con alta prioridad reciben memoria inmediatamente.
+  + Procesos de baja prioridad esperan.
+
+- **Simulación de asignación**:
+  #+BEGIN_EXAMPLE
+  Prioridad: 
+  - Proceso A: Alta (Se asigna memoria primero)
+  - Proceso B: Media
+  - Proceso C: Baja (Espera)
+
+  Resultado:
+  Memoria asignada a A y B, C espera por liberación.
+  #+END_EXAMPLE
+
+  
+** Memoria real
+La memoria real es la memoria física disponible en un sistema, como la
+RAM. Los sistemas operativos deben administrarla eficientemente para
+optimizar el rendimiento.
+
+- **Características**:
+  - Recursos limitados.
+  - Acceso más rápido que la memoria secundaria.
+- **Administración**:
+  - Dividir en bloques o particiones.
+  - Mantener tablas de uso de memoria.
+
+**Ejemplo**: En sistemas monoprogramados, un único proceso utiliza toda
+la memoria disponible, mientras que en sistemas multiprogramados se
+asignan particiones a múltiples procesos.
+
+**  Organización de memoria virtual
+La memoria virtual permite a los programas utilizar más memoria de la
+que físicamente está disponible en el sistema. Esto se logra mediante
+la abstracción de la memoria secundaria como parte del espacio de
+direcciones.
+
+- **Esquema de organización**:
+  - **Paginación**: Divide la memoria en bloques de tamaño fijo (páginas).
+  - **Segmentación**: Divide la memoria en bloques de tamaño variable según las necesidades lógicas.
+  - **Paginación con segmentación**: Combinación de ambas técnicas.
+
+**Ventajas**:
+- Multiprogramación eficiente.
+- Aislamiento de procesos.
+- Manejo simplificado de espacios de memoria grandes.
+
+**Ejemplo**:
+Un proceso puede acceder a una dirección lógica, que el sistema operativo traduce a una dirección física mediante una tabla de páginas.
+
+** Administración de memoria virtual
+
+Administración de Memoria Virtual
+La memoria virtual es un mecanismo que permite a los sistemas
+operativos manejar más memoria de la que físicamente está
+disponible. Este concepto se basa en la abstracción de la memoria,
+permitiendo que los programas trabajen como si tuvieran acceso a un
+espacio de memoria continuo y de gran tamaño, independientemente de
+las limitaciones físicas.
+
+La administración de memoria virtual es responsable de asignar,
+liberar y mantener las estructuras necesarias para garantizar la
+operación eficiente de este sistema.
+
+*** Estrategias de Asignación
+**** Algoritmos de reemplazo de páginas
+Cuando un proceso solicita una página que no está en memoria y no hay espacio disponible, el sistema debe decidir qué página existente se reemplazará. Los algoritmos más comunes son:
+
+- **LRU (Least Recently Used)**:
+  - Reemplaza la página que no ha sido utilizada durante más tiempo.
+  - Simula el comportamiento real de los procesos, priorizando páginas recientes.
+  - **Ventaja**: Buen desempeño en cargas de trabajo típicas.
+  - **Desventaja**: Costoso en términos de tiempo y espacio, ya que requiere seguimiento continuo del uso de las páginas.
+
+- **FIFO (First In, First Out)**:
+  - Reemplaza la página más antigua en la memoria (la que ingresó primero).
+  - **Ventaja**: Simplicidad en la implementación.
+  - **Desventaja**: Puede generar resultados ineficientes, como el problema de **Belady** (más fallos de página al aumentar el tamaño de la memoria).
+
+- **Optimal**:
+  - Reemplaza la página que no se necesitará por más tiempo en el futuro.
+  - **Ventaja**: Ofrece el menor número posible de fallos de página.
+  - **Desventaja**: Impracticable en sistemas reales, ya que requiere conocer el acceso futuro.
+
+**** Políticas de carga
+Las políticas de carga determinan cuándo se traen las páginas desde el almacenamiento secundario a la memoria principal.
+
+- **Demand Paging**:
+  - Solo se cargan las páginas cuando se necesitan, minimizando el uso inicial de memoria.
+  - **Ventaja**: Conserva memoria y reduce el tiempo de carga inicial.
+  - **Desventaja**: Puede aumentar los fallos de página en el inicio de un proceso.
+
+- **Prefetching**:
+  - Se cargan páginas anticipadamente basándose en patrones de acceso previstos.
+  - **Ventaja**: Reduce los fallos de página si las predicciones son correctas.
+  - **Desventaja**: Puede desperdiciar recursos si las predicciones son incorrectas.
+
+*** Componentes Principales
+**** Tabla de Páginas
+La tabla de páginas es una estructura de datos clave que relaciona las direcciones lógicas (utilizadas por los programas) con las direcciones físicas (en la memoria).
+
+- **Estructura**:
+  - Contiene entradas que mapean páginas lógicas a marcos de memoria física.
+  - Cada entrada incluye información sobre si la página está presente en la memoria, bits de protección y un bit de referencia.
+
+- **Desempeño**:
+  - Las tablas de páginas grandes pueden consumir mucha memoria.
+  - Para optimizar, se usan tablas multinivel o tablas invertidas.
+
+**** TLB (Translation Lookaside Buffer)
+El **TLB** es una memoria caché especializada que acelera la traducción de direcciones lógicas a físicas.
+
+- **Funcionamiento**:
+  - Almacena un subconjunto de las entradas de la tabla de páginas.
+  - Si una dirección lógica se encuentra en el TLB (**hit**), la traducción es rápida.
+  - Si no está en el TLB (**miss**), se accede a la tabla de páginas, lo que toma más tiempo.
+
+- **Ventajas**:
+  - Reduce significativamente la latencia de acceso a memoria.
+  - Mejora el rendimiento en sistemas con altas tasas de traducción de direcciones.
+
+**** Swap
+El **swap** es un mecanismo que permite liberar espacio en la memoria física moviendo páginas no activas al disco.
+
+- **Funcionamiento**:
+  - Cuando no hay suficiente memoria física, las páginas no utilizadas recientemente se escriben en una porción del disco conocida como **archivo de intercambio**.
+  - Si se requiere nuevamente, la página se trae de vuelta a la memoria, reemplazando otra si es necesario.
+
+- **Ventajas**:
+  - Permite ejecutar más procesos simultáneamente.
+  - Amplía efectivamente el tamaño de la memoria física.
+
+- **Desventajas**:
+  - El acceso a disco es mucho más lento que el acceso a memoria física.
+  - El uso excesivo de swap puede causar degradación del rendimiento (**thrashing**).
+
+*** Ejemplo: Proceso de Fallo de Página
+**** Escenario
+Un proceso solicita una página que no está en memoria. Esto genera un **page fault**.
+
+1. **Detección del fallo**:
+   - El sistema operativo detecta que la página solicitada no está en memoria.
+
+2. **Selección de la página a reemplazar**:
+   - Se utiliza un algoritmo, como LRU, para elegir una página existente en memoria para reemplazar.
+
+3. **Swap in y swap out**:
+   - Si la página seleccionada se modificó, se escribe en disco (**swap out**).
+   - La página solicitada se lee del disco y se coloca en memoria (**swap in**).
+
+4. **Actualización de estructuras**:
+   - La tabla de páginas y, si es aplicable, el TLB se actualizan con la nueva información.
+
+**** Código Representativo (C Pseudocódigo)
+#+BEGIN_SRC c
+if (page_fault) {
+    page_to_replace = select_page_LRU();
+    if (page_to_replace.modified) {
+        write_to_disk(page_to_replace);
+    }
+    new_page = read_from_disk(requested_page);
+    update_page_table(new_page, memory_frame);
+    update_TLB(new_page, memory_frame);
+}
+#+END_SRC
+
+
+
+** Ejercicios
+
+1.  Simulación de particiones fijas:
+
+- Escribe un programa que simule un sistema de administración de
+  memoria con particiones fijas.
+- Debe permitir al usuario definir el tamaño total de la memoria y las
+  particiones.
+- Simula la asignación y liberación de procesos a las particiones,
+  mostrando cómo se utiliza la memoria.
+
+nodo a[1000];
+nodo a[valor|prior|npo]-[valor|prior|npo]
