@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2024-11-21 jue 14:17 -->
+<!-- 2024-11-22 vie 14:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Apuntes Sistemas Operativos</title>
@@ -209,130 +209,134 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf9aba69">Administración de Procesos y del procesador</a>
+<li><a href="#org57f9ab6">Administración de Procesos y del procesador</a>
 <ul>
-<li><a href="#org2b0b930">Comandos para manejar procesos en Linux</a>
+<li><a href="#org8931a9e">Comandos para manejar procesos en Linux</a>
 <ul>
-<li><a href="#org8d179e3">1. Ver procesos activos</a></li>
-<li><a href="#org462798f">2. Iniciar procesos</a></li>
-<li><a href="#org622b7c5">3. Controlar la ejecución de procesos</a></li>
-<li><a href="#org3758838">4. Enviar señales a los procesos</a></li>
-<li><a href="#orgd5e1076">5. Cambiar prioridad de procesos</a></li>
-<li><a href="#org6dba2b1">6. Ver detalles específicos de los procesos</a></li>
+<li><a href="#orgd04de85">1. Ver procesos activos</a></li>
+<li><a href="#orgddd24fd">2. Iniciar procesos</a></li>
+<li><a href="#org1a7651f">3. Controlar la ejecución de procesos</a></li>
+<li><a href="#orgb679a1e">4. Enviar señales a los procesos</a></li>
+<li><a href="#org8c76108">5. Cambiar prioridad de procesos</a></li>
+<li><a href="#org9ccb9a9">6. Ver detalles específicos de los procesos</a></li>
 </ul>
 </li>
-<li><a href="#orge1313a9">Punteros en C</a>
+<li><a href="#orga1eba29">Punteros en C</a>
 <ul>
-<li><a href="#org3fdab4b">¿Qué es un puntero?</a></li>
-<li><a href="#org66386a1">Declaración de punteros</a></li>
-<li><a href="#org1ed17e8">Inicialización de punteros</a></li>
-<li><a href="#orgd776e44">Acceso al valor apuntado</a></li>
-<li><a href="#org96d17d2">Punteros y arreglos</a></li>
-<li><a href="#org837a679">Punteros y funciones</a></li>
-<li><a href="#org7d0e57b">Punteros nulos</a></li>
-<li><a href="#org7a1000e">Aritmética de punteros</a></li>
-<li><a href="#org9948f6b">Punteros a punteros</a></li>
-<li><a href="#orgcaabb68">Dobles y triples punteros</a></li>
-<li><a href="#org59e078b">Punteros y cadenas de caracteres</a></li>
+<li><a href="#org23cc250">¿Qué es un puntero?</a></li>
+<li><a href="#orgc46a4e6">Declaración de punteros</a></li>
+<li><a href="#orgb8d85c8">Inicialización de punteros</a></li>
+<li><a href="#org5de074b">Acceso al valor apuntado</a></li>
+<li><a href="#org0b57168">Punteros y arreglos</a></li>
+<li><a href="#org2326041">Punteros y funciones</a></li>
+<li><a href="#orgebd43a9">Punteros nulos</a></li>
+<li><a href="#org9950ef1">Aritmética de punteros</a></li>
+<li><a href="#orgf6194af">Punteros a punteros</a></li>
+<li><a href="#orgcb9ea49">Dobles y triples punteros</a></li>
+<li><a href="#org479f4a8">Punteros y cadenas de caracteres</a></li>
 </ul>
 </li>
-<li><a href="#org89567d7">Concepto de proceso</a></li>
-<li><a href="#org5eda79d">Fork() en C</a>
+<li><a href="#org994a2da">Concepto de proceso</a></li>
+<li><a href="#orgb00f946">Fork() en C</a>
 <ul>
-<li><a href="#org31d6990">¿Qué es fork()?</a></li>
-<li><a href="#org0d48fb5">Funcionamiento básico de fork()</a></li>
-<li><a href="#orgc176197">Ejemplo básico de fork()</a></li>
-<li><a href="#org32e1faf">Explicación del Ejemplo</a></li>
-<li><a href="#orgd54fe37">Espera del Proceso Padre con wait()</a></li>
-<li><a href="#org931c1f0">fork() y Punteros</a></li>
-<li><a href="#org05aa9fd">Ejemplo con Punteros</a></li>
-<li><a href="#orgb9720d3">Salida esperada</a></li>
-<li><a href="#org63e816a">Explicación de Copy-on-Write (COW)</a></li>
-<li><a href="#orge6b58d3">Conclusión</a></li>
+<li><a href="#orgdcb8916">¿Qué es fork()?</a></li>
+<li><a href="#org56002e7">Funcionamiento básico de fork()</a></li>
+<li><a href="#orga534ada">Ejemplo básico de fork()</a></li>
+<li><a href="#org67564a0">Explicación del Ejemplo</a></li>
+<li><a href="#org59665a0">Espera del Proceso Padre con wait()</a></li>
+<li><a href="#orgee6b772">fork() y Punteros</a></li>
+<li><a href="#orgba7ff68">Ejemplo con Punteros</a></li>
+<li><a href="#orgaa9ab68">Salida esperada</a></li>
+<li><a href="#orgdc98d19">Explicación de Copy-on-Write (COW)</a></li>
+<li><a href="#orgc4951cb">Conclusión</a></li>
 </ul>
 </li>
-<li><a href="#orge55c685">Estados y transiciones de los procesos</a>
+<li><a href="#org264cc1c">Estados y transiciones de los procesos</a>
 <ul>
-<li><a href="#orgf6b126f">Ejemplo en C: Creación de un proceso utilizando fork()</a></li>
-<li><a href="#org0483981">Ejemplo en C: Simulación de transiciones de estados</a></li>
+<li><a href="#org18c6528">Ejemplo en C: Creación de un proceso utilizando fork()</a></li>
+<li><a href="#org5b5d382">Ejemplo en C: Simulación de transiciones de estados</a></li>
 </ul>
 </li>
-<li><a href="#org0a21d5c">Tabla de Procesos</a>
+<li><a href="#org88be168">Tabla de Procesos</a>
 <ul>
-<li><a href="#org2582cab">¿Qué es la Tabla de Procesos?</a></li>
-<li><a href="#org6010220">Información en la Tabla de Procesos</a></li>
-<li><a href="#org89a2c50">Estados del Proceso</a></li>
-<li><a href="#orge8dba21">Ejemplo en C de una Tabla de Procesos Simplificada</a></li>
-<li><a href="#orga43cf72">Explicación del Ejemplo</a></li>
-<li><a href="#org820a5fe">Salida Esperada</a></li>
-<li><a href="#orge858e92">Conclusión</a></li>
+<li><a href="#org33fa5c7">¿Qué es la Tabla de Procesos?</a></li>
+<li><a href="#org740e85e">Información en la Tabla de Procesos</a></li>
+<li><a href="#org62e4ba3">Estados del Proceso</a></li>
+<li><a href="#org6beaab7">Ejemplo en C de una Tabla de Procesos Simplificada</a></li>
+<li><a href="#org7588324">Explicación del Ejemplo</a></li>
+<li><a href="#orga6372a8">Salida Esperada</a></li>
+<li><a href="#org8a17ad1">Conclusión</a></li>
 </ul>
 </li>
-<li><a href="#orgf1115ac">Procesos ligeros: Hilos o hebras</a>
+<li><a href="#orgbb85d81">Procesos ligeros: Hilos o hebras</a>
 <ul>
-<li><a href="#orgd2bf71b">Ejemplo en C: Creación de hilos con pthread</a></li>
+<li><a href="#org100e05a">Ejemplo en C: Creación de hilos con pthread</a></li>
 </ul>
 </li>
-<li><a href="#org06106be">pthread<sub>create</sub> en C</a>
+<li><a href="#orgbb4204e">pthread<sub>create</sub> en C</a>
 <ul>
-<li><a href="#orgf010406">Descripción de pthread<sub>create</sub></a></li>
-<li><a href="#org092c4af">Sintaxis de pthread<sub>create</sub></a></li>
-<li><a href="#orgd914f57">Parámetros</a></li>
-<li><a href="#orgb16b4e6">Valor de Retorno</a></li>
-<li><a href="#org6b48963">Ejemplo Práctico de pthread<sub>create</sub></a></li>
-<li><a href="#orgb1e8cb0">Explicación del Ejemplo</a></li>
-<li><a href="#org94fd809">Consideraciones Importantes</a></li>
-<li><a href="#org2a44de1">Resumen</a></li>
+<li><a href="#orgb636d89">Descripción de pthread<sub>create</sub></a></li>
+<li><a href="#orgc0f1fda">Sintaxis de pthread<sub>create</sub></a></li>
+<li><a href="#orgac7225d">Parámetros</a></li>
+<li><a href="#org76c7b23">Valor de Retorno</a></li>
+<li><a href="#orgaca80d1">Ejemplo Práctico de pthread<sub>create</sub></a></li>
+<li><a href="#org9e04c66">Explicación del Ejemplo</a></li>
+<li><a href="#org1373986">Consideraciones Importantes</a></li>
+<li><a href="#orgf865b30">Resumen</a></li>
 </ul>
 </li>
-<li><a href="#org0fdff2a">cola con prioridad</a></li>
-<li><a href="#orgecc6c5d">Concurrencia y Secuenciabilidad</a>
+<li><a href="#orgf5b7188">cola con prioridad</a></li>
+<li><a href="#org48eb42d">Concurrencia y Secuenciabilidad</a>
 <ul>
-<li><a href="#orga209452">Ejemplo en C: Concurrencia y sincronización de tareas</a></li>
-<li><a href="#org6bb4815">1.1 Exclusión Mutua</a></li>
-<li><a href="#orgf4e025c">1.2 Sincronización</a></li>
-<li><a href="#orgd24c8aa">1.3 Condiciones de carrera y sincronización</a></li>
+<li><a href="#orgde619c7">Ejemplo en C: Concurrencia y sincronización de tareas</a></li>
+<li><a href="#orgb6ca94f">1.1 Exclusión Mutua</a></li>
+<li><a href="#org65b3105">1.2 Sincronización</a></li>
+<li><a href="#orgabc666d">1.3 Condiciones de carrera y sincronización</a></li>
 </ul>
 </li>
-<li><a href="#org037b0e2">Secuenciabilidad</a>
+<li><a href="#org3a79329">Secuenciabilidad</a>
 <ul>
-<li><a href="#org0dd354e">2.1 Algoritmos de Planificación de Procesos</a></li>
-<li><a href="#org464af61">2.2 Algoritmos de Detección y Prevención de Interbloqueos (Deadlocks)</a></li>
-<li><a href="#org90dafb4">2.3 Sincronización y Secuenciabilidad</a></li>
-<li><a href="#orgfc85660">3. Conclusión</a></li>
+<li><a href="#orgd22d094">2.1 Algoritmos de Planificación de Procesos</a></li>
+<li><a href="#orgc95f263">2.2 Algoritmos de Detección y Prevención de Interbloqueos (Deadlocks)</a></li>
+<li><a href="#org5d9b628">2.3 Sincronización y Secuenciabilidad</a></li>
+<li><a href="#org529b0a5">3. Conclusión</a></li>
 </ul>
 </li>
-<li><a href="#org1524a59">Niveles, Objetivos y Criterios de Planificación</a>
+<li><a href="#org701ab8b">Niveles, Objetivos y Criterios de Planificación</a>
 <ul>
-<li><a href="#org9d1a2a1">Niveles de Planificación</a></li>
-<li><a href="#org52491a7">Objetivos de la Planificación</a></li>
-<li><a href="#org9904d58">Criterios de Planificación</a></li>
-<li><a href="#org9584e93">Ejemplo en C: Implementación Simple de Planificación Round Robin</a></li>
+<li><a href="#org9c2108e">Niveles de Planificación</a></li>
+<li><a href="#orge4b8d7c">Objetivos de la Planificación</a></li>
+<li><a href="#org4c52fcd">Criterios de Planificación</a></li>
+<li><a href="#org2c5bb0f">Ejemplo en C: Implementación Simple de Planificación Round Robin</a></li>
 </ul>
 </li>
-<li><a href="#orgf721383">Técnicas de Administración del Planificador</a></li>
+<li><a href="#org7fc3d86">Técnicas de Administración del Planificador</a></li>
 </ul>
 </li>
-<li><a href="#orgb867779">Administración de la memoria</a>
+<li><a href="#orge3d4f26">Administración de la memoria</a>
 <ul>
-<li><a href="#org447a43d">Política y filosofía de la administración de memoria</a>
+<li><a href="#orgbb87ab0">Política y filosofía de la administración de memoria</a>
 <ul>
-<li><a href="#orgab1d322">Ejemplos de administración de memoria</a></li>
-<li><a href="#orgcb1dbd0">Swapping</a></li>
-<li><a href="#org6a7a812">Fragmentación</a></li>
-<li><a href="#orga39efa4">Prioridades</a></li>
+<li><a href="#org627ab04">Ejemplos de administración de memoria</a></li>
+<li><a href="#orgd07f9b5">Swapping</a></li>
+<li><a href="#org9a1258b">Fragmentación</a></li>
+<li><a href="#org9d355e9">Prioridades</a></li>
 </ul>
 </li>
-<li><a href="#org96affe3">Memoria real</a></li>
-<li><a href="#org64b08d6">Organización de memoria virtual</a></li>
-<li><a href="#org2fb5b60">Administración de memoria virtual</a>
+<li><a href="#org50f5fb4">Memoria real</a></li>
+<li><a href="#orga80cfad">Organización de memoria virtual</a></li>
+<li><a href="#org41b6cd5">Administración de memoria virtual</a>
 <ul>
-<li><a href="#orga811932">Estrategias de Asignación</a></li>
-<li><a href="#org8de7b16">Componentes Principales</a></li>
-<li><a href="#orgd7b18d6">Ejemplo: Proceso de Fallo de Página</a></li>
+<li><a href="#orgd5c5972">Estrategias de Asignación</a></li>
+<li><a href="#org0a425ab">Componentes Principales</a></li>
+<li><a href="#orga3e386e">Ejemplo: Proceso de Fallo de Página</a></li>
 </ul>
 </li>
-<li><a href="#org8772b90">Ejercicios</a></li>
+<li><a href="#orgbd0c067">Ejercicios</a>
+<ul>
+<li><a href="#org39897b5">Respuestas</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -341,17 +345,17 @@
 
 
 
-<div id="outline-container-orgf9aba69" class="outline-2">
-<h2 id="orgf9aba69">Administración de Procesos y del procesador</h2>
-<div class="outline-text-2" id="text-orgf9aba69">
+<div id="outline-container-org57f9ab6" class="outline-2">
+<h2 id="org57f9ab6">Administración de Procesos y del procesador</h2>
+<div class="outline-text-2" id="text-org57f9ab6">
 </div>
-<div id="outline-container-org2b0b930" class="outline-3">
-<h3 id="org2b0b930">Comandos para manejar procesos en Linux</h3>
-<div class="outline-text-3" id="text-org2b0b930">
+<div id="outline-container-org8931a9e" class="outline-3">
+<h3 id="org8931a9e">Comandos para manejar procesos en Linux</h3>
+<div class="outline-text-3" id="text-org8931a9e">
 </div>
-<div id="outline-container-org8d179e3" class="outline-4">
-<h4 id="org8d179e3">1. Ver procesos activos</h4>
-<div class="outline-text-4" id="text-org8d179e3">
+<div id="outline-container-orgd04de85" class="outline-4">
+<h4 id="orgd04de85">1. Ver procesos activos</h4>
+<div class="outline-text-4" id="text-orgd04de85">
 <ul class="org-ul">
 <li>`ps`
 Muestra una lista de procesos en la terminal actual. Ofrece información sobre el PID, usuario, CPU, memoria, etc.
@@ -374,9 +378,9 @@ Busca el PID (Process ID) de un proceso específico por su nombre. Útil para ob
 </div>
 </div>
 
-<div id="outline-container-org462798f" class="outline-4">
-<h4 id="org462798f">2. Iniciar procesos</h4>
-<div class="outline-text-4" id="text-org462798f">
+<div id="outline-container-orgddd24fd" class="outline-4">
+<h4 id="orgddd24fd">2. Iniciar procesos</h4>
+<div class="outline-text-4" id="text-orgddd24fd">
 <ul class="org-ul">
 <li>`&amp;` 
 Ejecuta un comando en segundo plano, permitiendo que el usuario continúe usando la terminal. 
@@ -393,9 +397,9 @@ Inicia un proceso que continúa en ejecución incluso después de cerrar la term
 </div>
 </div>
 
-<div id="outline-container-org622b7c5" class="outline-4">
-<h4 id="org622b7c5">3. Controlar la ejecución de procesos</h4>
-<div class="outline-text-4" id="text-org622b7c5">
+<div id="outline-container-org1a7651f" class="outline-4">
+<h4 id="org1a7651f">3. Controlar la ejecución de procesos</h4>
+<div class="outline-text-4" id="text-org1a7651f">
 <ul class="org-ul">
 <li>`fg` 
 Trae un proceso en segundo plano al primer plano, permitiendo interactuar directamente con él.</li>
@@ -409,9 +413,9 @@ Muestra los procesos en segundo plano o suspendidos asociados a la sesión de te
 </div>
 </div>
 
-<div id="outline-container-org3758838" class="outline-4">
-<h4 id="org3758838">4. Enviar señales a los procesos</h4>
-<div class="outline-text-4" id="text-org3758838">
+<div id="outline-container-orgb679a1e" class="outline-4">
+<h4 id="orgb679a1e">4. Enviar señales a los procesos</h4>
+<div class="outline-text-4" id="text-orgb679a1e">
 <ul class="org-ul">
 <li>`kill &lt;PID&gt;` 
 Envía una señal de terminación al proceso especificado por su PID. Intenta cerrar el proceso de manera controlada.
@@ -440,9 +444,9 @@ Similar a `pkill`, detiene todos los procesos con un nombre específico.
 </div>
 </div>
 
-<div id="outline-container-orgd5e1076" class="outline-4">
-<h4 id="orgd5e1076">5. Cambiar prioridad de procesos</h4>
-<div class="outline-text-4" id="text-orgd5e1076">
+<div id="outline-container-org8c76108" class="outline-4">
+<h4 id="org8c76108">5. Cambiar prioridad de procesos</h4>
+<div class="outline-text-4" id="text-org8c76108">
 <ul class="org-ul">
 <li>`nice -n &lt;prioridad&gt; &lt;comando&gt;`
 Inicia un proceso con una prioridad especificada, donde el rango va de -20 (mayor prioridad) a 19 (menor prioridad). La prioridad afecta el orden de planificación.
@@ -459,9 +463,9 @@ Cambia la prioridad de un proceso en ejecución.
 </div>
 </div>
 
-<div id="outline-container-org6dba2b1" class="outline-4">
-<h4 id="org6dba2b1">6. Ver detalles específicos de los procesos</h4>
-<div class="outline-text-4" id="text-org6dba2b1">
+<div id="outline-container-org9ccb9a9" class="outline-4">
+<h4 id="org9ccb9a9">6. Ver detalles específicos de los procesos</h4>
+<div class="outline-text-4" id="text-org9ccb9a9">
 <ul class="org-ul">
 <li>`pstree`
 Muestra los procesos en una estructura de árbol, permitiendo visualizar mejor las relaciones y jerarquías entre procesos en ejecución.</li>
@@ -478,13 +482,13 @@ Lista todos los archivos abiertos por un proceso específico, útil para ver con
 
 
 
-<div id="outline-container-orge1313a9" class="outline-3">
-<h3 id="orge1313a9">Punteros en C</h3>
-<div class="outline-text-3" id="text-orge1313a9">
+<div id="outline-container-orga1eba29" class="outline-3">
+<h3 id="orga1eba29">Punteros en C</h3>
+<div class="outline-text-3" id="text-orga1eba29">
 </div>
-<div id="outline-container-org3fdab4b" class="outline-4">
-<h4 id="org3fdab4b">¿Qué es un puntero?</h4>
-<div class="outline-text-4" id="text-org3fdab4b">
+<div id="outline-container-org23cc250" class="outline-4">
+<h4 id="org23cc250">¿Qué es un puntero?</h4>
+<div class="outline-text-4" id="text-org23cc250">
 <p>
 Un puntero es una variable que almacena la dirección de memoria de
 otra variable. En lugar de contener un valor directo, un puntero
@@ -493,9 +497,9 @@ otra variable. En lugar de contener un valor directo, un puntero
 </div>
 </div>
 
-<div id="outline-container-org66386a1" class="outline-4">
-<h4 id="org66386a1">Declaración de punteros</h4>
-<div class="outline-text-4" id="text-org66386a1">
+<div id="outline-container-orgc46a4e6" class="outline-4">
+<h4 id="orgc46a4e6">Declaración de punteros</h4>
+<div class="outline-text-4" id="text-orgc46a4e6">
 <p>
 Para declarar un puntero, se utiliza el operador `*` antes del nombre
 de la variable:
@@ -512,9 +516,9 @@ En este ejemplo, `ptr` es un puntero a un entero.
 </div>
 </div>
 
-<div id="outline-container-org1ed17e8" class="outline-4">
-<h4 id="org1ed17e8">Inicialización de punteros</h4>
-<div class="outline-text-4" id="text-org1ed17e8">
+<div id="outline-container-orgb8d85c8" class="outline-4">
+<h4 id="orgb8d85c8">Inicialización de punteros</h4>
+<div class="outline-text-4" id="text-orgb8d85c8">
 <p>
 Un puntero debe inicializarse con la dirección de una variable antes de ser utilizado. Para obtener la dirección de una variable, se emplea el operador `&amp;`:
 </p>
@@ -531,9 +535,9 @@ Aquí, `ptr` almacena la dirección de `var`.
 </div>
 </div>
 
-<div id="outline-container-orgd776e44" class="outline-4">
-<h4 id="orgd776e44">Acceso al valor apuntado</h4>
-<div class="outline-text-4" id="text-orgd776e44">
+<div id="outline-container-org5de074b" class="outline-4">
+<h4 id="org5de074b">Acceso al valor apuntado</h4>
+<div class="outline-text-4" id="text-org5de074b">
 <p>
 Para acceder o modificar el valor de la variable a la que apunta un
 puntero, se utiliza el operador de desreferencia `*`:
@@ -547,9 +551,9 @@ puntero, se utiliza el operador de desreferencia `*`:
 </div>
 </div>
 
-<div id="outline-container-org96d17d2" class="outline-4">
-<h4 id="org96d17d2">Punteros y arreglos</h4>
-<div class="outline-text-4" id="text-org96d17d2">
+<div id="outline-container-org0b57168" class="outline-4">
+<h4 id="org0b57168">Punteros y arreglos</h4>
+<div class="outline-text-4" id="text-org0b57168">
 <p>
 En C, el nombre de un arreglo actúa como un puntero al primer elemento
 del mismo. Por lo tanto, se puede utilizar aritmética de punteros para
@@ -569,9 +573,9 @@ recorrer un arreglo:
 </div>
 </div>
 
-<div id="outline-container-org837a679" class="outline-4">
-<h4 id="org837a679">Punteros y funciones</h4>
-<div class="outline-text-4" id="text-org837a679">
+<div id="outline-container-org2326041" class="outline-4">
+<h4 id="org2326041">Punteros y funciones</h4>
+<div class="outline-text-4" id="text-org2326041">
 <p>
 Los punteros permiten que las funciones modifiquen variables fuera de
 su ámbito local. Al pasar la dirección de una variable a una función,
@@ -594,9 +598,9 @@ esta puede alterar el valor original:
 </div>
 </div>
 
-<div id="outline-container-org7d0e57b" class="outline-4">
-<h4 id="org7d0e57b">Punteros nulos</h4>
-<div class="outline-text-4" id="text-org7d0e57b">
+<div id="outline-container-orgebd43a9" class="outline-4">
+<h4 id="orgebd43a9">Punteros nulos</h4>
+<div class="outline-text-4" id="text-orgebd43a9">
 <p>
 Un puntero nulo es un puntero que no apunta a ninguna dirección
 válida. Se inicializa asignándole el valor `NULL`:
@@ -614,9 +618,9 @@ errores al intentar acceder a direcciones de memoria no válidas.
 </div>
 </div>
 
-<div id="outline-container-org7a1000e" class="outline-4">
-<h4 id="org7a1000e">Aritmética de punteros</h4>
-<div class="outline-text-4" id="text-org7a1000e">
+<div id="outline-container-org9950ef1" class="outline-4">
+<h4 id="org9950ef1">Aritmética de punteros</h4>
+<div class="outline-text-4" id="text-org9950ef1">
 <p>
 Los punteros pueden incrementarse o decrementarse para navegar por
 estructuras de datos en memoria:
@@ -633,9 +637,9 @@ printf<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"%d\n"
 </div>
 </div>
 
-<div id="outline-container-org9948f6b" class="outline-4">
-<h4 id="org9948f6b">Punteros a punteros</h4>
-<div class="outline-text-4" id="text-org9948f6b">
+<div id="outline-container-orgf6194af" class="outline-4">
+<h4 id="orgf6194af">Punteros a punteros</h4>
+<div class="outline-text-4" id="text-orgf6194af">
 <p>
 Un puntero puede apuntar a otro puntero, lo que se denomina "puntero a puntero":
 </p>
@@ -651,9 +655,9 @@ printf<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"Valor
 </div>
 </div>
 
-<div id="outline-container-orgcaabb68" class="outline-4">
-<h4 id="orgcaabb68">Dobles y triples punteros</h4>
-<div class="outline-text-4" id="text-orgcaabb68">
+<div id="outline-container-orgcb9ea49" class="outline-4">
+<h4 id="orgcb9ea49">Dobles y triples punteros</h4>
+<div class="outline-text-4" id="text-orgcb9ea49">
 <p>
 Un <b><b>doble puntero</b></b> es un puntero que apunta a otro puntero,
 permitiendo manejar niveles adicionales de indirección en la
@@ -693,9 +697,9 @@ Usar punteros de múltiples niveles requiere tener una buena comprensión de có
 </div>
 
 
-<div id="outline-container-org59e078b" class="outline-4">
-<h4 id="org59e078b">Punteros y cadenas de caracteres</h4>
-<div class="outline-text-4" id="text-org59e078b">
+<div id="outline-container-org479f4a8" class="outline-4">
+<h4 id="org479f4a8">Punteros y cadenas de caracteres</h4>
+<div class="outline-text-4" id="text-org479f4a8">
 <p>
 Las cadenas de caracteres en C son arreglos de caracteres terminados en un carácter nulo (`'\0'`). Los punteros se utilizan comúnmente para manipular estas cadenas:
 </p>
@@ -715,9 +719,9 @@ Las cadenas de caracteres en C son arreglos de caracteres terminados en un cará
 </div>
 </div>
 
-<div id="outline-container-org89567d7" class="outline-3">
-<h3 id="org89567d7">Concepto de proceso</h3>
-<div class="outline-text-3" id="text-org89567d7">
+<div id="outline-container-org994a2da" class="outline-3">
+<h3 id="org994a2da">Concepto de proceso</h3>
+<div class="outline-text-3" id="text-org994a2da">
 <p>
 Un proceso es una unidad de ejecución dentro de un sistema
 operativo. Cada proceso tiene su propio espacio de memoria, que
@@ -730,13 +734,13 @@ forma aparentemente simultánea.
 </div>
 </div>
 
-<div id="outline-container-org5eda79d" class="outline-3">
-<h3 id="org5eda79d">Fork() en C</h3>
-<div class="outline-text-3" id="text-org5eda79d">
+<div id="outline-container-orgb00f946" class="outline-3">
+<h3 id="orgb00f946">Fork() en C</h3>
+<div class="outline-text-3" id="text-orgb00f946">
 </div>
-<div id="outline-container-org31d6990" class="outline-4">
-<h4 id="org31d6990">¿Qué es fork()?</h4>
-<div class="outline-text-4" id="text-org31d6990">
+<div id="outline-container-orgdcb8916" class="outline-4">
+<h4 id="orgdcb8916">¿Qué es fork()?</h4>
+<div class="outline-text-4" id="text-orgdcb8916">
 <p>
 `fork()` es una llamada al sistema en C, utilizada para crear un nuevo
 proceso llamado "proceso hijo". Este proceso es una copia casi exacta
@@ -747,9 +751,9 @@ tipo Unix/Linux.
 </div>
 </div>
 
-<div id="outline-container-org0d48fb5" class="outline-4">
-<h4 id="org0d48fb5">Funcionamiento básico de fork()</h4>
-<div class="outline-text-4" id="text-org0d48fb5">
+<div id="outline-container-org56002e7" class="outline-4">
+<h4 id="org56002e7">Funcionamiento básico de fork()</h4>
+<div class="outline-text-4" id="text-org56002e7">
 <p>
 Cuando se llama a `fork()`, la ejecución continúa tanto en el proceso
 padre como en el proceso hijo. La llamada a `fork()` retorna un valor
@@ -764,9 +768,9 @@ proceso) del proceso hijo.</li>
 </div>
 </div>
 
-<div id="outline-container-orgc176197" class="outline-4">
-<h4 id="orgc176197">Ejemplo básico de fork()</h4>
-<div class="outline-text-4" id="text-orgc176197">
+<div id="outline-container-orga534ada" class="outline-4">
+<h4 id="orga534ada">Ejemplo básico de fork()</h4>
+<div class="outline-text-4" id="text-orga534ada">
 <p>
 A continuación, un ejemplo sencillo que muestra cómo usar `fork()`
 para crear un proceso hijo:
@@ -796,9 +800,9 @@ para crear un proceso hijo:
 </div>
 </div>
 
-<div id="outline-container-org32e1faf" class="outline-4">
-<h4 id="org32e1faf">Explicación del Ejemplo</h4>
-<div class="outline-text-4" id="text-org32e1faf">
+<div id="outline-container-org67564a0" class="outline-4">
+<h4 id="org67564a0">Explicación del Ejemplo</h4>
+<div class="outline-text-4" id="text-org67564a0">
 <ol class="org-ol">
 <li>`fork()` es llamado y crea un proceso hijo.</li>
 <li>En el proceso hijo, `pid` será igual a `0`, por lo que se ejecutará
@@ -810,9 +814,9 @@ código para el proceso padre.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd54fe37" class="outline-4">
-<h4 id="orgd54fe37">Espera del Proceso Padre con wait()</h4>
-<div class="outline-text-4" id="text-orgd54fe37">
+<div id="outline-container-org59665a0" class="outline-4">
+<h4 id="org59665a0">Espera del Proceso Padre con wait()</h4>
+<div class="outline-text-4" id="text-org59665a0">
 <p>
 Para que el proceso padre espere a que el proceso hijo termine antes
 de continuar, se puede utilizar la función `wait()`:
@@ -846,9 +850,9 @@ termine antes de imprimir su mensaje.
 </div>
 </div>
 
-<div id="outline-container-org931c1f0" class="outline-4">
-<h4 id="org931c1f0">fork() y Punteros</h4>
-<div class="outline-text-4" id="text-org931c1f0">
+<div id="outline-container-orgee6b772" class="outline-4">
+<h4 id="orgee6b772">fork() y Punteros</h4>
+<div class="outline-text-4" id="text-orgee6b772">
 <p>
 `fork()` crea un espacio de memoria independiente para el proceso
 hijo, lo que significa que los punteros en el proceso hijo apuntan a
@@ -860,9 +864,9 @@ variables del proceso hijo afecten al padre, gracias al mecanismo de
 </div>
 </div>
 
-<div id="outline-container-org05aa9fd" class="outline-4">
-<h4 id="org05aa9fd">Ejemplo con Punteros</h4>
-<div class="outline-text-4" id="text-org05aa9fd">
+<div id="outline-container-orgba7ff68" class="outline-4">
+<h4 id="orgba7ff68">Ejemplo con Punteros</h4>
+<div class="outline-text-4" id="text-orgba7ff68">
 <p>
 Este ejemplo demuestra cómo `fork()` maneja los punteros y el espacio de memoria independiente:
 </p>
@@ -897,9 +901,9 @@ Este ejemplo demuestra cómo `fork()` maneja los punteros y el espacio de memori
 </div>
 </div>
 
-<div id="outline-container-orgb9720d3" class="outline-4">
-<h4 id="orgb9720d3">Salida esperada</h4>
-<div class="outline-text-4" id="text-orgb9720d3">
+<div id="outline-container-orgaa9ab68" class="outline-4">
+<h4 id="orgaa9ab68">Salida esperada</h4>
+<div class="outline-text-4" id="text-orgaa9ab68">
 <p>
 La salida de este código será algo similar a:
 </p>
@@ -912,18 +916,18 @@ Proceso padre: valor de *ptr = 100
 </div>
 </div>
 
-<div id="outline-container-org63e816a" class="outline-4">
-<h4 id="org63e816a">Explicación de Copy-on-Write (COW)</h4>
-<div class="outline-text-4" id="text-org63e816a">
+<div id="outline-container-orgdc98d19" class="outline-4">
+<h4 id="orgdc98d19">Explicación de Copy-on-Write (COW)</h4>
+<div class="outline-text-4" id="text-orgdc98d19">
 <p>
 Gracias a Copy-on-Write, ambos procesos (padre e hijo) comparten la misma memoria hasta que uno de ellos intenta modificarla. En ese momento, el sistema operativo crea una copia independiente de la memoria para el proceso que realiza la escritura, evitando que los cambios afecten al otro proceso.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge6b58d3" class="outline-4">
-<h4 id="orge6b58d3">Conclusión</h4>
-<div class="outline-text-4" id="text-orge6b58d3">
+<div id="outline-container-orgc4951cb" class="outline-4">
+<h4 id="orgc4951cb">Conclusión</h4>
+<div class="outline-text-4" id="text-orgc4951cb">
 <p>
 La llamada a `fork()` es una herramienta poderosa en C para la creación de procesos en sistemas operativos Unix/Linux. Permite duplicar un proceso, crear nuevos flujos de ejecución, y manejar recursos compartidos de manera controlada. Es especialmente útil en programas multitarea como servidores o aplicaciones que requieren procesamiento paralelo.
 </p>
@@ -931,9 +935,9 @@ La llamada a `fork()` es una herramienta poderosa en C para la creación de proc
 </div>
 </div>
 
-<div id="outline-container-orge55c685" class="outline-3">
-<h3 id="orge55c685">Estados y transiciones de los procesos</h3>
-<div class="outline-text-3" id="text-orge55c685">
+<div id="outline-container-org264cc1c" class="outline-3">
+<h3 id="org264cc1c">Estados y transiciones de los procesos</h3>
+<div class="outline-text-3" id="text-org264cc1c">
 <p>
 Los procesos en un sistema operativo pueden estar en diferentes
 estados, que determinan si están utilizando la CPU, esperando, o
@@ -954,9 +958,9 @@ estructura de datos llamada tabla de procesos.
 </div>
 
 
-<div id="outline-container-orgf6b126f" class="outline-4">
-<h4 id="orgf6b126f">Ejemplo en C: Creación de un proceso utilizando fork()</h4>
-<div class="outline-text-4" id="text-orgf6b126f">
+<div id="outline-container-org18c6528" class="outline-4">
+<h4 id="org18c6528">Ejemplo en C: Creación de un proceso utilizando fork()</h4>
+<div class="outline-text-4" id="text-org18c6528">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">unistd.h</span><span style="color: #c099ff;">&gt;</span>
@@ -978,9 +982,9 @@ estructura de datos llamada tabla de procesos.
 
 
 
-<div id="outline-container-org0483981" class="outline-4">
-<h4 id="org0483981">Ejemplo en C: Simulación de transiciones de estados</h4>
-<div class="outline-text-4" id="text-org0483981">
+<div id="outline-container-org5b5d382" class="outline-4">
+<h4 id="org5b5d382">Ejemplo en C: Simulación de transiciones de estados</h4>
+<div class="outline-text-4" id="text-org5b5d382">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">unistd.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1008,13 +1012,13 @@ estructura de datos llamada tabla de procesos.
 </div>
 </div>
 
-<div id="outline-container-org0a21d5c" class="outline-3">
-<h3 id="org0a21d5c">Tabla de Procesos</h3>
-<div class="outline-text-3" id="text-org0a21d5c">
+<div id="outline-container-org88be168" class="outline-3">
+<h3 id="org88be168">Tabla de Procesos</h3>
+<div class="outline-text-3" id="text-org88be168">
 </div>
-<div id="outline-container-org2582cab" class="outline-4">
-<h4 id="org2582cab">¿Qué es la Tabla de Procesos?</h4>
-<div class="outline-text-4" id="text-org2582cab">
+<div id="outline-container-org33fa5c7" class="outline-4">
+<h4 id="org33fa5c7">¿Qué es la Tabla de Procesos?</h4>
+<div class="outline-text-4" id="text-org33fa5c7">
 <p>
 La <b><b>Tabla de Procesos</b></b> es una estructura de datos utilizada por el
 sistema operativo para gestionar todos los procesos activos en el
@@ -1025,9 +1029,9 @@ su administración.
 </div>
 </div>
 
-<div id="outline-container-org6010220" class="outline-4">
-<h4 id="org6010220">Información en la Tabla de Procesos</h4>
-<div class="outline-text-4" id="text-org6010220">
+<div id="outline-container-org740e85e" class="outline-4">
+<h4 id="org740e85e">Información en la Tabla de Procesos</h4>
+<div class="outline-text-4" id="text-org740e85e">
 <p>
 Cada entrada en la tabla de procesos incluye un PCB con varios campos importantes:
 </p>
@@ -1045,9 +1049,9 @@ instrucción que el proceso debe ejecutar.</li>
 </div>
 </div>
 
-<div id="outline-container-org89a2c50" class="outline-4">
-<h4 id="org89a2c50">Estados del Proceso</h4>
-<div class="outline-text-4" id="text-org89a2c50">
+<div id="outline-container-org62e4ba3" class="outline-4">
+<h4 id="org62e4ba3">Estados del Proceso</h4>
+<div class="outline-text-4" id="text-org62e4ba3">
 <p>
 Un proceso puede encontrarse en diferentes estados, y la tabla de procesos ayuda a rastrear el estado actual de cada proceso. Los estados típicos incluyen:
 </p>
@@ -1061,9 +1065,9 @@ Un proceso puede encontrarse en diferentes estados, y la tabla de procesos ayuda
 </div>
 </div>
 
-<div id="outline-container-orge8dba21" class="outline-4">
-<h4 id="orge8dba21">Ejemplo en C de una Tabla de Procesos Simplificada</h4>
-<div class="outline-text-4" id="text-orge8dba21">
+<div id="outline-container-org6beaab7" class="outline-4">
+<h4 id="org6beaab7">Ejemplo en C de una Tabla de Procesos Simplificada</h4>
+<div class="outline-text-4" id="text-org6beaab7">
 <p>
 El siguiente ejemplo en C muestra cómo se puede representar una tabla
 de procesos de manera simple mediante una estructura de datos.
@@ -1126,9 +1130,9 @@ de procesos de manera simple mediante una estructura de datos.
 </div>
 </div>
 
-<div id="outline-container-orga43cf72" class="outline-4">
-<h4 id="orga43cf72">Explicación del Ejemplo</h4>
-<div class="outline-text-4" id="text-orga43cf72">
+<div id="outline-container-org7588324" class="outline-4">
+<h4 id="org7588324">Explicación del Ejemplo</h4>
+<div class="outline-text-4" id="text-org7588324">
 <ol class="org-ol">
 <li><b><b>Definición de Estructura</b></b>: La estructura `Process` representa cada proceso en la tabla. Incluye el <b><b>PID</b></b>, <b><b>estado</b></b>, <b><b>prioridad</b></b>, y <b><b>contador de programa (PC)</b></b>.</li>
 <li><b><b>Inicialización de Procesos</b></b>: La función `initializeProcesses` asigna un PID, establece el estado en "Listo", y asigna una prioridad a cada proceso.</li>
@@ -1138,9 +1142,9 @@ de procesos de manera simple mediante una estructura de datos.
 </div>
 </div>
 
-<div id="outline-container-org820a5fe" class="outline-4">
-<h4 id="org820a5fe">Salida Esperada</h4>
-<div class="outline-text-4" id="text-org820a5fe">
+<div id="outline-container-orga6372a8" class="outline-4">
+<h4 id="orga6372a8">Salida Esperada</h4>
+<div class="outline-text-4" id="text-orga6372a8">
 <p>
 Al ejecutar el programa, la salida muestra la tabla de procesos inicial y después de actualizar el estado de un proceso.
 </p>
@@ -1171,9 +1175,9 @@ PID   Estado       Prioridad     PC
 </div>
 </div>
 
-<div id="outline-container-orge858e92" class="outline-4">
-<h4 id="orge858e92">Conclusión</h4>
-<div class="outline-text-4" id="text-orge858e92">
+<div id="outline-container-org8a17ad1" class="outline-4">
+<h4 id="org8a17ad1">Conclusión</h4>
+<div class="outline-text-4" id="text-org8a17ad1">
 <p>
 La tabla de procesos es fundamental para el seguimiento y administración
 de los procesos en un sistema operativo. Cada proceso tiene su propio
@@ -1190,9 +1194,9 @@ recursos de cada proceso.
 
 
 
-<div id="outline-container-orgf1115ac" class="outline-3">
-<h3 id="orgf1115ac">Procesos ligeros: Hilos o hebras</h3>
-<div class="outline-text-3" id="text-orgf1115ac">
+<div id="outline-container-orgbb85d81" class="outline-3">
+<h3 id="orgbb85d81">Procesos ligeros: Hilos o hebras</h3>
+<div class="outline-text-3" id="text-orgbb85d81">
 <p>
 Un proceso ligero o hilo es una unidad de ejecución que comparte el
 mismo espacio de memoria que otros hilos dentro del mismo proceso. Los
@@ -1203,9 +1207,9 @@ crear y gestionar hilos.
 </p>
 </div>
 
-<div id="outline-container-orgd2bf71b" class="outline-4">
-<h4 id="orgd2bf71b">Ejemplo en C: Creación de hilos con pthread</h4>
-<div class="outline-text-4" id="text-orgd2bf71b">
+<div id="outline-container-org100e05a" class="outline-4">
+<h4 id="org100e05a">Ejemplo en C: Creación de hilos con pthread</h4>
+<div class="outline-text-4" id="text-org100e05a">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">pthread.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1231,13 +1235,13 @@ crear y gestionar hilos.
 </div>
 </div>
 
-<div id="outline-container-org06106be" class="outline-3">
-<h3 id="org06106be">pthread<sub>create</sub> en C</h3>
-<div class="outline-text-3" id="text-org06106be">
+<div id="outline-container-orgbb4204e" class="outline-3">
+<h3 id="orgbb4204e">pthread<sub>create</sub> en C</h3>
+<div class="outline-text-3" id="text-orgbb4204e">
 </div>
-<div id="outline-container-orgf010406" class="outline-4">
-<h4 id="orgf010406">Descripción de pthread<sub>create</sub></h4>
-<div class="outline-text-4" id="text-orgf010406">
+<div id="outline-container-orgb636d89" class="outline-4">
+<h4 id="orgb636d89">Descripción de pthread<sub>create</sub></h4>
+<div class="outline-text-4" id="text-orgb636d89">
 <p>
 La función `pthread<sub>create</sub>` en C se utiliza para crear y lanzar un
 nuevo hilo de ejecución en un programa. Esta función es parte de la
@@ -1248,9 +1252,9 @@ múltiples tareas de forma concurrente.
 </div>
 </div>
 
-<div id="outline-container-org092c4af" class="outline-4">
-<h4 id="org092c4af">Sintaxis de pthread<sub>create</sub></h4>
-<div class="outline-text-4" id="text-org092c4af">
+<div id="outline-container-orgc0f1fda" class="outline-4">
+<h4 id="orgc0f1fda">Sintaxis de pthread<sub>create</sub></h4>
+<div class="outline-text-4" id="text-orgc0f1fda">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #ffc777;">int</span> <span style="color: #82aaff;">pthread_create</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">pthread_t</span> *<span style="color: #ff98a4;">thread</span>, <span style="color: #c099ff;">const</span> <span style="color: #ffc777;">pthread_attr_t</span> *<span style="color: #ff98a4;">attr</span>, <span style="color: #ffc777;">void</span> *<span style="color: #ff995e;">(</span>*<span style="color: #82aaff;">start_routine</span><span style="color: #ff995e;">)(</span><span style="color: #ffc777;">void</span> *<span style="color: #ff995e;">)</span>, <span style="color: #ffc777;">void</span> *<span style="color: #ff98a4;">arg</span><span style="color: #c099ff;">)</span>;
 </pre>
@@ -1258,9 +1262,9 @@ múltiples tareas de forma concurrente.
 </div>
 </div>
 
-<div id="outline-container-orgd914f57" class="outline-4">
-<h4 id="orgd914f57">Parámetros</h4>
-<div class="outline-text-4" id="text-orgd914f57">
+<div id="outline-container-orgac7225d" class="outline-4">
+<h4 id="orgac7225d">Parámetros</h4>
+<div class="outline-text-4" id="text-orgac7225d">
 <ul class="org-ul">
 <li><b><b>`pthread<sub>t</sub> *thread`</b></b>: Puntero a una variable de tipo `pthread<sub>t</sub>`,
 que es el identificador del hilo que se está creando. Al terminar
@@ -1280,9 +1284,9 @@ datos, este parámetro puede ser `NULL`.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb16b4e6" class="outline-4">
-<h4 id="orgb16b4e6">Valor de Retorno</h4>
-<div class="outline-text-4" id="text-orgb16b4e6">
+<div id="outline-container-org76c7b23" class="outline-4">
+<h4 id="org76c7b23">Valor de Retorno</h4>
+<div class="outline-text-4" id="text-org76c7b23">
 <ul class="org-ul">
 <li><b><b>0</b></b>: La función se ejecuta exitosamente y el hilo se crea sin problemas.</li>
 <li><b><b>Distinto de 0</b></b>: Devuelve un código de error si la creación del hilo falla.</li>
@@ -1290,9 +1294,9 @@ datos, este parámetro puede ser `NULL`.</li>
 </div>
 </div>
 
-<div id="outline-container-org6b48963" class="outline-4">
-<h4 id="org6b48963">Ejemplo Práctico de pthread<sub>create</sub></h4>
-<div class="outline-text-4" id="text-org6b48963">
+<div id="outline-container-orgaca80d1" class="outline-4">
+<h4 id="orgaca80d1">Ejemplo Práctico de pthread<sub>create</sub></h4>
+<div class="outline-text-4" id="text-orgaca80d1">
 <p>
 Este ejemplo en C crea un hilo simple que imprime un mensaje
 utilizando `pthread<sub>create</sub>`:
@@ -1329,9 +1333,9 @@ utilizando `pthread<sub>create</sub>`:
 </div>
 </div>
 
-<div id="outline-container-orgb1e8cb0" class="outline-4">
-<h4 id="orgb1e8cb0">Explicación del Ejemplo</h4>
-<div class="outline-text-4" id="text-orgb1e8cb0">
+<div id="outline-container-org9e04c66" class="outline-4">
+<h4 id="org9e04c66">Explicación del Ejemplo</h4>
+<div class="outline-text-4" id="text-org9e04c66">
 <ol class="org-ol">
 <li><b><b>Declaración de Hilo y Argumento</b></b>:
 <ul class="org-ul">
@@ -1362,9 +1366,9 @@ utilizando `pthread<sub>create</sub>`:
 </div>
 </div>
 
-<div id="outline-container-org94fd809" class="outline-4">
-<h4 id="org94fd809">Consideraciones Importantes</h4>
-<div class="outline-text-4" id="text-org94fd809">
+<div id="outline-container-org1373986" class="outline-4">
+<h4 id="org1373986">Consideraciones Importantes</h4>
+<div class="outline-text-4" id="text-org1373986">
 <ul class="org-ul">
 <li><b><b>Sincronización</b></b>: <b>pthread<sub>create</sub></b> lanza el hilo inmediatamente,
 pero el hilo principal puede necesitar esperar a que el hilo termine
@@ -1380,9 +1384,9 @@ inicializando y configurando los atributos del hilo con
 </div>
 </div>
 
-<div id="outline-container-org2a44de1" class="outline-4">
-<h4 id="org2a44de1">Resumen</h4>
-<div class="outline-text-4" id="text-org2a44de1">
+<div id="outline-container-orgf865b30" class="outline-4">
+<h4 id="orgf865b30">Resumen</h4>
+<div class="outline-text-4" id="text-orgf865b30">
 <p>
 La función <b>pthread<sub>create</sub></b> permite crear un nuevo hilo y especificar
 la tarea que debe ejecutar, lo cual es útil para realizar múltiples
@@ -1395,9 +1399,9 @@ identificador y atributos personalizados.
 </div>
 
 
-<div id="outline-container-org0fdff2a" class="outline-3">
-<h3 id="org0fdff2a">cola con prioridad</h3>
-<div class="outline-text-3" id="text-org0fdff2a">
+<div id="outline-container-orgf5b7188" class="outline-3">
+<h3 id="orgf5b7188">cola con prioridad</h3>
+<div class="outline-text-3" id="text-orgf5b7188">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1526,9 +1530,9 @@ identificador y atributos personalizados.
 
 
 
-<div id="outline-container-orgecc6c5d" class="outline-3">
-<h3 id="orgecc6c5d">Concurrencia y Secuenciabilidad</h3>
-<div class="outline-text-3" id="text-orgecc6c5d">
+<div id="outline-container-org48eb42d" class="outline-3">
+<h3 id="org48eb42d">Concurrencia y Secuenciabilidad</h3>
+<div class="outline-text-3" id="text-org48eb42d">
 <p>
 La concurrencia y secuenciabilidad son conceptos clave en el diseño
 y la gestión de sistemas operativos modernos. Permiten que
@@ -1557,9 +1561,9 @@ condiciones de carrera y gestionar la exclusión mutua.</li>
 </div>
 
 
-<div id="outline-container-orga209452" class="outline-4">
-<h4 id="orga209452">Ejemplo en C: Concurrencia y sincronización de tareas</h4>
-<div class="outline-text-4" id="text-orga209452">
+<div id="outline-container-orgde619c7" class="outline-4">
+<h4 id="orgde619c7">Ejemplo en C: Concurrencia y sincronización de tareas</h4>
+<div class="outline-text-4" id="text-orgde619c7">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">pthread.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1595,9 +1599,9 @@ condiciones de carrera y gestionar la exclusión mutua.</li>
 </div>
 
 
-<div id="outline-container-org6bb4815" class="outline-4">
-<h4 id="org6bb4815">1.1 Exclusión Mutua</h4>
-<div class="outline-text-4" id="text-org6bb4815">
+<div id="outline-container-orgb6ca94f" class="outline-4">
+<h4 id="orgb6ca94f">1.1 Exclusión Mutua</h4>
+<div class="outline-text-4" id="text-orgb6ca94f">
 <p>
 La exclusión mutua asegura que solo un proceso a la vez pueda acceder
 a una sección crítica que manipula recursos compartidos.
@@ -1615,8 +1619,8 @@ a una sección crítica que manipula recursos compartidos.
 
 
 <ul class="org-ul">
-<li><a id="org82c9b98"></a>1. Algoritmo de Dekker<br />
-<div class="outline-text-5" id="text-org82c9b98">
+<li><a id="orgb8121c0"></a>1. Algoritmo de Dekker<br />
+<div class="outline-text-5" id="text-orgb8121c0">
 <p>
 El algoritmo de Dekker es un algoritmo de programación concurrente
 para exclusión mutua, que permite a dos procesos o hilos de ejecución
@@ -1634,8 +1638,8 @@ deberá esperar su finalización.
 </div>
 
 <ul class="org-ul">
-<li><a id="orge743f69"></a>Condiciones<br />
-<div class="outline-text-6" id="text-orge743f69">
+<li><a id="orgc21d5c2"></a>Condiciones<br />
+<div class="outline-text-6" id="text-orgc21d5c2">
 <ul class="org-ul">
 <li>No hay prioridad entre procesos.</li>
 <li>La capacidad de los equipos es irrelevante.</li>
@@ -1724,8 +1728,8 @@ Ejemplo de del algoritmo de Dekker en C
 </li>
 
 
-<li><a id="org6c46cba"></a>Productor Consumidor Dekker<br />
-<div class="outline-text-6" id="text-org6c46cba">
+<li><a id="org2092536"></a>Productor Consumidor Dekker<br />
+<div class="outline-text-6" id="text-org2092536">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1824,8 +1828,8 @@ Ejemplo de del algoritmo de Dekker en C
 
 
 
-<li><a id="orgf7fe1c3"></a>2. Algoritmo de Peterson<br />
-<div class="outline-text-5" id="text-orgf7fe1c3">
+<li><a id="org86b1932"></a>2. Algoritmo de Peterson<br />
+<div class="outline-text-5" id="text-org86b1932">
 <p>
 El algoritmo de Peterson, también conocido como solución de
 Peterson,​ es un algoritmo de programación concurrente para exclusión
@@ -1902,8 +1906,8 @@ Ejemplo de del algoritmo de Peterson en C
 </div>
 
 <ul class="org-ul">
-<li><a id="org3f03509"></a>Productor Consumidor<br />
-<div class="outline-text-6" id="text-org3f03509">
+<li><a id="org0af88d2"></a>Productor Consumidor<br />
+<div class="outline-text-6" id="text-org0af88d2">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1996,8 +2000,8 @@ Ejemplo de del algoritmo de Peterson en C
 </ul>
 </li>
 
-<li><a id="org27d59fe"></a>3. Algoritmo de Lamport’s Bakery<br />
-<div class="outline-text-5" id="text-org27d59fe">
+<li><a id="org442235c"></a>3. Algoritmo de Lamport’s Bakery<br />
+<div class="outline-text-5" id="text-org442235c">
 <p>
 El algoritmo de Lamport’s Bakery es una generalización que permite la
 exclusión mutua para múltiples procesos, usando una "numeración"
@@ -2120,8 +2124,8 @@ Ejemplo de del algoritmo de Lamport’s Bakery en C
 </div>
 </li>
 
-<li><a id="org417fcbc"></a>Productor Consumidor<br />
-<div class="outline-text-5" id="text-org417fcbc">
+<li><a id="orgb62fa90"></a>Productor Consumidor<br />
+<div class="outline-text-5" id="text-orgb62fa90">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -2215,8 +2219,8 @@ Ejemplo de del algoritmo de Lamport’s Bakery en C
 </div>
 </li>
 
-<li><a id="org3de7ee2"></a>4. Semáforos y Mutexes<br />
-<div class="outline-text-5" id="text-org3de7ee2">
+<li><a id="org152ed0d"></a>4. Semáforos y Mutexes<br />
+<div class="outline-text-5" id="text-org152ed0d">
 <p>
 Los semáforos y mutexes son mecanismos ampliamente utilizados para
 manejar la sincronización y exclusión mutua en sistemas operativos
@@ -2404,8 +2408,8 @@ Ejemplo de del algoritmo de Semáforos y Mutexes en C
 </div>
 
 <ul class="org-ul">
-<li><a id="org94a3d2e"></a>Productor Consumidos<br />
-<div class="outline-text-6" id="text-org94a3d2e">
+<li><a id="orge48e060"></a>Productor Consumidos<br />
+<div class="outline-text-6" id="text-orge48e060">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -2551,9 +2555,9 @@ Ejemplo de del algoritmo de Semáforos y Mutexes en C
 
 
 
-<div id="outline-container-orgf4e025c" class="outline-4">
-<h4 id="orgf4e025c">1.2 Sincronización</h4>
-<div class="outline-text-4" id="text-orgf4e025c">
+<div id="outline-container-org65b3105" class="outline-4">
+<h4 id="org65b3105">1.2 Sincronización</h4>
+<div class="outline-text-4" id="text-org65b3105">
 <p>
 La sincronización se encarga de coordinar la ejecución de
 múltiples procesos o threads para garantizar que operen de manera
@@ -2572,9 +2576,9 @@ hasta que una condición se cumpla.</li>
 </div>
 </div>
 
-<div id="outline-container-orgd24c8aa" class="outline-4">
-<h4 id="orgd24c8aa">1.3 Condiciones de carrera y sincronización</h4>
-<div class="outline-text-4" id="text-orgd24c8aa">
+<div id="outline-container-orgabc666d" class="outline-4">
+<h4 id="orgabc666d">1.3 Condiciones de carrera y sincronización</h4>
+<div class="outline-text-4" id="text-orgabc666d">
 <p>
 Las condiciones de carrera ocurren cuando dos o más procesos acceden a recursos compartidos de manera concurrente y el resultado depende del orden de ejecución. Esto se soluciona con:
 </p>
@@ -2586,9 +2590,9 @@ Las condiciones de carrera ocurren cuando dos o más procesos acceden a recursos
 </div>
 </div>
 
-<div id="outline-container-org037b0e2" class="outline-3">
-<h3 id="org037b0e2">Secuenciabilidad</h3>
-<div class="outline-text-3" id="text-org037b0e2">
+<div id="outline-container-org3a79329" class="outline-3">
+<h3 id="org3a79329">Secuenciabilidad</h3>
+<div class="outline-text-3" id="text-org3a79329">
 <p>
 La secuenciabilidad implica gestionar el orden de ejecución de los
 procesos o threads en un sistema operativo para asegurar que se
@@ -2602,9 +2606,9 @@ tiempos de espera y maximicen el uso del procesador.</li>
 </ul>
 </div>
 
-<div id="outline-container-org0dd354e" class="outline-4">
-<h4 id="org0dd354e">2.1 Algoritmos de Planificación de Procesos</h4>
-<div class="outline-text-4" id="text-org0dd354e">
+<div id="outline-container-orgd22d094" class="outline-4">
+<h4 id="orgd22d094">2.1 Algoritmos de Planificación de Procesos</h4>
+<div class="outline-text-4" id="text-orgd22d094">
 <p>
 Los algoritmos de planificación determinan el orden en que se
 ejecutan los procesos en la CPU. Los más comunes incluyen:
@@ -2623,9 +2627,9 @@ evitar el "hambruna" de procesos de baja prioridad.</li>
 </div>
 </div>
 
-<div id="outline-container-org464af61" class="outline-4">
-<h4 id="org464af61">2.2 Algoritmos de Detección y Prevención de Interbloqueos (Deadlocks)</h4>
-<div class="outline-text-4" id="text-org464af61">
+<div id="outline-container-orgc95f263" class="outline-4">
+<h4 id="orgc95f263">2.2 Algoritmos de Detección y Prevención de Interbloqueos (Deadlocks)</h4>
+<div class="outline-text-4" id="text-orgc95f263">
 <p>
 Los interbloqueos ocurren cuando dos o más procesos esperan
 indefinidamente por recursos que otros procesos poseen.
@@ -2651,9 +2655,9 @@ condiciones para un interbloqueo.</li>
 </div>
 </div>
 
-<div id="outline-container-org90dafb4" class="outline-4">
-<h4 id="org90dafb4">2.3 Sincronización y Secuenciabilidad</h4>
-<div class="outline-text-4" id="text-org90dafb4">
+<div id="outline-container-org5d9b628" class="outline-4">
+<h4 id="org5d9b628">2.3 Sincronización y Secuenciabilidad</h4>
+<div class="outline-text-4" id="text-org5d9b628">
 <p>
 La sincronización y secuenciabilidad son clave para evitar
 conflictos y maximizar el rendimiento. Se utilizan técnicas como:
@@ -2667,9 +2671,9 @@ concurrentes y modelar sincronización y secuenciabilidad.</li>
 </div>
 </div>
 
-<div id="outline-container-orgfc85660" class="outline-4">
-<h4 id="orgfc85660">3. Conclusión</h4>
-<div class="outline-text-4" id="text-orgfc85660">
+<div id="outline-container-org529b0a5" class="outline-4">
+<h4 id="org529b0a5">3. Conclusión</h4>
+<div class="outline-text-4" id="text-org529b0a5">
 <p>
 La concurrencia y secuenciabilidad son fundamentales en la gestión de
 sistemas operativos modernos. Los algoritmos y métodos descritos
@@ -2685,9 +2689,9 @@ y aplicaciones robustas en entornos concurrentes.
 
 
 
-<div id="outline-container-org1524a59" class="outline-3">
-<h3 id="org1524a59">Niveles, Objetivos y Criterios de Planificación</h3>
-<div class="outline-text-3" id="text-org1524a59">
+<div id="outline-container-org701ab8b" class="outline-3">
+<h3 id="org701ab8b">Niveles, Objetivos y Criterios de Planificación</h3>
+<div class="outline-text-3" id="text-org701ab8b">
 <p>
 La planificación es el proceso de asignar recursos del sistema a los
 procesos, y su objetivo principal es optimizar el rendimiento del
@@ -2698,9 +2702,9 @@ su ciclo de vida.
 </p>
 </div>
 
-<div id="outline-container-org9d1a2a1" class="outline-4">
-<h4 id="org9d1a2a1">Niveles de Planificación</h4>
-<div class="outline-text-4" id="text-org9d1a2a1">
+<div id="outline-container-org9c2108e" class="outline-4">
+<h4 id="org9c2108e">Niveles de Planificación</h4>
+<div class="outline-text-4" id="text-org9c2108e">
 <ul class="org-ul">
 <li><b><b>Planificación a largo plazo</b></b>: 
 <ul class="org-ul">
@@ -2724,9 +2728,9 @@ su ciclo de vida.
 </div>
 </div>
 
-<div id="outline-container-org52491a7" class="outline-4">
-<h4 id="org52491a7">Objetivos de la Planificación</h4>
-<div class="outline-text-4" id="text-org52491a7">
+<div id="outline-container-orge4b8d7c" class="outline-4">
+<h4 id="orge4b8d7c">Objetivos de la Planificación</h4>
+<div class="outline-text-4" id="text-orge4b8d7c">
 <ul class="org-ul">
 <li><b><b>Optimización del tiempo de respuesta</b></b>: Especialmente importante en sistemas interactivos, donde los usuarios esperan respuestas rápidas.</li>
 <li><b><b>Maximización del rendimiento</b></b>: Ejecutar la mayor cantidad de procesos posible en un tiempo determinado.</li>
@@ -2736,9 +2740,9 @@ su ciclo de vida.
 </div>
 </div>
 
-<div id="outline-container-org9904d58" class="outline-4">
-<h4 id="org9904d58">Criterios de Planificación</h4>
-<div class="outline-text-4" id="text-org9904d58">
+<div id="outline-container-org4c52fcd" class="outline-4">
+<h4 id="org4c52fcd">Criterios de Planificación</h4>
+<div class="outline-text-4" id="text-org4c52fcd">
 <ul class="org-ul">
 <li><b><b>Equidad</b></b>: El sistema debe asignar recursos de manera equitativa, evitando el bloqueo de procesos de baja prioridad.</li>
 <li><b><b>Eficiencia</b></b>: Aumentar la utilización de la CPU al máximo, minimizando el tiempo de inactividad.</li>
@@ -2749,9 +2753,9 @@ su ciclo de vida.
 </div>
 </div>
 
-<div id="outline-container-org9584e93" class="outline-4">
-<h4 id="org9584e93">Ejemplo en C: Implementación Simple de Planificación Round Robin</h4>
-<div class="outline-text-4" id="text-org9584e93">
+<div id="outline-container-org2c5bb0f" class="outline-4">
+<h4 id="org2c5bb0f">Ejemplo en C: Implementación Simple de Planificación Round Robin</h4>
+<div class="outline-text-4" id="text-org2c5bb0f">
 <p>
 El siguiente código en C es una implementación simple de un esquema de
 planificación Round Robin. En este ejemplo, se simulan tres procesos
@@ -2782,9 +2786,9 @@ tiempo fijo para su ejecución.
 </div>
 </div>
 
-<div id="outline-container-orgf721383" class="outline-3">
-<h3 id="orgf721383">Técnicas de Administración del Planificador</h3>
-<div class="outline-text-3" id="text-orgf721383">
+<div id="outline-container-org7fc3d86" class="outline-3">
+<h3 id="org7fc3d86">Técnicas de Administración del Planificador</h3>
+<div class="outline-text-3" id="text-org7fc3d86">
 <p>
 El planificador utiliza varias técnicas para mejorar la gestión de
 procesos y optimizar el rendimiento del sistema. Algunas de las
@@ -2834,13 +2838,13 @@ razonables.</li>
 </div>
 
 
-<div id="outline-container-orgb867779" class="outline-2">
-<h2 id="orgb867779">Administración de la memoria</h2>
-<div class="outline-text-2" id="text-orgb867779">
+<div id="outline-container-orge3d4f26" class="outline-2">
+<h2 id="orge3d4f26">Administración de la memoria</h2>
+<div class="outline-text-2" id="text-orge3d4f26">
 </div>
-<div id="outline-container-org447a43d" class="outline-3">
-<h3 id="org447a43d">Política y filosofía de la administración de memoria</h3>
-<div class="outline-text-3" id="text-org447a43d">
+<div id="outline-container-orgbb87ab0" class="outline-3">
+<h3 id="orgbb87ab0">Política y filosofía de la administración de memoria</h3>
+<div class="outline-text-3" id="text-orgbb87ab0">
 <p>
 La administración de memoria en los sistemas operativos sigue
 principios fundamentales que guían su diseño y operación. Entre las
@@ -2864,13 +2868,13 @@ pudiendo causar fragmentación.
 
 
 
-<div id="outline-container-orgab1d322" class="outline-4">
-<h4 id="orgab1d322">Ejemplos de administración de memoria</h4>
-<div class="outline-text-4" id="text-orgab1d322">
+<div id="outline-container-org627ab04" class="outline-4">
+<h4 id="org627ab04">Ejemplos de administración de memoria</h4>
+<div class="outline-text-4" id="text-org627ab04">
 </div>
 <ul class="org-ul">
-<li><a id="orgcb6757b"></a>Asignación dinámica vs. estática<br />
-<div class="outline-text-5" id="text-orgcb6757b">
+<li><a id="org4078c62"></a>Asignación dinámica vs. estática<br />
+<div class="outline-text-5" id="text-org4078c62">
 <p>
 La asignación dinámica y estática se refiere al momento en el que se
 reserva la memoria para un programa.
@@ -2914,9 +2918,9 @@ Ejemplo en C:
 </ul>
 </div>
 
-<div id="outline-container-orgcb1dbd0" class="outline-4">
-<h4 id="orgcb1dbd0">Swapping</h4>
-<div class="outline-text-4" id="text-orgcb1dbd0">
+<div id="outline-container-orgd07f9b5" class="outline-4">
+<h4 id="orgd07f9b5">Swapping</h4>
+<div class="outline-text-4" id="text-orgd07f9b5">
 <p>
 El swapping consiste en mover procesos completos entre la memoria
 principal y el disco para liberar espacio.
@@ -2932,7 +2936,7 @@ principal y el disco para liberar espacio.
 <li><p>
 <b><b>Diagrama</b></b>:
 </p>
-<pre class="example" id="org34672ad">
+<pre class="example" id="org5067bd5">
   Memoria principal:
   [Proceso A] [Proceso B] [Libre]
   
@@ -2948,9 +2952,9 @@ principal y el disco para liberar espacio.
 </div>
 </div>
 
-<div id="outline-container-org6a7a812" class="outline-4">
-<h4 id="org6a7a812">Fragmentación</h4>
-<div class="outline-text-4" id="text-org6a7a812">
+<div id="outline-container-org9a1258b" class="outline-4">
+<h4 id="org9a1258b">Fragmentación</h4>
+<div class="outline-text-4" id="text-org9a1258b">
 <p>
 La fragmentación ocurre cuando la memoria se utiliza de manera
 ineficiente, dejando pequeños bloques no utilizables.
@@ -2964,7 +2968,7 @@ ineficiente, dejando pequeños bloques no utilizables.
 <li><p>
 Ejemplo:
 </p>
-<pre class="example" id="org67fc1dc">
+<pre class="example" id="org6dda294">
     Solicitud: 10 KB
     Bloque asignado: 16 KB (6 KB desperdiciados)
 </pre></li>
@@ -2977,7 +2981,7 @@ Ejemplo:
 <li><p>
 Ejemplo:
 </p>
-<pre class="example" id="orgb793c05">
+<pre class="example" id="orgf61b265">
     [Libre 10 KB] [Usado 50 KB] [Libre 15 KB]
     Solicitud: 20 KB -&gt; Fallo (No hay bloques contiguos de 20 KB)
 </pre></li>
@@ -2986,9 +2990,9 @@ Ejemplo:
 </div>
 </div>
 
-<div id="outline-container-orga39efa4" class="outline-4">
-<h4 id="orga39efa4">Prioridades</h4>
-<div class="outline-text-4" id="text-orga39efa4">
+<div id="outline-container-org9d355e9" class="outline-4">
+<h4 id="org9d355e9">Prioridades</h4>
+<div class="outline-text-4" id="text-org9d355e9">
 <p>
 La asignación basada en prioridades otorga más recursos a procesos críticos.
 </p>
@@ -3003,7 +3007,7 @@ La asignación basada en prioridades otorga más recursos a procesos críticos.
 <li><p>
 <b><b>Simulación de asignación</b></b>:
 </p>
-<pre class="example" id="org93d5c53">
+<pre class="example" id="org4712393">
   Prioridad: 
   - Proceso A: Alta (Se asigna memoria primero)
   - Proceso B: Media
@@ -3018,9 +3022,9 @@ La asignación basada en prioridades otorga más recursos a procesos críticos.
 </div>
 
 
-<div id="outline-container-org96affe3" class="outline-3">
-<h3 id="org96affe3">Memoria real</h3>
-<div class="outline-text-3" id="text-org96affe3">
+<div id="outline-container-org50f5fb4" class="outline-3">
+<h3 id="org50f5fb4">Memoria real</h3>
+<div class="outline-text-3" id="text-org50f5fb4">
 <p>
 La memoria real es la memoria física disponible en un sistema, como la
 RAM. Los sistemas operativos deben administrarla eficientemente para
@@ -3048,9 +3052,9 @@ asignan particiones a múltiples procesos.
 </div>
 </div>
 
-<div id="outline-container-org64b08d6" class="outline-3">
-<h3 id="org64b08d6">Organización de memoria virtual</h3>
-<div class="outline-text-3" id="text-org64b08d6">
+<div id="outline-container-orga80cfad" class="outline-3">
+<h3 id="orga80cfad">Organización de memoria virtual</h3>
+<div class="outline-text-3" id="text-orga80cfad">
 <p>
 La memoria virtual permite a los programas utilizar más memoria de la
 que físicamente está disponible en el sistema. Esto se logra mediante
@@ -3062,7 +3066,8 @@ direcciones.
 <li><b><b>Esquema de organización</b></b>:
 <ul class="org-ul">
 <li><b><b>Paginación</b></b>: Divide la memoria en bloques de tamaño fijo (páginas).</li>
-<li><b><b>Segmentación</b></b>: Divide la memoria en bloques de tamaño variable según las necesidades lógicas.</li>
+<li><b><b>Segmentación</b></b>: Divide la memoria en bloques de tamaño variable
+según las necesidades lógicas.</li>
 <li><b><b>Paginación con segmentación</b></b>: Combinación de ambas técnicas.</li>
 </ul></li>
 </ul>
@@ -3083,9 +3088,9 @@ Un proceso puede acceder a una dirección lógica, que el sistema operativo trad
 </div>
 </div>
 
-<div id="outline-container-org2fb5b60" class="outline-3">
-<h3 id="org2fb5b60">Administración de memoria virtual</h3>
-<div class="outline-text-3" id="text-org2fb5b60">
+<div id="outline-container-org41b6cd5" class="outline-3">
+<h3 id="org41b6cd5">Administración de memoria virtual</h3>
+<div class="outline-text-3" id="text-org41b6cd5">
 <p>
 Administración de Memoria Virtual
 La memoria virtual es un mecanismo que permite a los sistemas
@@ -3103,13 +3108,13 @@ operación eficiente de este sistema.
 </p>
 </div>
 
-<div id="outline-container-orga811932" class="outline-4">
-<h4 id="orga811932">Estrategias de Asignación</h4>
-<div class="outline-text-4" id="text-orga811932">
+<div id="outline-container-orgd5c5972" class="outline-4">
+<h4 id="orgd5c5972">Estrategias de Asignación</h4>
+<div class="outline-text-4" id="text-orgd5c5972">
 </div>
 <ul class="org-ul">
-<li><a id="org78bcc4d"></a>Algoritmos de reemplazo de páginas<br />
-<div class="outline-text-5" id="text-org78bcc4d">
+<li><a id="orgbe22025"></a>Algoritmos de reemplazo de páginas<br />
+<div class="outline-text-5" id="text-orgbe22025">
 <p>
 Cuando un proceso solicita una página que no está en memoria y no hay espacio disponible, el sistema debe decidir qué página existente se reemplazará. Los algoritmos más comunes son:
 </p>
@@ -3140,8 +3145,8 @@ Cuando un proceso solicita una página que no está en memoria y no hay espacio 
 </div>
 </li>
 
-<li><a id="org07048de"></a>Políticas de carga<br />
-<div class="outline-text-5" id="text-org07048de">
+<li><a id="orgb1f87da"></a>Políticas de carga<br />
+<div class="outline-text-5" id="text-orgb1f87da">
 <p>
 Las políticas de carga determinan cuándo se traen las páginas desde el almacenamiento secundario a la memoria principal.
 </p>
@@ -3166,13 +3171,13 @@ Las políticas de carga determinan cuándo se traen las páginas desde el almace
 </ul>
 </div>
 
-<div id="outline-container-org8de7b16" class="outline-4">
-<h4 id="org8de7b16">Componentes Principales</h4>
-<div class="outline-text-4" id="text-org8de7b16">
+<div id="outline-container-org0a425ab" class="outline-4">
+<h4 id="org0a425ab">Componentes Principales</h4>
+<div class="outline-text-4" id="text-org0a425ab">
 </div>
 <ul class="org-ul">
-<li><a id="orgffa21f5"></a>Tabla de Páginas<br />
-<div class="outline-text-5" id="text-orgffa21f5">
+<li><a id="org3f8ec75"></a>Tabla de Páginas<br />
+<div class="outline-text-5" id="text-org3f8ec75">
 <p>
 La tabla de páginas es una estructura de datos clave que relaciona las direcciones lógicas (utilizadas por los programas) con las direcciones físicas (en la memoria).
 </p>
@@ -3193,8 +3198,8 @@ La tabla de páginas es una estructura de datos clave que relaciona las direccio
 </div>
 </li>
 
-<li><a id="orgf539450"></a>TLB (Translation Lookaside Buffer)<br />
-<div class="outline-text-5" id="text-orgf539450">
+<li><a id="org84f5be2"></a>TLB (Translation Lookaside Buffer)<br />
+<div class="outline-text-5" id="text-org84f5be2">
 <p>
 El <b><b>TLB</b></b> es una memoria caché especializada que acelera la traducción de direcciones lógicas a físicas.
 </p>
@@ -3216,8 +3221,8 @@ El <b><b>TLB</b></b> es una memoria caché especializada que acelera la traducci
 </div>
 </li>
 
-<li><a id="org94c2255"></a>Swap<br />
-<div class="outline-text-5" id="text-org94c2255">
+<li><a id="org12c2b2a"></a>Swap<br />
+<div class="outline-text-5" id="text-org12c2b2a">
 <p>
 El <b><b>swap</b></b> es un mecanismo que permite liberar espacio en la memoria física moviendo páginas no activas al disco.
 </p>
@@ -3246,13 +3251,13 @@ El <b><b>swap</b></b> es un mecanismo que permite liberar espacio en la memoria 
 </ul>
 </div>
 
-<div id="outline-container-orgd7b18d6" class="outline-4">
-<h4 id="orgd7b18d6">Ejemplo: Proceso de Fallo de Página</h4>
-<div class="outline-text-4" id="text-orgd7b18d6">
+<div id="outline-container-orga3e386e" class="outline-4">
+<h4 id="orga3e386e">Ejemplo: Proceso de Fallo de Página</h4>
+<div class="outline-text-4" id="text-orga3e386e">
 </div>
 <ul class="org-ul">
-<li><a id="orgc4c8021"></a>Escenario<br />
-<div class="outline-text-5" id="text-orgc4c8021">
+<li><a id="org3da3b20"></a>Escenario<br />
+<div class="outline-text-5" id="text-org3da3b20">
 <p>
 Un proceso solicita una página que no está en memoria. Esto genera un <b><b>page fault</b></b>.
 </p>
@@ -3282,8 +3287,8 @@ Un proceso solicita una página que no está en memoria. Esto genera un <b><b>pa
 </div>
 </li>
 
-<li><a id="org83d11ab"></a>Código Representativo (C Pseudocódigo)<br />
-<div class="outline-text-5" id="text-org83d11ab">
+<li><a id="org9eaaa6d"></a>Código Representativo (C Pseudocódigo)<br />
+<div class="outline-text-5" id="text-org9eaaa6d">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #c099ff;">if</span> <span style="color: #c099ff;">(</span>page_fault<span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
     page_to_replace = select_page_LRU<span style="color: #ff995e;">()</span>;
@@ -3304,9 +3309,9 @@ Un proceso solicita una página que no está en memoria. Esto genera un <b><b>pa
 
 
 
-<div id="outline-container-org8772b90" class="outline-3">
-<h3 id="org8772b90">Ejercicios</h3>
-<div class="outline-text-3" id="text-org8772b90">
+<div id="outline-container-orgbd0c067" class="outline-3">
+<h3 id="orgbd0c067">Ejercicios</h3>
+<div class="outline-text-3" id="text-orgbd0c067">
 <ol class="org-ol">
 <li>Simulación de particiones fijas:</li>
 
@@ -3317,6 +3322,139 @@ particiones.</li>
 <li>Simula la asignación y liberación de procesos a las particiones,
 mostrando cómo se utiliza la memoria.</li>
 </ol>
+</div>
+
+<div id="outline-container-org39897b5" class="outline-4">
+<h4 id="org39897b5">Respuestas</h4>
+<div class="outline-text-4" id="text-org39897b5">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">string.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #86e1fc; font-weight: bold;">#define</span> <span style="color: #ff98a4;">MAX_PARTICIONES</span> 100
+<span style="color: #86e1fc; font-weight: bold;">#define</span> <span style="color: #ff98a4;">MAX_PROCESOS</span> 100
+
+<span style="color: #c099ff;">typedef</span> <span style="color: #c099ff;">struct</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">tamano</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id_de_proceso</span>; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">-1 si el proceso no es asignado</span>
+<span style="color: #c099ff;">}</span> <span style="color: #ffc777;">Particion</span>;
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">imprime_memoria</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">Particion</span> <span style="color: #ff98a4;">Particions</span><span style="color: #ff995e;">[]</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">numero_de_particiones</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"\nEstado de la memoria:\n"</span><span style="color: #ff995e;">)</span>;
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; numero_de_particiones; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        <span style="color: #c099ff;">if</span> <span style="color: #ff98a4;">(</span>Particions<span style="color: #b4f9f8;">[</span>i<span style="color: #b4f9f8;">]</span>.id_de_proceso == -1<span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            printf<span style="color: #b4f9f8;">(</span><span style="color: #c3e88d;">"Partici&#243;n %d: %d KB (Libre)\n"</span>, i + 1, Particions<span style="color: #f989d3;">[</span>i<span style="color: #f989d3;">]</span>.tamano<span style="color: #b4f9f8;">)</span>;
+        <span style="color: #ff98a4;">}</span> <span style="color: #c099ff;">else</span> <span style="color: #ff98a4;">{</span>
+            printf<span style="color: #b4f9f8;">(</span><span style="color: #c3e88d;">"Partici&#243;n %d: %d KB (Proceso %d)\n"</span>, i + 1, Particions<span style="color: #f989d3;">[</span>i<span style="color: #f989d3;">]</span>.tamano, Particions<span style="color: #f989d3;">[</span>i<span style="color: #f989d3;">]</span>.id_de_proceso<span style="color: #b4f9f8;">)</span>;
+        <span style="color: #ff98a4;">}</span>
+    <span style="color: #ff995e;">}</span>
+    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"\n"</span><span style="color: #ff995e;">)</span>;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">memoria_total</span>, <span style="color: #ff98a4;">numero_de_particiones</span>;
+    <span style="color: #ffc777;">Particion</span> <span style="color: #ff98a4;">Particions</span><span style="color: #ff995e;">[</span>MAX_PARTICIONES<span style="color: #ff995e;">]</span>;
+
+    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Solicitar tama&#241;o total de la memoria</span>
+    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"Ingrese el tama&#241;o total de la memoria (KB): "</span><span style="color: #ff995e;">)</span>;
+    scanf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"%d"</span>, &amp;memoria_total<span style="color: #ff995e;">)</span>;
+
+    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Solicitar n&#250;mero de particiones</span>
+    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"Ingrese el n&#250;mero de particiones: "</span><span style="color: #ff995e;">)</span>;
+    scanf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"%d"</span>, &amp;numero_de_particiones<span style="color: #ff995e;">)</span>;
+
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>numero_de_particiones &gt; MAX_PARTICIONES<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"N&#250;mero m&#225;ximo de particiones excedido (%d).\n"</span>, MAX_PARTICIONES<span style="color: #ff98a4;">)</span>;
+        <span style="color: #c099ff;">return</span> 1;
+    <span style="color: #ff995e;">}</span>
+
+    <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Solicitar tama&#241;os de las particiones</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">tamano_total_particion</span> = 0;
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; numero_de_particiones; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Ingrese el tama&#241;o de la partici&#243;n %d (KB): "</span>, i + 1<span style="color: #ff98a4;">)</span>;
+        scanf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"%d"</span>, &amp;Particions<span style="color: #b4f9f8;">[</span>i<span style="color: #b4f9f8;">]</span>.tamano<span style="color: #ff98a4;">)</span>;
+        Particions<span style="color: #ff98a4;">[</span>i<span style="color: #ff98a4;">]</span>.id_de_proceso = -1; <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Inicialmente, todas est&#225;n libres</span>
+        tamano_total_particion += Particions<span style="color: #ff98a4;">[</span>i<span style="color: #ff98a4;">]</span>.tamano;
+    <span style="color: #ff995e;">}</span>
+
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>tamano_total_particion &gt; memoria_total<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Error: El tama&#241;o total de las particiones excede el tama&#241;o de la memoria.\n"</span><span style="color: #ff98a4;">)</span>;
+        <span style="color: #c099ff;">return</span> 1;
+    <span style="color: #ff995e;">}</span>
+
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">op</span>;
+    <span style="color: #c099ff;">do</span> <span style="color: #ff995e;">{</span>
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"\n--- Men&#250; ---\n"</span><span style="color: #ff98a4;">)</span>;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"1. Asignar proceso\n"</span><span style="color: #ff98a4;">)</span>;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"2. Liberar proceso\n"</span><span style="color: #ff98a4;">)</span>;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"3. Mostrar estado de la memoria\n"</span><span style="color: #ff98a4;">)</span>;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"4. Salir\n"</span><span style="color: #ff98a4;">)</span>;
+        printf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"Seleccione una opci&#243;n: "</span><span style="color: #ff98a4;">)</span>;
+        scanf<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">"%d"</span>, &amp;op<span style="color: #ff98a4;">)</span>;
+
+        <span style="color: #c099ff;">switch</span> <span style="color: #ff98a4;">(</span>op<span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            <span style="color: #c099ff;">case</span> 1: <span style="color: #b4f9f8;">{</span>
+                <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id_de_proceso</span>, <span style="color: #ff98a4;">tam_proceso</span>;
+                printf<span style="color: #f989d3;">(</span><span style="color: #c3e88d;">"Ingrese el ID del proceso: "</span><span style="color: #f989d3;">)</span>;
+                scanf<span style="color: #f989d3;">(</span><span style="color: #c3e88d;">"%d"</span>, &amp;id_de_proceso<span style="color: #f989d3;">)</span>;
+                printf<span style="color: #f989d3;">(</span><span style="color: #c3e88d;">"Ingrese el tama&#241;o del proceso (KB): "</span><span style="color: #f989d3;">)</span>;
+                scanf<span style="color: #f989d3;">(</span><span style="color: #c3e88d;">"%d"</span>, &amp;tam_proceso<span style="color: #f989d3;">)</span>;
+
+                <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">asignado</span> = 0;
+                <span style="color: #c099ff;">for</span> <span style="color: #f989d3;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; numero_de_particiones; i++<span style="color: #f989d3;">)</span> <span style="color: #f989d3;">{</span>
+                    <span style="color: #c099ff;">if</span> <span style="color: #ffc777;">(</span>Particions<span style="color: #82aaff;">[</span>i<span style="color: #82aaff;">]</span>.id_de_proceso == -1 &amp;&amp; Particions<span style="color: #82aaff;">[</span>i<span style="color: #82aaff;">]</span>.tamano &gt;= tam_proceso<span style="color: #ffc777;">)</span> <span style="color: #ffc777;">{</span>
+                        Particions<span style="color: #82aaff;">[</span>i<span style="color: #82aaff;">]</span>.id_de_proceso = id_de_proceso;
+                        asignado = 1;
+                        printf<span style="color: #82aaff;">(</span><span style="color: #c3e88d;">"Proceso %d asignado a la partici&#243;n %d.\n"</span>, id_de_proceso, i + 1<span style="color: #82aaff;">)</span>;
+                        <span style="color: #c099ff;">break</span>;
+                    <span style="color: #ffc777;">}</span>
+                <span style="color: #f989d3;">}</span>
+                <span style="color: #c099ff;">if</span> <span style="color: #f989d3;">(</span><span style="color: #86e1fc; font-weight: bold;">!</span>asignado<span style="color: #f989d3;">)</span> <span style="color: #f989d3;">{</span>
+                    printf<span style="color: #ffc777;">(</span><span style="color: #c3e88d;">"No se encontr&#243; una partici&#243;n disponible para el proceso %d.\n"</span>, id_de_proceso<span style="color: #ffc777;">)</span>;
+                <span style="color: #f989d3;">}</span>
+                <span style="color: #c099ff;">break</span>;
+            <span style="color: #b4f9f8;">}</span>
+            <span style="color: #c099ff;">case</span> 2: <span style="color: #b4f9f8;">{</span>
+                <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">id_de_proceso</span>;
+                printf<span style="color: #f989d3;">(</span><span style="color: #c3e88d;">"Ingrese el ID del proceso a liberar: "</span><span style="color: #f989d3;">)</span>;
+                scanf<span style="color: #f989d3;">(</span><span style="color: #c3e88d;">"%d"</span>, &amp;id_de_proceso<span style="color: #f989d3;">)</span>;
+
+                <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">libre</span> = 0;
+                <span style="color: #c099ff;">for</span> <span style="color: #f989d3;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; numero_de_particiones; i++<span style="color: #f989d3;">)</span> <span style="color: #f989d3;">{</span>
+                    <span style="color: #c099ff;">if</span> <span style="color: #ffc777;">(</span>Particions<span style="color: #82aaff;">[</span>i<span style="color: #82aaff;">]</span>.id_de_proceso == id_de_proceso<span style="color: #ffc777;">)</span> <span style="color: #ffc777;">{</span>
+                        Particions<span style="color: #82aaff;">[</span>i<span style="color: #82aaff;">]</span>.id_de_proceso = -1;
+                        libre = 1;
+                        printf<span style="color: #82aaff;">(</span><span style="color: #c3e88d;">"Proceso %d liberado de la partici&#243;n %d.\n"</span>, id_de_proceso, i + 1<span style="color: #82aaff;">)</span>;
+                        <span style="color: #c099ff;">break</span>;
+                    <span style="color: #ffc777;">}</span>
+                <span style="color: #f989d3;">}</span>
+                <span style="color: #c099ff;">if</span> <span style="color: #f989d3;">(</span><span style="color: #86e1fc; font-weight: bold;">!</span>libre<span style="color: #f989d3;">)</span> <span style="color: #f989d3;">{</span>
+                    printf<span style="color: #ffc777;">(</span><span style="color: #c3e88d;">"No se encontr&#243; el proceso %d en ninguna partici&#243;n.\n"</span>, id_de_proceso<span style="color: #ffc777;">)</span>;
+                <span style="color: #f989d3;">}</span>
+                <span style="color: #c099ff;">break</span>;
+            <span style="color: #b4f9f8;">}</span>
+            <span style="color: #c099ff;">case</span> 3:
+                imprime_memoria<span style="color: #b4f9f8;">(</span>Particions, numero_de_particiones<span style="color: #b4f9f8;">)</span>;
+                <span style="color: #c099ff;">break</span>;
+            <span style="color: #c099ff;">case</span> 4:
+                printf<span style="color: #b4f9f8;">(</span><span style="color: #c3e88d;">"Saliendo del programa.\n"</span><span style="color: #b4f9f8;">)</span>;
+                <span style="color: #c099ff;">break</span>;
+            <span style="color: #c099ff;">default</span>:
+                printf<span style="color: #b4f9f8;">(</span><span style="color: #c3e88d;">"Opci&#243;n no v&#225;lida.\n"</span><span style="color: #b4f9f8;">)</span>;
+        <span style="color: #ff98a4;">}</span>
+    <span style="color: #ff995e;">}</span> <span style="color: #c099ff;">while</span> <span style="color: #ff995e;">(</span>op != 4<span style="color: #ff995e;">)</span>;
+
+    <span style="color: #c099ff;">return</span> 0;
+<span style="color: #c099ff;">}</span>
+
+</pre>
+</div>
+
+
+<p>
+nodo memora[1000];
+</p>
 
 <p>
 nodo a[1000];
@@ -3326,9 +3464,10 @@ nodo a[valor|prior|npo]-[valor|prior|npo]
 </div>
 </div>
 </div>
+</div>
 <div id="postamble" class="status">
 <p class="author">Autor: likcos</p>
-<p class="date">Created: 2024-11-21 jue 14:17</p>
+<p class="date">Created: 2024-11-22 vie 14:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
