@@ -1,4 +1,5 @@
 #+TITLE: Apuntes Sistemas Operativos 
+#+Author: Eduardo Alcaraz
 #+LANGUAGE: es
 #+LaTeX_HEADER: \usepackage[spanish]{inputenc}
 #+SETUPFILE: /home/likcos/Materias/SO/theme-readtheorg-local.setup
@@ -2315,3 +2316,393 @@ El problema consiste en encontrar un algoritmo que permita que los
 filósofos nunca se mueran de hambre.
 
 
+
+
+* Administración de entrada/salida
+El sistema operativo proporciona una interfaz para la comunicación con
+los dispositivos de hardware. Esta sección aborda los conceptos
+principales relacionados con la administración de entrada/salida.
+
+** 4.1. Dispositivos y manejadores de dispositivos
+- Un **dispositivo** es cualquier hardware que se utiliza para
+  transferir datos entre la computadora y el mundo externo o entre
+  componentes internos.
+  - Ejemplos: teclado, monitor, disco duro, impresora, etc.
+- Los **manejadores de dispositivos** son programas que permiten la
+  comunicación entre el sistema operativo y los dispositivos de
+  hardware.
+  - Responsabilidades:
+    - Abstracción del hardware: Proveen una interfaz estándar.
+    - Control de dispositivos: Activan, desactivan o configuran el hardware.
+    - Manejo de errores: Detectan y notifican errores de hardware.
+
+** 4.2. Mecanismos y funciones de los manejadores de dispositivos
+
+- **Mecanismos**: 
+  - **Interrupciones**: Señales enviadas por los dispositivos para solicitar atención del CPU.
+  - **Polling**: El sistema operativo revisa periódicamente el estado del dispositivo.
+  - **DMA (Acceso Directo a Memoria)**: Permite a los dispositivos
+    transferir datos directamente a la memoria sin intervención del
+    CPU.
+- **Funciones**:
+
+  1. **Inicialización**:
+     - Configuración del hardware (puertos, registros, etc.).
+     - Verificación de disponibilidad del dispositivo.
+  2. **Procesamiento de comandos**:
+     - Traducción de solicitudes de entrada/salida en comandos
+       específicos del hardware.
+  3. **Transferencia de datos**:
+     - Manejo eficiente de la transferencia entre memoria y dispositivo.
+  4. **Finalización**:
+     - Limpieza de recursos y notificación al sistema operativo.
+
+** 4.3. Estructuras de datos para manejo de dispositivos
+- Las estructuras de datos son fundamentales para organizar y
+  gestionar la interacción con dispositivos.
+- **Ejemplos comunes**:
+  - **Tablas de dispositivos**:
+    - Contienen información sobre los dispositivos disponibles en el sistema.
+    - Campos: Nombre del dispositivo, tipo, dirección base, etc.
+  - **Colas de entrada/salida**:
+    - Gestionan las solicitudes pendientes para un dispositivo.
+    - Implementan algoritmos de planificación como FCFS (First Come,
+      First Serve) o SSTF (Shortest Seek Time First).
+  - **Buffers**:
+    - Memoria temporal para manejar diferencias en velocidad entre el
+      dispositivo y el procesador.
+    - Ejemplo: Double buffering para minimizar tiempos de espera.
+  - **Tablas de manejadores**:
+    - Mapas que asocian operaciones del sistema operativo con las
+      funciones del manejador de dispositivos.
+
+** 4.4. Operaciones de entrada/salida
+- **Tipos de operaciones**:
+  1. **Bloqueantes**:
+     - El proceso solicitante se detiene hasta que la operación de E/S se completa.
+  2. **No bloqueantes**:
+     - El proceso solicitante continúa ejecutándose mientras se realiza la operación de E/S.
+  3. **Asíncronas**:
+     - El sistema operativo notifica al proceso solicitante cuando la operación de E/S ha terminado.
+- **Etapas de la operación de E/S**:
+  1. **Solicitud**:
+     - El proceso genera una solicitud de E/S al sistema operativo.
+  2. **Planificación**:
+     - Se decide el orden en que se procesarán las solicitudes (prioridades, tiempo de espera, etc.).
+  3. **Transferencia**:
+     - Los datos se transfieren entre el dispositivo y la memoria del sistema.
+  4. **Notificación**:
+     - El sistema operativo informa al proceso solicitante sobre el éxito o el fallo de la operación.
+
+** Ejemplo de código en C para manejo de dispositivos
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+c:
+int main() {
+    int fd = open("/dev/sda", O_RDONLY); // Abrir el dispositivo en modo de solo lectura
+    if (fd < 0) {
+        perror("Error al abrir el dispositivo");
+        return -1;
+    }
+
+    char buffer[512]; // Buffer para leer datos
+    ssize_t bytesRead = read(fd, buffer, sizeof(buffer));
+    if (bytesRead < 0) {
+        perror("Error al leer datos del dispositivo");
+        close(fd);
+        return -1;
+    }
+
+    printf("Se leyeron %ld bytes del dispositivo.\n", bytesRead);
+    close(fd);
+    return 0;
+}
+#+END_SRC
+
+
+
+* Dispositivos de Entrada y Salida en Linux
+** Dispositivos de Entrada
+*** Teclado y Mouse
+    - `xinput`: Gestiona dispositivos de entrada.
+      #+begin_src bash
+      xinput list
+      #+end_src
+    - `evtest`: Monitorea eventos de dispositivos de entrada.
+      #+begin_src bash
+      sudo evtest
+      #+end_src
+    - `libinput`: Utilizado para administrar dispositivos en entornos gráficos.
+      #+begin_src bash
+      sudo libinput list-devices
+      #+end_src
+
+*** Pantallas Táctiles
+    - `xinput`: Configura parámetros para pantallas táctiles.
+      #+begin_src bash
+      xinput set-prop <device_id> <property> <value>
+      #+end_src
+
+    - `calibrate-touchscreen`: Herramienta para calibrar pantallas táctiles.
+
+** Dispositivos de Salida
+*** Pantalla/Monitor
+    - `xrandr`: Configura y ajusta pantallas conectadas.
+      #+begin_src bash
+      xrandr --output <display_name> --mode <resolution>
+      #+end_src
+
+    - `arandr`: Interfaz gráfica para `xrandr`.
+
+*** Audio
+    - `alsamixer`: Interfaz para controlar el volumen y dispositivos de audio.
+      #+begin_src bash
+      alsamixer
+      #+end_src
+
+    - `pulseaudio`: Controla dispositivos de sonido.
+      #+begin_src bash
+      pactl list sinks
+      #+end_src
+
+    - `pipewire`: Alternativa moderna para gestionar el audio.
+      #+begin_src bash
+      pw-cli ls Node
+      #+end_src
+
+** Dispositivos de Entrada/Salida Generales
+*** Almacenamiento
+    - `lsblk`: Muestra dispositivos de almacenamiento.
+      #+begin_src bash
+      lsblk
+      #+end_src
+
+    - `mount` y `umount`: Monta y desmonta sistemas de archivos.
+      #+begin_src bash
+      sudo mount /dev/<device> /mnt/<directory>
+      sudo umount /mnt/<directory>
+      #+end_src
+
+    - `blkid`: Identifica UUID y etiquetas de particiones.
+      #+begin_src bash
+      blkid
+      #+end_src
+
+*** USB
+    - `lsusb`: Lista dispositivos USB conectados.
+      #+begin_src bash
+      lsusb
+      #+end_src
+
+    - `usb-devices`: Muestra detalles de los dispositivos USB.
+      #+begin_src bash
+      usb-devices
+      #+end_src
+
+*** Red
+    - `ip link`: Lista interfaces de red.
+      #+begin_src bash
+      ip link show
+      #+end_src
+
+    - `nmcli`: Administra conexiones de red.
+      #+begin_src bash
+      nmcli device show
+      #+end_src
+
+
+
+* Actividades
+
+El objetivo de estas actividades es fortalecer tu comprensión de dos
+áreas fundamentales en sistemas operativos: la administración de
+memoria y la administración de entrada/salida (E/S). Estos conceptos
+son esenciales para entender cómo un sistema operativo gestiona los
+recursos de hardware y software para garantizar el funcionamiento
+eficiente de un equipo de cómputo.
+
+
+** ¿Qué se espera de ti?
+1. **Lectura y análisis crítico**:
+   - Antes de comenzar las actividades, revisa los temas relacionados
+     en tu material de estudio o en recursos confiables. Asegúrate de
+     comprender los conceptos clave, como memoria virtual, paginación,
+     dispositivos de bloque y planificación de discos.
+   - Reflexiona sobre cómo estos conceptos son aplicados en sistemas
+     operativos modernos como Linux o Windows.
+
+2. **Desarrollo práctico**:
+   - Implementarás programas en lenguajes como C o Python para simular
+     y profundizar en los mecanismos estudiados. Esto incluye la
+     creación de algoritmos de administración de memoria y simuladores
+     de entrada/salida.
+   - Al realizar estas tareas, te familiarizarás con técnicas de
+     programación orientadas a sistemas, como el manejo de memoria
+     dinámica, la gestión de interrupciones y la planificación de
+     recursos.
+
+3. **Resolución de problemas**:
+   - Las actividades incluyen preguntas teóricas y prácticas diseñadas
+     para retarte a analizar problemas reales y proponer soluciones
+     innovadoras.
+   - Se espera que simules entornos de sistemas operativos y explores
+     cómo interactúan sus componentes clave.
+
+
+
+
+
+
+
+
+** Administración de Memoria
+*** 3.1 Política y filosofía
+1. ¿Cuál es la diferencia entre fragmentación interna y externa? Explica cómo cada una afecta el rendimiento de la memoria.
+2. Investiga y explica las políticas de reemplazo de páginas en sistemas operativos. ¿Cuál consideras más eficiente y por qué?
+
+*** 3.2 Memoria real
+3. Escribe un programa en C o Python que simule la administración de memoria mediante particiones fijas.
+4. Diseña un algoritmo para calcular qué procesos pueden ser asignados a un sistema con memoria real limitada utilizando el algoritmo de "primera cabida".
+
+*** 3.3 Organización de memoria virtual
+5. Investiga y explica el concepto de "paginación" y "segmentación". ¿Cuáles son las ventajas y desventajas de cada técnica?
+6. Escribe un programa que simule una tabla de páginas para procesos con acceso aleatorio a memoria virtual.
+
+*** 3.4 Administración de memoria virtual
+7. Escribe un código que implemente el algoritmo de reemplazo de página "Least Recently Used" (LRU).
+8. Diseña un diagrama que represente el proceso de traducción de direcciones virtuales a físicas en un sistema con memoria virtual.
+
+*** Integración
+9. Analiza un sistema operativo moderno (por ejemplo, Linux o Windows) e identifica cómo administra la memoria virtual.
+10. Realiza una simulación en cualquier lenguaje de programación que emule el swapping de procesos en memoria virtual.
+
+** Administración de Entrada/Salida
+*** 4.1 Dispositivos y manejadores de dispositivos
+1. Explica la diferencia entre dispositivos de bloque y dispositivos de carácter. Da un ejemplo de cada uno.
+2. Diseña un programa que implemente un manejador de dispositivos sencillo para un dispositivo virtual de entrada.
+
+*** 4.2 Mecanismos y funciones de los manejadores de dispositivos
+3. Investiga qué es la interrupción por E/S y cómo la administra el sistema operativo. Escribe un ejemplo en pseudocódigo para simular este proceso.
+4. Escribe un programa que utilice el manejo de interrupciones en un sistema básico de simulación.
+
+*** 4.3 Estructuras de datos para manejo de dispositivos
+5. Investiga y explica qué es una cola de E/S. Diseña una simulación de una cola con prioridad.
+6. Escribe un programa que simule las operaciones de un manejador de dispositivos utilizando una tabla de estructuras.
+
+*** 4.4 Operaciones de Entrada/Salida
+7. Diseña un flujo que describa el proceso de lectura de un archivo desde un disco magnético. Acompáñalo con un programa básico que simule el proceso.
+8. Implementa un programa en Python, C o java  que realice operaciones de entrada/salida asíncronas usando archivos.
+
+*** Integración
+9. Escribe un programa que implemente el algoritmo de planificación de discos "Elevator (SCAN)".
+10. Diseña un sistema que maneje múltiples dispositivos simulados (disco duro, impresora, teclado) y muestra cómo se realiza la comunicación entre ellos.
+
+*** Avanzados
+11. Explica cómo los sistemas operativos modernos optimizan las operaciones de entrada/salida con el uso de memoria caché.
+
+
+
+
+
+
+
+* Actividades: Dispositivos de entrada y salida en Linux
+
+** Introducción
+   En este ejercicio, aprenderá a listar,
+   verificar y analizar los dispositivos de entrada y salida en
+   Linux. Usarán comandos básicos y herramientas comunes disponibles
+   en cualquier distribución.
+
+** Actividad 1: Listar dispositivos conectados
+*** Objetivo
+Conocer los dispositivos de entrada y salida conectados al sistema.
+*** Instrucciones
+    1. Abra una terminal en su entorno Linux.
+    2. Ejecute los siguientes comandos y anote sus observaciones:
+       - `lsblk`: Enumera los dispositivos de bloque.
+       - `lsusb`: Lista los dispositivos conectados a los puertos USB.
+       - `lspci`: Muestra los dispositivos conectados al bus PCI.
+       - `dmesg | grep usb`: Muestra los mensajes del kernel relacionados con dispositivos USB.
+    3. Conteste:
+       - ¿Qué tipos de dispositivos se muestran en la salida de `lsblk`?
+       - ¿Cuál es la diferencia entre `lsusb` y `lspci`?
+       - ¿Qué información adicional proporciona `dmesg | grep usb`?
+
+** Actividad 2: Verificar dispositivos de almacenamiento
+*** Objetivo
+    Aprender cómo identificar discos duros, particiones y su configuración.
+*** Instrucciones
+    1. Use el comando `fdisk -l` para listar todos los discos y particiones.
+    2. Utilice `blkid` para ver los identificadores UUID y los tipos de sistema de archivos.
+    3. Use `df -h` para listar los dispositivos montados y su espacio disponible.
+    4. Conteste:
+       - ¿Qué dispositivos de almacenamiento están conectados a su sistema?
+       - ¿Qué particiones están montadas actualmente?
+       - ¿Qué tipo de sistemas de archivos se usan en las particiones?
+
+** Actividad 3: Explorar dispositivos de entrada
+*** Objetivo
+    Identificar dispositivos como teclados, ratones y cámaras.
+*** Instrucciones
+    1. Ejecute `cat /proc/bus/input/devices` para listar los dispositivos de entrada.
+    2. Use `evtest` para monitorear eventos de dispositivos de entrada (requiere permisos de superusuario).
+    3. Investigue los siguientes dispositivos:
+       - Teclado
+       - Mouse
+       - Controladores USB adicionales
+    4. Conteste:
+       - ¿Qué eventos genera cada dispositivo al interactuar con ellos?
+       - ¿Cómo se identifican los dispositivos en `/proc/bus/input/devices`?
+
+** Actividad 4: Examinar dispositivos de salida
+*** Objetivo
+    Entender cómo identificar dispositivos de salida como monitores y tarjetas de sonido.
+*** Instrucciones
+    1. Use `xrandr` para listar las pantallas conectadas y sus resoluciones.
+    2. Ejecute `aplay -l` para listar las tarjetas de sonido disponibles.
+    3. Use `lsof /dev/snd/*` para ver qué procesos están utilizando la tarjeta de sonido.
+    4. Conteste:
+       - ¿Qué salidas de video están disponibles en su sistema?
+       - ¿Qué dispositivos de sonido se detectaron?
+       - ¿Qué procesos están usando la tarjeta de sonido?
+
+** Actividad 5: Crear un script de resumen
+*** Objetivo
+    Automatizar la recopilación de información de dispositivos de entrada y salida.
+*** Instrucciones
+    1. Cree un archivo llamado `dispositivos.sh` y agregue el siguiente contenido:
+       ```bash
+       #!/bin/bash
+       echo "Dispositivos de bloque:"
+       lsblk
+       echo "Dispositivos USB:"
+       lsusb
+       echo "Dispositivos PCI:"
+       lspci
+       echo "Dispositivos de entrada:"
+       cat /proc/bus/input/devices
+       echo "Salidas de video:"
+       xrandr
+       echo "Tarjetas de sonido:"
+       aplay -l
+       ```
+    2. Ejecute el script usando `bash dispositivos.sh`.
+    3. Modifique el script para guardar la salida en un archivo llamado `resumen_dispositivos.txt`.
+    4. Conteste:
+       - ¿Qué ventajas tiene usar un script para recopilar esta información?
+       - ¿Qué cambios realizaría para personalizar el script?
+
+** Actividad 6: Reflexión y discusión
+*** Objetivo
+    Analizar la importancia del manejo de dispositivos en sistemas Linux.
+*** Instrucciones
+    1. Reflexione sobre lo aprendido y discuta en equipo:
+       - ¿Qué comando encontró más útil y por qué?
+       - ¿Qué tan importante es conocer los dispositivos conectados al sistema?
+       - ¿Cómo podrían estos conocimientos aplicarse en la administración de sistemas?
+
+
+	
