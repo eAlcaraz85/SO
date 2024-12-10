@@ -2631,15 +2631,22 @@ Conocer los dispositivos de entrada y salida conectados al sistema.
        - ¿Cuál es la diferencia entre `lsusb` y `lspci`?
        - ¿Qué información adicional proporciona `dmesg | grep usb`?
 
+
+	
 ** Actividad 2: Verificar dispositivos de almacenamiento
 *** Objetivo
-    Aprender cómo identificar discos duros, particiones y su configuración.
+    Aprender cómo identificar discos duros, particiones y su
+    configuración.
 *** Instrucciones
-    1. Use el comando `fdisk -l` para listar todos los discos y particiones.
-    2. Utilice `blkid` para ver los identificadores UUID y los tipos de sistema de archivos.
-    3. Use `df -h` para listar los dispositivos montados y su espacio disponible.
+    1. Use el comando `fdisk -l` para listar todos los discos y
+       particiones.
+    2. Utilice `blkid` para ver los identificadores UUID y los tipos
+       de sistema de archivos.
+    3. Use `df -h` para listar los dispositivos montados y su espacio
+       disponible.
     4. Conteste:
-       - ¿Qué dispositivos de almacenamiento están conectados a su sistema?
+       - ¿Qué dispositivos de almacenamiento están conectados a su
+         sistema?
        - ¿Qué particiones están montadas actualmente?
        - ¿Qué tipo de sistemas de archivos se usan en las particiones?
 
@@ -2647,15 +2654,18 @@ Conocer los dispositivos de entrada y salida conectados al sistema.
 *** Objetivo
     Identificar dispositivos como teclados, ratones y cámaras.
 *** Instrucciones
-    1. Ejecute `cat /proc/bus/input/devices` para listar los dispositivos de entrada.
+    1. Ejecute `cat /proc/bus/input/devices` para listar los
+       dispositivos de entrada.
     2. Use `evtest` para monitorear eventos de dispositivos de entrada (requiere permisos de superusuario).
     3. Investigue los siguientes dispositivos:
        - Teclado
        - Mouse
        - Controladores USB adicionales
     4. Conteste:
-       - ¿Qué eventos genera cada dispositivo al interactuar con ellos?
-       - ¿Cómo se identifican los dispositivos en `/proc/bus/input/devices`?
+       - ¿Qué eventos genera cada dispositivo al interactuar con
+         ellos?
+       - ¿Cómo se identifican los dispositivos en
+         `/proc/bus/input/devices`?
 
 ** Actividad 4: Examinar dispositivos de salida
 *** Objetivo
@@ -2704,5 +2714,137 @@ Conocer los dispositivos de entrada y salida conectados al sistema.
        - ¿Qué tan importante es conocer los dispositivos conectados al sistema?
        - ¿Cómo podrían estos conocimientos aplicarse en la administración de sistemas?
 
+
+	
+
+
+*  Comandos de Entrada y Salida, Discos y Archivos
+** Ejercicio 1: Montar y Desmontar Discos
+   - **Objetivo:** Aprender a montar y desmontar un dispositivo externo.
+   1. Inserta una memoria USB en el sistema.
+   2. Encuentra el dispositivo usando el comando:
+      #+BEGIN_SRC bash
+      lsblk
+      #+END_SRC
+      o
+      #+BEGIN_SRC bash
+      fdisk -l
+      #+END_SRC
+   3. Monta la memoria USB en un directorio, por ejemplo, `/mnt/usb`:
+      #+BEGIN_SRC bash
+      sudo mount /dev/sdX1 /mnt/usb
+      #+END_SRC
+   4. Verifica que esté montado correctamente:
+      #+BEGIN_SRC bash
+      df -h
+      #+END_SRC
+   5. Copia un archivo desde tu directorio personal al dispositivo USB:
+      #+BEGIN_SRC bash
+      cp archivo.txt /mnt/usb/
+      #+END_SRC
+   6. Desmonta la memoria USB:
+      #+BEGIN_SRC bash
+      sudo umount /mnt/usb
+      #+END_SRC
+
+** Ejercicio 2: Redirección de Entrada y Salida
+   - **Objetivo:** Usar redirección para guardar la salida de comandos en archivos.
+   1. Lista los archivos de tu directorio actual y guarda el resultado en un archivo `listado.txt`:
+      #+BEGIN_SRC bash
+      ls -l > listado.txt
+      #+END_SRC
+   2. Muestra el contenido del archivo en la terminal:
+      #+BEGIN_SRC bash
+      cat listado.txt
+      #+END_SRC
+   3. Añade la fecha actual al final del archivo:
+      #+BEGIN_SRC bash
+      date >> listado.txt
+      #+END_SRC
+   4. Muestra todo el contenido del archivo nuevamente:
+      #+BEGIN_SRC bash
+      cat listado.txt
+      #+END_SRC
+
+** Ejercicio 3: Copiar y Mover Archivos
+   - **Objetivo:** Practicar copiar y mover archivos y directorios.
+   1. Crea un archivo de texto llamado `archivo1.txt`:
+      #+BEGIN_SRC bash
+      echo "Este es un archivo de prueba" > archivo1.txt
+      #+END_SRC
+   2. Copia este archivo a otro directorio, por ejemplo, `/tmp`:
+      #+BEGIN_SRC bash
+      cp archivo1.txt /tmp/
+      #+END_SRC
+   3. Renombra el archivo copiado a `archivo2.txt` en `/tmp`:
+      #+BEGIN_SRC bash
+      mv /tmp/archivo1.txt /tmp/archivo2.txt
+      #+END_SRC
+   4. Mueve el archivo `archivo2.txt` de vuelta a tu directorio actual:
+      #+BEGIN_SRC bash
+      mv /tmp/archivo2.txt .
+      #+END_SRC
+
+** Ejercicio 4: Comprimir y Descomprimir Archivos
+   - **Objetivo:** Aprender a trabajar con compresión de archivos.
+   1. Crea un directorio llamado `backup` y copia algunos archivos en él.
+   2. Comprime el directorio `backup` en un archivo `.tar.gz`:
+      #+BEGIN_SRC bash
+      tar -czvf backup.tar.gz backup/
+      #+END_SRC
+   3. Borra el directorio original y extrae el contenido del archivo comprimido:
+      #+BEGIN_SRC bash
+      tar -xzvf backup.tar.gz
+      #+END_SRC
+
+** Ejercicio 5: Permisos y Propiedades de Archivos
+   - **Objetivo:** Aprender a modificar permisos y propietarios de archivos.
+   1. Crea un archivo llamado `privado.txt`:
+      #+BEGIN_SRC bash
+      touch privado.txt
+      #+END_SRC
+   2. Cambia los permisos del archivo para que solo el propietario pueda leer y escribir:
+      #+BEGIN_SRC bash
+      chmod 600 privado.txt
+      #+END_SRC
+   3. Cambia el propietario del archivo a otro usuario (si tienes privilegios):
+      #+BEGIN_SRC bash
+      sudo chown usuario privado.txt
+      #+END_SRC
+
+** Ejercicio 6: Exploración de Dispositivos
+   - **Objetivo:** Identificar discos y particiones en el sistema.
+   1. Usa `lsblk` para listar los discos y particiones:
+      #+BEGIN_SRC bash
+      lsblk
+      #+END_SRC
+   2. Usa `du -sh` para ver el tamaño del contenido en un directorio de tu elección:
+      #+BEGIN_SRC bash
+      du -sh /ruta/directorio
+      #+END_SRC
+   3. Verifica el uso de disco con `df -h`:
+      #+BEGIN_SRC bash
+      df -h
+      #+END_SRC
+
+** Ejercicio 7: Crear y Formatear Particiones
+   - **Objetivo:** Crear y formatear una nueva partición (Usar disco de práctica o máquina virtual).
+   1. Identifica un disco no particionado:
+      #+BEGIN_SRC bash
+      sudo fdisk -l
+      #+END_SRC
+   2. Usa `fdisk` para crear una nueva partición:
+      #+BEGIN_SRC bash
+      sudo fdisk /dev/sdX
+      #+END_SRC
+   3. Formatea la partición como `ext4`:
+      #+BEGIN_SRC bash
+      sudo mkfs.ext4 /dev/sdX1
+      #+END_SRC
+   4. Monta la partición en un directorio y prueba escribiendo archivos en ella:
+      #+BEGIN_SRC bash
+      sudo mount /dev/sdX1 /mnt/nueva_particion
+      echo "Prueba de escritura" > /mnt/nueva_particion/test.txt
+      #+END_SRC
 
 	
